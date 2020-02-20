@@ -1,0 +1,17 @@
+--- SelfTestCases/MoreThan4.out	2011-04-28 14:55:20.000000000 -0700
++++ ./Output/Tests/MoreThan4.out	2020-02-19 16:01:55.000000000 -0800
+@@ -1,13 +1 @@
+-1
+-2
+-3
+-4
+-5
+-6
+-6
+-5
+-4
+-3
+-2
+-1
+-0
++Program has no "Main" function.

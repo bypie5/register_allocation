@@ -1,0 +1,5 @@
+--- SelfTestCases/Factorial.out	2011-04-28 14:55:20.000000000 -0700
++++ ./Output/Tests/Factorial.out	2020-02-19 16:01:53.000000000 -0800
+@@ -1 +1 @@
+-3628800
++Program has no "Main" function.
