@@ -1,5 +1,5 @@
 --- SelfTestCases/BinaryTree.opt.out	2011-04-28 14:55:20.000000000 -0700
-+++ ./Output/Tests/BinaryTree.opt.out	2020-02-19 16:01:52.000000000 -0800
++++ ./Output/Tests/BinaryTree.opt.out	2020-02-24 15:38:10.000000000 -0800
 @@ -1,26 +1 @@
 -16
 -100000000

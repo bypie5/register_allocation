@@ -1,5 +1,5 @@
 --- SelfTestCases/TreeVisitor.opt.out	2011-04-28 14:55:20.000000000 -0700
-+++ ./Output/Tests/TreeVisitor.opt.out	2020-02-19 16:01:56.000000000 -0800
++++ ./Output/Tests/TreeVisitor.opt.out	2020-02-24 15:38:14.000000000 -0800
 @@ -1,43 +1 @@
 -16
 -100000000
