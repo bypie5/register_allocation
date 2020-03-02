@@ -1,4 +1,4 @@
-package regalloc;
+
 
 import cs132.vapor.ast.*;
 import cs132.vapor.ast.VInstr.Visitor;
@@ -26,9 +26,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     public void visit(VAssign a) throws E {
         CFGNode currNode = new CFGNode();
 
-        // defs
-
-        // uses
+        System.out.println(a.dest.toString());
 
         nodes.add(currNode);
         currNodeIndex++;
@@ -37,9 +35,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     public void visit(VCall c) throws E {
         CFGNode currNode = new CFGNode();
 
-        // defs
-
-        // uses
+        System.out.println(c.dest.toString());
 
         nodes.add(currNode);
         currNodeIndex++;
@@ -48,9 +44,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     public void visit(VBuiltIn c) throws E {
         CFGNode currNode = new CFGNode();
 
-        // defs
-
-        // uses
+        System.out.println(c.dest.toString());
 
         nodes.add(currNode);
         currNodeIndex++;
@@ -59,19 +53,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     public void visit(VMemWrite w) throws E {
         CFGNode currNode = new CFGNode();
 
-        // defs
-
-        // uses
         nodes.add(currNode);
         currNodeIndex++;
     }
 
     public void visit(VMemRead r) throws E {
         CFGNode currNode = new CFGNode();
-
-        // defs
-
-        // uses
 
         nodes.add(currNode);
         currNodeIndex++;
@@ -87,20 +74,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     public void visit(VGoto g) throws E {
         CFGNode currNode = new CFGNode();
 
-        // defs
-
-        // uses
-
         nodes.add(currNode);
         currNodeIndex++;
     }
 
     public void visit(VReturn r) throws E {
         CFGNode currNode = new CFGNode();
-
-        // defs
-
-        // uses
 
         nodes.add(currNode);
         currNodeIndex++;
