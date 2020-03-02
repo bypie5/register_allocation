@@ -27,8 +27,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode currNode = new CFGNode();
 
         // defs
+        currNode.def.addElement(a.dest.toString());
 
         // uses
+        if (a.source instanceof VVarRef) {
+            currNode.use.addElement(a.source.toString());
+        }
 
         nodes.add(currNode);
         currNodeIndex++;
@@ -38,6 +42,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode currNode = new CFGNode();
 
         // defs
+        currNode.def.addElement(c.dest.toString());
 
         // uses
 

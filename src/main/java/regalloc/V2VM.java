@@ -8,6 +8,10 @@ import java.util.List;
 
 public class V2VM {
     public static void main(String[] args) {
+        allocRegs();
+    }
+
+    public static void allocRegs() {
         try {
             VaporProgram tree = ParseVapor.parseVapor(System.in, System.err);
             LiveRangeVisitor<Exception> rangeVisitor = new LiveRangeVisitor();
@@ -27,5 +31,7 @@ public class V2VM {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+
+        System.out.println("test");
     }
 }
