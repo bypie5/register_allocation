@@ -3,8 +3,7 @@ package regalloc;
 import cs132.vapor.ast.*;
 import cs132.vapor.ast.VInstr.Visitor;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
@@ -18,25 +17,43 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         nodes = new ArrayList<>();
     }
 
+    // For debugging
     public void inspect() {
         System.out.println(currFunction.ident);
         for (int i = 0; i < nodes.size(); i++) {
-            System.out.println("node " + i + ": ");
+            System.out.println("node " + nodes.get(i).index + ": ");
             nodes.get(i).inspect();
         }
     }
 
-    // TODO: Make this return something useful
+    // Computes live ranges on CFGNodes in nodes list
+    public void computeLiveRanges() {
+        do {
+            for (int i = 0; i < nodes.size(); i++) {
+                nodes.get(i).inPrime.assign(nodes.get(i).in);
+                nodes.get(i).outPrime.assign(nodes.get(i).out);
+                nodes.get(i).in.assign(nodes.get(i).use.union(nodes.get(i).out.diff(nodes.get(i).def)));
+            }
+        } while(converged());
+    }
+
+    boolean converged() {
+        return false;
+    }
+
+    // Creates data structure to be used later
     public LiveRange getCurrRanges() {
         LiveRange liveRange = new LiveRange();
 
-        // TODO: Compute live ranges
+        computeLiveRanges();
+
+        // TODO: Feed CFGNode data into liveRange
 
         return liveRange;
     }
 
     public void visit(VAssign a) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
         currNode.def.addElement(a.dest.toString());
@@ -51,7 +68,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VCall c) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
         currNode.def.addElement(c.dest.toString());
@@ -68,7 +85,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VBuiltIn c) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
         if (c.dest != null) {
@@ -87,7 +104,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VMemWrite w) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
 
@@ -107,7 +124,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VMemRead r) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
         currNode.def.addElement(r.dest.toString());
@@ -124,7 +141,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VBranch b) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
 
@@ -136,7 +153,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VGoto g) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
 
@@ -147,7 +164,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VReturn r) throws E {
-        CFGNode currNode = new CFGNode();
+        CFGNode currNode = new CFGNode(currNodeIndex);
 
         // defs
 
@@ -161,43 +178,73 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     class VariableSet {
-        List<String> elements;
+        Set<String> elements;
 
         public VariableSet () {
-            elements = new ArrayList<>();
+            elements = new HashSet<>();
         }
 
         public void addElement(String key) {
             elements.add(key);
         }
 
-        public List<String> getElements() {
-            return this.elements;
+        public boolean equals(VariableSet comp) {
+            return this.elements.equals(comp);
+        }
+
+        public VariableSet diff(VariableSet rhs) {
+            VariableSet d = this;
+            d.elements.removeAll(rhs.elements);
+
+            return d;
+        }
+
+        public VariableSet union(VariableSet rhs) {
+            VariableSet u = this;
+            u.elements.addAll(rhs.elements);
+            return u;
+        }
+
+        public void assign(VariableSet a) {
+            this.elements.clear();
+            this.elements.addAll(a.elements);
         }
 
         public String inspect() {
             String val = "";
-            for (int i = 0; i < elements.size(); i++) {
-                if (i == 0)
-                    val += elements.get(i);
+            int count = 0;
+            Iterator<String> el = elements.iterator();
+            while(el.hasNext()) {
+                if (count == 0)
+                    val += el.next();
                 else
-                    val += elements.get(i) + " ";
+                    val += el.next() + " ";
+                count++;
             }
             return val;
         }
     }
 
     class CFGNode {
+        public int index;
         public VariableSet in;
         public VariableSet out;
         public VariableSet def;
         public VariableSet use;
+        public VariableSet inPrime;
+        public VariableSet outPrime;
 
-        public CFGNode() {
+        List<Integer> succ;
+
+        public CFGNode(int index) {
+            this.index = index;
             in = new VariableSet();
             out = new VariableSet();
             def = new VariableSet();
             use = new VariableSet();
+            inPrime = new VariableSet();
+            outPrime = new VariableSet();
+            succ = new ArrayList<>();
         }
 
         public void inspect() {
