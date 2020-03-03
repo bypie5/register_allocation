@@ -15,7 +15,7 @@ public class V2VM {
         try {
             VaporProgram tree = ParseVapor.parseVapor(System.in, System.err);
             LiveRangeVisitor<Exception> rangeVisitor = new LiveRangeVisitor();
-            List<LiveRange> ranges = new ArrayList();
+            List<LiveRange> ranges = new ArrayList<>();
 
             // For each function compute live range
             for (int i = 0; i < tree.functions.length; i++) {
@@ -26,12 +26,12 @@ public class V2VM {
                     tree.functions[i].body[j].accept(rangeVisitor);
                 }
 
+                rangeVisitor.inspect();
                 ranges.add(rangeVisitor.getCurrRanges());
             }
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            System.out.println(e.toString());
+            e.printStackTrace(System.out);
         }
-
-        System.out.println("test");
     }
 }

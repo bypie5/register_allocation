@@ -34,6 +34,7 @@ public class V2VMTest {
         System.setIn(DEFAULT_STDIN);
         System.setOut(originalOut);
         System.setErr(originalErr);
+        System.out.println(errContent.toString());
     }
 
     @Test
@@ -45,8 +46,8 @@ public class V2VMTest {
             System.err.println(e.getMessage());
             fail();
         }
-        V2VM.allocRegs();
 
+        V2VM.allocRegs();
         assertEquals("ALWAYS FAIL", outContent.toString());
     }
 
@@ -59,8 +60,8 @@ public class V2VMTest {
             System.err.println(e.getMessage());
             fail();
         }
-        V2VM.allocRegs();
 
+        V2VM.allocRegs();
         assertEquals("ALWAYS FAIL", outContent.toString());
     }
 }
