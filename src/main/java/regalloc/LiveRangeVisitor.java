@@ -68,11 +68,11 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     // Computes live ranges on CFGNodes in nodes list
-    public void computeLiveRanges() {
-        cleanUpCFG();
-        printCFG();
+    public void computeNodeSets() {
 
-       do {
+        cleanUpCFG();
+
+        do {
             for (int i = 0; i < nodes.size(); i++) {
                 CFGNode currNode = nodes.get(i);
 
@@ -109,14 +109,56 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         return true;
     }
 
+    LiveRange getRangeByIdent(String ident, List<LiveRange> ranges) {
+        for (LiveRange range : ranges) {
+            if (range.ident.equals(ident)) {
+                return range;
+            }
+        }
+
+        return null;
+    }
+
     // Creates data structure to be used later
-    public LiveRange getCurrRanges() {
-        LiveRange liveRange = new LiveRange();
+    public List<LiveRange> getCurrRanges() {
+        List<LiveRange> finalRanges = new ArrayList<>();
+        List<LiveRange> incompleteRanges = new ArrayList<>();
 
-        computeLiveRanges();
-        // TODO: Feed CFGNode data into liveRange
+        computeNodeSets();
 
-        return liveRange;
+        // active[n] = in[n] union def[n]
+        for (CFGNode node : nodes) {
+            node.active = new TreeSet<>(node.in);
+            node.active.addAll(node.def);
+        }
+
+        for (CFGNode node : nodes) {
+            // Create or extend ranges
+            for(String ident : node.active) {
+                LiveRange temp = getRangeByIdent(ident, incompleteRanges);
+                if (temp == null) {
+                    incompleteRanges.add(new LiveRange(node.index, node.index, ident));
+                } else {
+                    temp.end++;
+                }
+            }
+
+            // Add a terminated range to finalRanges
+            for (int i = 0; i < incompleteRanges.size(); i++) {
+                if (!node.active.contains(incompleteRanges.get(i).ident)) {
+                    finalRanges.add(incompleteRanges.get(i));
+                    incompleteRanges.remove(i);
+                }
+            }
+        }
+
+        // Add nodes that are active until the end
+        for (LiveRange r : incompleteRanges) {
+            r.end++;
+            finalRanges.add(r);
+        }
+
+        return finalRanges;
     }
 
     public void visit(VAssign a) throws E {
@@ -263,6 +305,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         public Set<String> use;
         public Set<String> inPrime;
         public Set<String> outPrime;
+        public Set<String> active;
 
         List<Integer> succ;
 
@@ -274,11 +317,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             use = new TreeSet();
             inPrime = new TreeSet();
             outPrime = new TreeSet();
+            active = new TreeSet<>();
             succ = new ArrayList<>();
         }
 
         public void inspect() {
-            System.out.print("    in:    {");
+            /*System.out.print("    in:    {");
             for (String s : in) {
                 System.out.print(s);
             }
@@ -298,6 +342,11 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
             System.out.print("    def:   {");
             for (String s : def) {
+                System.out.print(s);
+            }
+            System.out.println("}");*/
+            System.out.print("    active:   {");
+            for (String s : active) {
                 System.out.print(s);
             }
             System.out.println("}");
