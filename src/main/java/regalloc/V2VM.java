@@ -26,8 +26,8 @@ public class V2VM {
                     tree.functions[i].body[j].accept(rangeVisitor);
                 }
 
-                rangeVisitor.inspect();
                 ranges.add(rangeVisitor.getCurrRanges());
+                rangeVisitor.inspect();
             }
         } catch (Exception e) {
             System.out.println(e.toString());
