@@ -8,26 +8,60 @@ import java.util.*;
 public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
     VFunction currFunction;
-    int currNodeIndex;
     List<CFGNode> nodes; // Each line is a node
 
     public void setCurrFunction(VFunction currFunction) {
         this.currFunction = currFunction;
-        currNodeIndex = 0;
         nodes = new ArrayList<>();
     }
 
     // For debugging
     public void inspect() {
         System.out.println(currFunction.ident);
-        for (int i = 0; i < nodes.size(); i++) {
-            System.out.println("node " + nodes.get(i).index + ": ");
-            nodes.get(i).inspect();
+        for (CFGNode node : nodes) {
+            System.out.println("node " + node.index + ": ");
+            node.inspect();
+        }
+    }
+
+    public int getRelativePos(int sourcePos) {
+        return (sourcePos - currFunction.sourcePos.line) - 1;
+    }
+
+    public void printCFG() {
+        for (CFGNode node : nodes) {
+            for (int succ : node.succ) {
+                System.out.println(node.index + " -> " + succ);
+            }
+        }
+    }
+
+    public void cleanUpCFG() {
+        List<Integer> actualNodes = new ArrayList<>();
+        for (CFGNode node : nodes) {
+            actualNodes.add(node.index);
+        }
+
+        // Make sure successors point to an actual node in nodes
+        for (CFGNode node : nodes) {
+            for (int i = 0; i < node.succ.size(); i++) {
+                // Round up curr succ to nearest node in actualNodes
+                if (!actualNodes.contains(node.succ.get(i))) {
+                    for (int an : actualNodes) {
+                        if (an > node.succ.get(i)) {
+                            node.succ.set(i, an);
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
 
     // Computes live ranges on CFGNodes in nodes list
     public void computeLiveRanges() {
+        cleanUpCFG();
+
         do {
             for (int i = 0; i < nodes.size(); i++) {
                 nodes.get(i).inPrime.assign(nodes.get(i).in);
@@ -53,7 +87,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     public void visit(VAssign a) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(a.sourcePos.line));
 
         // defs
         currNode.def.addElement(a.dest.toString());
@@ -63,12 +97,13 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             currNode.use.addElement(a.source.toString());
         }
 
+        currNode.addSingleSucc(getRelativePos(a.sourcePos.line));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VCall c) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(c.sourcePos.line));
 
         // defs
         currNode.def.addElement(c.dest.toString());
@@ -80,12 +115,13 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             }
         }
 
+        currNode.addSingleSucc(getRelativePos(c.sourcePos.line));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VBuiltIn c) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(c.sourcePos.line));
 
         // defs
         if (c.dest != null) {
@@ -99,12 +135,13 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             }
         }
 
+        currNode.addSingleSucc(getRelativePos(c.sourcePos.line));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VMemWrite w) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(w.sourcePos.line));
 
         // defs
 
@@ -119,12 +156,13 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             currNode.use.addElement(w.source.toString());
         }
 
+        currNode.addSingleSucc(getRelativePos(w.sourcePos.line));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VMemRead r) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(r.sourcePos.line));
 
         // defs
         currNode.def.addElement(r.dest.toString());
@@ -136,35 +174,41 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             }
         }
 
+        currNode.addSingleSucc(getRelativePos(r.sourcePos.line));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VBranch b) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(b.sourcePos.line));
 
         // defs
 
         // uses
         currNode.use.addElement(b.value.toString());
 
+        currNode.addSingleSucc(getRelativePos(b.sourcePos.line));
+        int targetPos = b.target.getTarget().sourcePos.line;
+        currNode.succ.add(getRelativePos(targetPos));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VGoto g) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(g.sourcePos.line));
 
         // defs
 
         // uses
 
+        int targetPos = ((VAddr.Label)g.target).label.getTarget().sourcePos.line;
+        currNode.succ.add(getRelativePos(targetPos));
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     public void visit(VReturn r) throws E {
-        CFGNode currNode = new CFGNode(currNodeIndex);
+        CFGNode currNode = new CFGNode(getRelativePos(r.sourcePos.line));
 
         // defs
 
@@ -173,8 +217,9 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             currNode.use.addElement(r.value.toString());
         }
 
+        // Does not have any successors
+
         nodes.add(currNode);
-        currNodeIndex++;
     }
 
     class VariableSet {
@@ -252,6 +297,10 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             System.out.println("    out: {" + out.inspect() + "}");
             System.out.println("    def: {" + def.inspect() + "}");
             System.out.println("    use: {" + use.inspect() + "}");
+        }
+
+        public void addSingleSucc(int pos) {
+            succ.add(pos + 1);
         }
     }
 }
