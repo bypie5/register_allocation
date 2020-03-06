@@ -1,1 +1,15 @@
-x
+Main
+node 0: 
+    active:   {x}
+node 1: 
+    active:   {x}
+node 3: 
+    active:   {x}
+node 4: 
+    active:   {x}
+node 6: 
+    active:   {diffx}
+node 7: 
+    active:   {diffx}
+node 8: 
+    active:   {}

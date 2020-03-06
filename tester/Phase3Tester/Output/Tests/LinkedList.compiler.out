@@ -1,1 +1,762 @@
-t.0
+Main
+node 0: 
+    active:   {t.0}
+node 1: 
+    active:   {t.0}
+node 2: 
+    active:   {t.0}
+node 3: 
+    active:   {t.0}
+node 5: 
+    active:   {t.0t.1}
+node 6: 
+    active:   {t.0t.1}
+node 7: 
+    active:   {t.0t.2}
+node 8: 
+    active:   {t.2}
+node 9: 
+    active:   {}
+Element.Init
+node 0: 
+    active:   {thisv_Agev_Marriedv_Salary}
+node 1: 
+    active:   {thisv_Marriedv_Salary}
+node 2: 
+    active:   {thisv_Married}
+node 3: 
+    active:   {}
+Element.GetAge
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Element.GetSalary
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Element.GetMarried
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Element.Equal
+node 0: 
+    active:   {otherret_valthis}
+node 1: 
+    active:   {otherret_valthis}
+node 2: 
+    active:   {otherret_valthis}
+node 4: 
+    active:   {otherret_valt.0this}
+node 5: 
+    active:   {otherret_valt.0this}
+node 6: 
+    active:   {aux01otherret_valthis}
+node 7: 
+    active:   {aux01otherret_valt.1this}
+node 8: 
+    active:   {aux01otherret_valt.1this}
+node 9: 
+    active:   {aux01otherret_valt.2this}
+node 10: 
+    active:   {aux01otherret_valt.2t.3this}
+node 11: 
+    active:   {otherret_valt.3t.4this}
+node 12: 
+    active:   {otherret_valt.4this}
+node 13: 
+    active:   {ret_val}
+node 14: 
+    active:   {ret_val}
+node 16: 
+    active:   {otherret_valthis}
+node 17: 
+    active:   {otherret_valthis}
+node 19: 
+    active:   {otherret_valt.5this}
+node 20: 
+    active:   {otherret_valt.5this}
+node 21: 
+    active:   {aux02otherret_valthis}
+node 22: 
+    active:   {aux02otherret_valt.6this}
+node 23: 
+    active:   {aux02otherret_valt.6this}
+node 24: 
+    active:   {aux02otherret_valt.7this}
+node 25: 
+    active:   {aux02otherret_valt.7t.8this}
+node 26: 
+    active:   {otherret_valt.8t.9this}
+node 27: 
+    active:   {otherret_valt.9this}
+node 28: 
+    active:   {ret_val}
+node 29: 
+    active:   {ret_val}
+node 31: 
+    active:   {otherret_valt.10this}
+node 32: 
+    active:   {otherret_valt.10}
+node 33: 
+    active:   {otherret_val}
+node 34: 
+    active:   {otherret_val}
+node 36: 
+    active:   {otherret_valt.11}
+node 37: 
+    active:   {otherret_valt.11}
+node 38: 
+    active:   {otherret_valt.12}
+node 39: 
+    active:   {ret_valt.12t.13}
+node 40: 
+    active:   {ret_valt.13}
+node 41: 
+    active:   {ret_val}
+node 42: 
+    active:   {ret_val}
+node 44: 
+    active:   {ntret_val}
+node 46: 
+    active:   {ret_val}
+node 48: 
+    active:   {otherret_val}
+node 49: 
+    active:   {otherret_val}
+node 51: 
+    active:   {otherret_valt.14}
+node 52: 
+    active:   {otherret_valt.14}
+node 53: 
+    active:   {otherret_valt.15}
+node 54: 
+    active:   {ret_valt.15}
+node 55: 
+    active:   {ret_val}
+node 56: 
+    active:   {ret_val}
+node 58: 
+    active:   {ntret_val}
+node 63: 
+    active:   {ret_val}
+Element.Compare
+node 0: 
+    active:   {num1num2retval}
+node 1: 
+    active:   {aux02num1num2}
+node 2: 
+    active:   {aux02num1num2t.0}
+node 3: 
+    active:   {aux02num1t.0}
+node 4: 
+    active:   {retval}
+node 5: 
+    active:   {retval}
+node 7: 
+    active:   {aux02num1t.1}
+node 8: 
+    active:   {t.1t.2}
+node 9: 
+    active:   {t.2}
+node 10: 
+    active:   {retval}
+node 11: 
+    active:   {retval}
+node 13: 
+    active:   {retval}
+node 16: 
+    active:   {retval}
+List.Init
+node 0: 
+    active:   {this}
+node 1: 
+    active:   {}
+List.InitNew
+node 0: 
+    active:   {thisv_elemv_endv_next}
+node 1: 
+    active:   {thisv_elemv_next}
+node 2: 
+    active:   {thisv_next}
+node 3: 
+    active:   {}
+List.Insert
+node 0: 
+    active:   {aux03new_elemthis}
+node 1: 
+    active:   {aux03new_elemt.0}
+node 2: 
+    active:   {aux03new_elemt.0}
+node 3: 
+    active:   {aux02aux03new_elemt.0}
+node 4: 
+    active:   {aux02aux03new_elem}
+node 5: 
+    active:   {aux02aux03new_elem}
+node 7: 
+    active:   {aux02aux03new_elemt.1}
+node 8: 
+    active:   {aux02aux03new_elemt.1}
+node 9: 
+    active:   {aux02aux03new_elemret_val}
+node 10: 
+    active:   {aux02}
+List.SetNext
+node 0: 
+    active:   {thisv_next}
+node 1: 
+    active:   {}
+List.Delete
+node 0: 
+    active:   {emy_headthis}
+node 1: 
+    active:   {emy_headret_valthis}
+node 2: 
+    active:   {aux04emy_headret_valthis}
+node 3: 
+    active:   {aux01aux04emy_headret_valthis}
+node 4: 
+    active:   {aux01aux04emy_headprevret_valthis}
+node 5: 
+    active:   {aux01aux04emy_headprevret_valthisvar_end}
+node 6: 
+    active:   {aux01aux04emy_headprevret_valthisvar_elemvar_end}
+node 8: 
+    active:   {aux01aux04emy_headprevret_valt.1var_elemvar_end}
+node 9: 
+    active:   {aux01aux04emy_headprevret_valt.1var_elemvar_end}
+node 10: 
+    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
+node 11: 
+    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
+node 13: 
+    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
+node 15: 
+    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
+node 16: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 17: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 19: 
+    active:   {aux01aux04emy_headprevret_valt.2var_elemvar_end}
+node 20: 
+    active:   {aux01aux04emy_headprevret_valt.2var_elemvar_end}
+node 21: 
+    active:   {aux01aux04emy_headprevret_valt.3var_elemvar_end}
+node 22: 
+    active:   {aux01aux04emy_headprevret_valt.3var_elemvar_end}
+node 23: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 24: 
+    active:   {aux01aux04emy_headprevret_valt.4var_elemvar_end}
+node 25: 
+    active:   {aux01aux04emy_headprevret_valt.4var_elemvar_end}
+node 26: 
+    active:   {aux01aux04eprevret_valvar_elemvar_end}
+node 27: 
+    active:   {aux01aux04eprevret_valvar_elemvar_end}
+node 29: 
+    active:   {aux01aux04eprevret_valt.5var_elemvar_end}
+node 30: 
+    active:   {aux01aux04eprevret_valt.5var_elemvar_end}
+node 31: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 32: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 34: 
+    active:   {aux01aux04emy_headprevret_valt.6var_elemvar_end}
+node 35: 
+    active:   {aux01aux04emy_headprevret_valt.6var_elemvar_end}
+node 36: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 37: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 39: 
+    active:   {aux01aux04emy_headprevret_valt.7var_elemvar_end}
+node 40: 
+    active:   {aux01aux04emy_headprevret_valt.7var_elemvar_end}
+node 41: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 42: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 44: 
+    active:   {aux01aux04emy_headprevret_valt.8var_elemvar_end}
+node 45: 
+    active:   {aux01aux04emy_headprevret_valt.8var_elemvar_end}
+node 46: 
+    active:   {aux01aux04emy_headprevret_valt.9var_elemvar_end}
+node 47: 
+    active:   {aux01aux04aux05emy_headprevret_valt.9var_elemvar_end}
+node 48: 
+    active:   {aux01aux04emy_headprevret_valt.10var_elemvar_end}
+node 49: 
+    active:   {aux01aux04emy_headprevret_valt.10var_elemvar_end}
+node 51: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 53: 
+    active:   {aux01aux04emy_headntprevret_valvar_elemvar_end}
+node 55: 
+    active:   {aux01aux04emy_headprevret_valt.11var_elemvar_end}
+node 56: 
+    active:   {aux01aux04emy_headprevret_valt.11var_elemvar_end}
+node 57: 
+    active:   {aux01emy_headprevret_val}
+node 58: 
+    active:   {aux01emy_headprevret_val}
+node 59: 
+    active:   {aux01emy_headprevret_val}
+node 61: 
+    active:   {aux01emy_headprevret_valt.12}
+node 62: 
+    active:   {aux01emy_headprevret_valt.12}
+node 63: 
+    active:   {aux01emy_headprevret_val}
+node 64: 
+    active:   {aux01emy_headprevret_val}
+node 65: 
+    active:   {aux01emy_headprevret_val}
+node 67: 
+    active:   {aux01emy_headprevret_valt.13}
+node 68: 
+    active:   {aux01emy_headprevret_valt.13}
+node 69: 
+    active:   {aux01emy_headprevret_valvar_end}
+node 70: 
+    active:   {aux01emy_headprevret_valvar_end}
+node 71: 
+    active:   {aux01emy_headprevret_valvar_end}
+node 73: 
+    active:   {aux01emy_headprevret_valt.14var_end}
+node 74: 
+    active:   {aux01emy_headprevret_valt.14var_end}
+node 75: 
+    active:   {aux01emy_headprevret_valvar_elemvar_end}
+node 76: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 77: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 79: 
+    active:   {aux01aux04emy_headntprevret_valvar_elemvar_end}
+node 81: 
+    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
+node 83: 
+    active:   {my_head}
+List.Search
+node 0: 
+    active:   {eint_ret_valthis}
+node 1: 
+    active:   {aux01eint_ret_valthis}
+node 2: 
+    active:   {aux01eint_ret_valthisvar_end}
+node 3: 
+    active:   {aux01eint_ret_valthisvar_elemvar_end}
+node 5: 
+    active:   {aux01eint_ret_valt.0var_elemvar_end}
+node 6: 
+    active:   {aux01eint_ret_valt.0var_elem}
+node 7: 
+    active:   {aux01eint_ret_valvar_elem}
+node 8: 
+    active:   {aux01eint_ret_valvar_elem}
+node 10: 
+    active:   {aux01eint_ret_valt.1var_elem}
+node 11: 
+    active:   {aux01eint_ret_valt.1var_elem}
+node 12: 
+    active:   {aux01eint_ret_valt.2var_elem}
+node 13: 
+    active:   {aux01eint_ret_valt.2}
+node 14: 
+    active:   {aux01eint_ret_val}
+node 15: 
+    active:   {aux01eint_ret_val}
+node 17: 
+    active:   {aux01eint_ret_valnt}
+node 19: 
+    active:   {aux01eint_ret_val}
+node 20: 
+    active:   {aux01eint_ret_val}
+node 22: 
+    active:   {aux01eint_ret_valt.3}
+node 23: 
+    active:   {aux01eint_ret_valt.3}
+node 24: 
+    active:   {aux01eint_ret_val}
+node 25: 
+    active:   {aux01eint_ret_val}
+node 26: 
+    active:   {aux01eint_ret_val}
+node 28: 
+    active:   {aux01eint_ret_valt.4}
+node 29: 
+    active:   {aux01eint_ret_valt.4}
+node 30: 
+    active:   {aux01eint_ret_valvar_end}
+node 31: 
+    active:   {aux01eint_ret_valvar_end}
+node 32: 
+    active:   {aux01eint_ret_valvar_end}
+node 34: 
+    active:   {aux01eint_ret_valt.5var_end}
+node 35: 
+    active:   {aux01eint_ret_valt.5var_end}
+node 36: 
+    active:   {aux01eint_ret_valvar_elemvar_end}
+node 37: 
+    active:   {aux01eint_ret_valvar_elemvar_end}
+node 39: 
+    active:   {int_ret_val}
+List.GetEnd
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+List.GetElem
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+List.GetNext
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+List.Print
+node 0: 
+    active:   {aux01this}
+node 1: 
+    active:   {aux01thisvar_end}
+node 2: 
+    active:   {aux01thisvar_elemvar_end}
+node 4: 
+    active:   {aux01t.0var_elemvar_end}
+node 5: 
+    active:   {aux01t.0var_elem}
+node 6: 
+    active:   {aux01var_elem}
+node 7: 
+    active:   {aux01var_elem}
+node 9: 
+    active:   {aux01t.1var_elem}
+node 10: 
+    active:   {aux01t.1var_elem}
+node 11: 
+    active:   {aux01t.2var_elem}
+node 12: 
+    active:   {aux01t.2}
+node 13: 
+    active:   {aux01}
+node 14: 
+    active:   {aux01}
+node 16: 
+    active:   {aux01t.3}
+node 17: 
+    active:   {aux01t.3}
+node 18: 
+    active:   {aux01}
+node 19: 
+    active:   {aux01}
+node 20: 
+    active:   {aux01}
+node 22: 
+    active:   {aux01t.4}
+node 23: 
+    active:   {aux01t.4}
+node 24: 
+    active:   {aux01var_end}
+node 25: 
+    active:   {aux01var_end}
+node 26: 
+    active:   {aux01var_end}
+node 28: 
+    active:   {aux01t.5var_end}
+node 29: 
+    active:   {aux01t.5var_end}
+node 30: 
+    active:   {aux01var_elemvar_end}
+node 31: 
+    active:   {aux01var_elemvar_end}
+node 33: 
+    active:   {}
+LL.Start
+node 0: 
+    active:   {t.0}
+node 1: 
+    active:   {t.0}
+node 2: 
+    active:   {last_elemt.0}
+node 3: 
+    active:   {last_elem}
+node 4: 
+    active:   {last_elem}
+node 6: 
+    active:   {last_elemt.1}
+node 7: 
+    active:   {last_elemt.1}
+node 8: 
+    active:   {aux01last_elem}
+node 9: 
+    active:   {headlast_elem}
+node 10: 
+    active:   {head}
+node 11: 
+    active:   {head}
+node 13: 
+    active:   {headt.2}
+node 14: 
+    active:   {headt.2}
+node 15: 
+    active:   {aux01head}
+node 16: 
+    active:   {head}
+node 17: 
+    active:   {head}
+node 19: 
+    active:   {headt.3}
+node 20: 
+    active:   {headt.3}
+node 21: 
+    active:   {aux01head}
+node 22: 
+    active:   {headt.4}
+node 23: 
+    active:   {headt.4}
+node 24: 
+    active:   {el01headt.4}
+node 25: 
+    active:   {el01head}
+node 26: 
+    active:   {el01head}
+node 28: 
+    active:   {el01headt.5}
+node 29: 
+    active:   {el01headt.5}
+node 30: 
+    active:   {aux01el01head}
+node 31: 
+    active:   {el01head}
+node 32: 
+    active:   {el01head}
+node 34: 
+    active:   {el01headt.6}
+node 35: 
+    active:   {el01headt.6}
+node 36: 
+    active:   {el01head}
+node 37: 
+    active:   {head}
+node 38: 
+    active:   {head}
+node 40: 
+    active:   {headt.7}
+node 41: 
+    active:   {headt.7}
+node 42: 
+    active:   {aux01head}
+node 43: 
+    active:   {head}
+node 44: 
+    active:   {headt.8}
+node 45: 
+    active:   {headt.8}
+node 46: 
+    active:   {el01headt.8}
+node 47: 
+    active:   {el01head}
+node 48: 
+    active:   {el01head}
+node 50: 
+    active:   {el01headt.9}
+node 51: 
+    active:   {el01headt.9}
+node 52: 
+    active:   {aux01el01head}
+node 53: 
+    active:   {el01el02head}
+node 54: 
+    active:   {el01el02head}
+node 55: 
+    active:   {el01el02head}
+node 57: 
+    active:   {el01el02headt.10}
+node 58: 
+    active:   {el01el02headt.10}
+node 59: 
+    active:   {el01el02head}
+node 60: 
+    active:   {el02head}
+node 61: 
+    active:   {el02head}
+node 63: 
+    active:   {el02headt.11}
+node 64: 
+    active:   {el02headt.11}
+node 65: 
+    active:   {aux01el02head}
+node 66: 
+    active:   {el02head}
+node 67: 
+    active:   {el02headt.12}
+node 68: 
+    active:   {el02headt.12}
+node 69: 
+    active:   {el01el02headt.12}
+node 70: 
+    active:   {el01el02head}
+node 71: 
+    active:   {el01el02head}
+node 73: 
+    active:   {el01el02headt.13}
+node 74: 
+    active:   {el01el02headt.13}
+node 75: 
+    active:   {aux01el01el02head}
+node 76: 
+    active:   {el01el02head}
+node 77: 
+    active:   {el01el02head}
+node 79: 
+    active:   {el01el02headt.14}
+node 80: 
+    active:   {el01el02headt.14}
+node 81: 
+    active:   {el01el02head}
+node 82: 
+    active:   {el02head}
+node 83: 
+    active:   {el02head}
+node 85: 
+    active:   {el02headt.15}
+node 86: 
+    active:   {el02headt.15}
+node 87: 
+    active:   {aux01el02head}
+node 88: 
+    active:   {el02headt.16}
+node 89: 
+    active:   {el02headt.16}
+node 90: 
+    active:   {el02el03headt.16}
+node 91: 
+    active:   {el02el03head}
+node 92: 
+    active:   {el02el03head}
+node 94: 
+    active:   {el02el03headt.17}
+node 95: 
+    active:   {el02el03headt.17}
+node 96: 
+    active:   {aux01el02el03head}
+node 97: 
+    active:   {el02el03head}
+node 98: 
+    active:   {el02el03head}
+node 100: 
+    active:   {el02el03headt.18}
+node 101: 
+    active:   {el02el03headt.18}
+node 102: 
+    active:   {el02el03headt.19}
+node 103: 
+    active:   {el02el03headt.19}
+node 104: 
+    active:   {el02el03head}
+node 105: 
+    active:   {el02el03head}
+node 107: 
+    active:   {el02el03headt.20}
+node 108: 
+    active:   {el02el03headt.20}
+node 109: 
+    active:   {el02el03headt.21}
+node 110: 
+    active:   {el02headt.21}
+node 111: 
+    active:   {el02head}
+node 112: 
+    active:   {el02headt.22}
+node 113: 
+    active:   {el02headt.22}
+node 114: 
+    active:   {el01el02headt.22}
+node 115: 
+    active:   {el01el02head}
+node 116: 
+    active:   {el01el02head}
+node 118: 
+    active:   {el01el02headt.23}
+node 119: 
+    active:   {el01el02headt.23}
+node 120: 
+    active:   {aux01el01el02head}
+node 121: 
+    active:   {el01el02head}
+node 122: 
+    active:   {el01el02head}
+node 124: 
+    active:   {el01el02headt.24}
+node 125: 
+    active:   {el01el02headt.24}
+node 126: 
+    active:   {el01el02head}
+node 127: 
+    active:   {el01el02head}
+node 128: 
+    active:   {el01el02head}
+node 130: 
+    active:   {el01el02headt.25}
+node 131: 
+    active:   {el01el02headt.25}
+node 132: 
+    active:   {aux01el01el02head}
+node 133: 
+    active:   {el01el02head}
+node 134: 
+    active:   {el01el02head}
+node 135: 
+    active:   {el01el02head}
+node 137: 
+    active:   {el01el02headt.26}
+node 138: 
+    active:   {el01el02headt.26}
+node 139: 
+    active:   {el01el02head}
+node 140: 
+    active:   {el01head}
+node 141: 
+    active:   {el01head}
+node 143: 
+    active:   {el01headt.27}
+node 144: 
+    active:   {el01headt.27}
+node 145: 
+    active:   {aux01el01head}
+node 146: 
+    active:   {el01head}
+node 147: 
+    active:   {el01head}
+node 148: 
+    active:   {el01head}
+node 150: 
+    active:   {el01headt.28}
+node 151: 
+    active:   {el01headt.28}
+node 152: 
+    active:   {el01head}
+node 153: 
+    active:   {head}
+node 154: 
+    active:   {head}
+node 156: 
+    active:   {headt.29}
+node 157: 
+    active:   {headt.29}
+node 158: 
+    active:   {aux01head}
+node 159: 
+    active:   {}
+node 160: 
+    active:   {}

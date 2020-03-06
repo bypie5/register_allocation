@@ -1,1 +1,24 @@
-t.0
+Main
+node 0: 
+    active:   {t.0}
+node 1: 
+    active:   {t.0}
+node 2: 
+    active:   {}
+Fac.ComputeFac
+node 0: 
+    active:   {numt.0this}
+node 1: 
+    active:   {numt.0this}
+node 2: 
+    active:   {num_aux}
+node 3: 
+    active:   {num_aux}
+node 5: 
+    active:   {numt.1this}
+node 6: 
+    active:   {numt.1t.2this}
+node 7: 
+    active:   {numnum_auxt.2}
+node 9: 
+    active:   {num_aux}

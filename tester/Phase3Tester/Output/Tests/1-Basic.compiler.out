@@ -1,2 +1,9 @@
-x
-y
+Main
+node 0: 
+    active:   {x}
+node 1: 
+    active:   {xy}
+node 2: 
+    active:   {y}
+node 3: 
+    active:   {}

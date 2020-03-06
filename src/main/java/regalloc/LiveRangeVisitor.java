@@ -120,7 +120,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     }
 
     // Creates data structure to be used later
-    public List<LiveRange> getCurrRanges() {
+    public LiveRanges getCurrRanges() {
         List<LiveRange> finalRanges = new ArrayList<>();
         List<LiveRange> incompleteRanges = new ArrayList<>();
 
@@ -158,7 +158,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
             finalRanges.add(r);
         }
 
-        return finalRanges;
+        return new LiveRanges(finalRanges);
     }
 
     public void visit(VAssign a) throws E {

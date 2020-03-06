@@ -1,1 +1,738 @@
-t.0
+Main
+node 0: 
+    active:   {t.0}
+node 1: 
+    active:   {t.0}
+node 2: 
+    active:   {}
+BT.Start
+node 0: 
+    active:   {root}
+node 1: 
+    active:   {root}
+node 2: 
+    active:   {root}
+node 4: 
+    active:   {ntbroot}
+node 5: 
+    active:   {root}
+node 6: 
+    active:   {root}
+node 8: 
+    active:   {ntbroot}
+node 9: 
+    active:   {root}
+node 10: 
+    active:   {root}
+node 11: 
+    active:   {root}
+node 13: 
+    active:   {ntbroot}
+node 14: 
+    active:   {root}
+node 15: 
+    active:   {root}
+node 17: 
+    active:   {ntbroot}
+node 18: 
+    active:   {root}
+node 19: 
+    active:   {root}
+node 21: 
+    active:   {ntbroot}
+node 22: 
+    active:   {root}
+node 23: 
+    active:   {root}
+node 25: 
+    active:   {ntbroot}
+node 26: 
+    active:   {root}
+node 27: 
+    active:   {root}
+node 29: 
+    active:   {ntbroot}
+node 30: 
+    active:   {root}
+node 31: 
+    active:   {root}
+node 33: 
+    active:   {ntbroot}
+node 34: 
+    active:   {root}
+node 35: 
+    active:   {root}
+node 37: 
+    active:   {ntbroot}
+node 38: 
+    active:   {root}
+node 39: 
+    active:   {root}
+node 41: 
+    active:   {ntbroot}
+node 42: 
+    active:   {root}
+node 43: 
+    active:   {root}
+node 45: 
+    active:   {ntbroot}
+node 46: 
+    active:   {root}
+node 47: 
+    active:   {root}
+node 49: 
+    active:   {roott.0}
+node 50: 
+    active:   {roott.0}
+node 51: 
+    active:   {root}
+node 52: 
+    active:   {root}
+node 54: 
+    active:   {roott.1}
+node 55: 
+    active:   {roott.1}
+node 56: 
+    active:   {root}
+node 57: 
+    active:   {root}
+node 59: 
+    active:   {roott.2}
+node 60: 
+    active:   {roott.2}
+node 61: 
+    active:   {root}
+node 62: 
+    active:   {root}
+node 64: 
+    active:   {roott.3}
+node 65: 
+    active:   {roott.3}
+node 66: 
+    active:   {root}
+node 67: 
+    active:   {root}
+node 69: 
+    active:   {roott.4}
+node 70: 
+    active:   {roott.4}
+node 71: 
+    active:   {root}
+node 72: 
+    active:   {root}
+node 74: 
+    active:   {ntbroot}
+node 75: 
+    active:   {root}
+node 76: 
+    active:   {root}
+node 78: 
+    active:   {ntbroot}
+node 79: 
+    active:   {root}
+node 80: 
+    active:   {root}
+node 82: 
+    active:   {roott.5}
+node 83: 
+    active:   {t.5}
+node 84: 
+    active:   {}
+Tree.Init
+node 0: 
+    active:   {thisv_key}
+node 1: 
+    active:   {this}
+node 2: 
+    active:   {this}
+node 3: 
+    active:   {}
+Tree.SetRight
+node 0: 
+    active:   {rnthis}
+node 1: 
+    active:   {}
+Tree.SetLeft
+node 0: 
+    active:   {lnthis}
+node 1: 
+    active:   {}
+Tree.GetRight
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Tree.GetLeft
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Tree.GetKey
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Tree.SetKey
+node 0: 
+    active:   {thisv_key}
+node 1: 
+    active:   {}
+Tree.GetHas_Right
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Tree.GetHas_Left
+node 0: 
+    active:   {t.0this}
+node 1: 
+    active:   {t.0}
+Tree.SetHas_Left
+node 0: 
+    active:   {thisval}
+node 1: 
+    active:   {}
+Tree.SetHas_Right
+node 0: 
+    active:   {thisval}
+node 1: 
+    active:   {}
+Tree.Compare
+node 0: 
+    active:   {ntbnum1num2}
+node 1: 
+    active:   {ntinum1num2}
+node 2: 
+    active:   {ntinum1num2t.0}
+node 3: 
+    active:   {ntinum1t.0}
+node 4: 
+    active:   {ntb}
+node 5: 
+    active:   {ntb}
+node 7: 
+    active:   {ntinum1t.1}
+node 8: 
+    active:   {t.1}
+node 9: 
+    active:   {ntb}
+node 10: 
+    active:   {ntb}
+node 12: 
+    active:   {ntb}
+node 15: 
+    active:   {ntb}
+Tree.Insert
+node 0: 
+    active:   {new_nodethisv_key}
+node 1: 
+    active:   {new_nodethisv_key}
+node 2: 
+    active:   {new_nodethisv_key}
+node 4: 
+    active:   {new_nodentbthisv_key}
+node 5: 
+    active:   {current_nodenew_nodethisv_key}
+node 6: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 8: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 9: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 10: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 12: 
+    active:   {contcurrent_nodekey_auxnew_nodev_key}
+node 13: 
+    active:   {contcurrent_nodekey_auxnew_nodet.0v_key}
+node 14: 
+    active:   {contcurrent_nodenew_nodet.0v_key}
+node 15: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 16: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 18: 
+    active:   {contcurrent_nodenew_nodet.1v_key}
+node 19: 
+    active:   {contcurrent_nodenew_nodet.1v_key}
+node 20: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 21: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 23: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 24: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 26: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 27: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 28: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 30: 
+    active:   {contcurrent_nodenew_nodentbv_key}
+node 31: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 32: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 34: 
+    active:   {contcurrent_nodenew_nodentbv_key}
+node 36: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 38: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 39: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 41: 
+    active:   {contcurrent_nodenew_nodet.2v_key}
+node 42: 
+    active:   {contcurrent_nodenew_nodet.2v_key}
+node 43: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 44: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 46: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 47: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 49: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 50: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 51: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 53: 
+    active:   {contcurrent_nodenew_nodentbv_key}
+node 54: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 55: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 57: 
+    active:   {contcurrent_nodenew_nodentbv_key}
+node 60: 
+    active:   {contcurrent_nodenew_nodev_key}
+node 62: 
+    active:   {}
+Tree.Delete
+node 0: 
+    active:   {current_nodethisv_key}
+node 1: 
+    active:   {current_nodeparent_nodethisv_key}
+node 2: 
+    active:   {contcurrent_nodeparent_nodethisv_key}
+node 3: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 4: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 6: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 7: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 8: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 10: 
+    active:   {contcurrent_nodefoundis_rootkey_auxparent_nodethisv_key}
+node 11: 
+    active:   {contcurrent_nodefoundis_rootkey_auxparent_nodet.0thisv_key}
+node 12: 
+    active:   {contcurrent_nodefoundis_rootkey_auxparent_nodet.0thisv_key}
+node 13: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 14: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 16: 
+    active:   {contcurrent_nodefoundparent_nodet.1thisv_key}
+node 17: 
+    active:   {contcurrent_nodefoundparent_nodet.1thisv_key}
+node 18: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 19: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 20: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 22: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 23: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 25: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 27: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 29: 
+    active:   {contcurrent_nodefoundis_rootkey_auxparent_nodet.2thisv_key}
+node 30: 
+    active:   {contcurrent_nodefoundis_rootparent_nodet.2thisv_key}
+node 31: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 32: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 34: 
+    active:   {contcurrent_nodefoundparent_nodet.3thisv_key}
+node 35: 
+    active:   {contcurrent_nodefoundparent_nodet.3thisv_key}
+node 36: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 37: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 38: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 40: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 41: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 43: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 45: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 47: 
+    active:   {current_nodeis_rootparent_nodethisv_key}
+node 48: 
+    active:   {current_nodeparent_nodethisv_key}
+node 49: 
+    active:   {current_nodeparent_nodethisv_key}
+node 51: 
+    active:   {current_nodeparent_nodet.4thisv_key}
+node 52: 
+    active:   {current_nodeparent_nodet.4thisv_key}
+node 53: 
+    active:   {current_nodeparent_nodethisv_key}
+node 54: 
+    active:   {current_nodeparent_nodethisv_key}
+node 56: 
+    active:   {current_nodeparent_nodet.5thisv_key}
+node 57: 
+    active:   {current_nodeparent_nodet.5thisv_key}
+node 58: 
+    active:   {current_nodentbparent_nodethisv_key}
+node 59: 
+    active:   {current_nodeparent_nodethisv_key}
+node 61: 
+    active:   {current_nodentbparent_nodethisv_key}
+node 63: 
+    active:   {current_nodeparent_nodethisv_key}
+node 65: 
+    active:   {current_nodentbparent_nodethisv_key}
+node 67: 
+    active:   {current_nodefoundparent_nodethisv_key}
+node 68: 
+    active:   {contcurrent_nodefoundparent_nodethisv_key}
+node 71: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 72: 
+    active:   {contcurrent_nodefoundis_rootparent_nodethisv_key}
+node 74: 
+    active:   {found}
+Tree.Remove
+node 0: 
+    active:   {c_nodep_nodethis}
+node 1: 
+    active:   {c_nodep_nodethis}
+node 3: 
+    active:   {c_nodep_nodet.0this}
+node 4: 
+    active:   {c_nodep_nodet.0this}
+node 5: 
+    active:   {c_nodentbp_nodethis}
+node 6: 
+    active:   {}
+node 8: 
+    active:   {c_nodep_nodethis}
+node 9: 
+    active:   {c_nodep_nodethis}
+node 11: 
+    active:   {c_nodep_nodet.1this}
+node 12: 
+    active:   {c_nodep_nodet.1this}
+node 13: 
+    active:   {c_nodentbp_nodethis}
+node 14: 
+    active:   {}
+node 16: 
+    active:   {c_nodep_nodethis}
+node 17: 
+    active:   {c_nodep_nodethis}
+node 19: 
+    active:   {auxkey1c_nodep_nodethis}
+node 20: 
+    active:   {auxkey1p_nodethis}
+node 21: 
+    active:   {auxkey1p_nodethis}
+node 23: 
+    active:   {auxkey1p_nodet.2this}
+node 24: 
+    active:   {auxkey1p_nodet.2this}
+node 25: 
+    active:   {auxkey1p_nodet.2this}
+node 27: 
+    active:   {auxkey1auxkey2p_nodet.2this}
+node 28: 
+    active:   {auxkey1auxkey2p_nodet.3this}
+node 29: 
+    active:   {p_nodet.3this}
+node 30: 
+    active:   {p_nodethis}
+node 31: 
+    active:   {p_nodethis}
+node 33: 
+    active:   {p_nodet.4this}
+node 34: 
+    active:   {ntbp_nodet.4}
+node 35: 
+    active:   {p_node}
+node 36: 
+    active:   {p_node}
+node 38: 
+    active:   {ntbp_node}
+node 39: 
+    active:   {}
+node 41: 
+    active:   {p_nodethis}
+node 42: 
+    active:   {p_nodethis}
+node 44: 
+    active:   {p_nodet.5this}
+node 45: 
+    active:   {ntbp_nodet.5}
+node 46: 
+    active:   {p_node}
+node 47: 
+    active:   {p_node}
+node 49: 
+    active:   {ntbp_node}
+node 53: 
+    active:   {}
+Tree.RemoveRight
+node 1: 
+    active:   {c_nodep_nodethis}
+node 2: 
+    active:   {c_nodep_nodethis}
+node 4: 
+    active:   {c_nodep_nodet.0this}
+node 5: 
+    active:   {c_nodep_nodet.0this}
+node 6: 
+    active:   {c_nodethis}
+node 7: 
+    active:   {c_nodethis}
+node 9: 
+    active:   {c_nodethis}
+node 10: 
+    active:   {c_nodethis}
+node 12: 
+    active:   {c_nodet.1this}
+node 13: 
+    active:   {c_nodet.1this}
+node 14: 
+    active:   {c_nodet.1this}
+node 16: 
+    active:   {c_nodet.1t.2this}
+node 17: 
+    active:   {c_nodentbt.2this}
+node 18: 
+    active:   {c_nodep_nodethis}
+node 19: 
+    active:   {c_nodep_nodethis}
+node 20: 
+    active:   {c_nodep_nodethis}
+node 22: 
+    active:   {c_nodep_nodethis}
+node 23: 
+    active:   {c_nodep_nodethis}
+node 25: 
+    active:   {p_nodethis}
+node 26: 
+    active:   {p_nodethis}
+node 28: 
+    active:   {p_nodet.3this}
+node 29: 
+    active:   {ntbp_nodet.3}
+node 30: 
+    active:   {p_node}
+node 31: 
+    active:   {p_node}
+node 33: 
+    active:   {ntbp_node}
+node 34: 
+    active:   {}
+Tree.RemoveLeft
+node 1: 
+    active:   {c_nodep_nodethis}
+node 2: 
+    active:   {c_nodep_nodethis}
+node 4: 
+    active:   {c_nodep_nodet.0this}
+node 5: 
+    active:   {c_nodep_nodet.0this}
+node 6: 
+    active:   {c_nodethis}
+node 7: 
+    active:   {c_nodethis}
+node 9: 
+    active:   {c_nodethis}
+node 10: 
+    active:   {c_nodethis}
+node 12: 
+    active:   {c_nodet.1this}
+node 13: 
+    active:   {c_nodet.1this}
+node 14: 
+    active:   {c_nodet.1this}
+node 16: 
+    active:   {c_nodet.1t.2this}
+node 17: 
+    active:   {c_nodentbt.2this}
+node 18: 
+    active:   {c_nodep_nodethis}
+node 19: 
+    active:   {c_nodep_nodethis}
+node 20: 
+    active:   {c_nodep_nodethis}
+node 22: 
+    active:   {c_nodep_nodethis}
+node 23: 
+    active:   {c_nodep_nodethis}
+node 25: 
+    active:   {p_nodethis}
+node 26: 
+    active:   {p_nodethis}
+node 28: 
+    active:   {p_nodet.3this}
+node 29: 
+    active:   {ntbp_nodet.3}
+node 30: 
+    active:   {p_node}
+node 31: 
+    active:   {p_node}
+node 33: 
+    active:   {ntbp_node}
+node 34: 
+    active:   {}
+Tree.Search
+node 0: 
+    active:   {current_nodethisv_key}
+node 1: 
+    active:   {contcurrent_nodev_key}
+node 2: 
+    active:   {contcurrent_nodeifoundv_key}
+node 4: 
+    active:   {contcurrent_nodeifoundv_key}
+node 5: 
+    active:   {contcurrent_nodeifoundv_key}
+node 6: 
+    active:   {contcurrent_nodeifoundv_key}
+node 8: 
+    active:   {contcurrent_nodeifoundkey_auxv_key}
+node 9: 
+    active:   {contcurrent_nodeifoundkey_auxt.0v_key}
+node 10: 
+    active:   {contcurrent_nodeifoundkey_auxt.0v_key}
+node 11: 
+    active:   {contcurrent_nodeifoundv_key}
+node 12: 
+    active:   {contcurrent_nodeifoundv_key}
+node 14: 
+    active:   {contcurrent_nodeifoundt.1v_key}
+node 15: 
+    active:   {contcurrent_nodeifoundt.1v_key}
+node 16: 
+    active:   {contcurrent_nodeifoundv_key}
+node 17: 
+    active:   {contcurrent_nodeifoundv_key}
+node 19: 
+    active:   {contcurrent_nodeifoundv_key}
+node 20: 
+    active:   {contcurrent_nodeifoundv_key}
+node 22: 
+    active:   {contcurrent_nodeifoundv_key}
+node 24: 
+    active:   {contcurrent_nodeifoundv_key}
+node 26: 
+    active:   {contcurrent_nodeifoundkey_auxt.2v_key}
+node 27: 
+    active:   {contcurrent_nodeifoundt.2v_key}
+node 28: 
+    active:   {contcurrent_nodeifoundv_key}
+node 29: 
+    active:   {contcurrent_nodeifoundv_key}
+node 31: 
+    active:   {contcurrent_nodeifoundt.3v_key}
+node 32: 
+    active:   {contcurrent_nodeifoundt.3v_key}
+node 33: 
+    active:   {contcurrent_nodeifoundv_key}
+node 34: 
+    active:   {contcurrent_nodeifoundv_key}
+node 36: 
+    active:   {contcurrent_nodeifoundv_key}
+node 37: 
+    active:   {contcurrent_nodeifoundv_key}
+node 39: 
+    active:   {contcurrent_nodeifoundv_key}
+node 41: 
+    active:   {contcurrent_nodeifoundv_key}
+node 43: 
+    active:   {current_nodeifoundv_key}
+node 44: 
+    active:   {contcurrent_nodeifoundv_key}
+node 47: 
+    active:   {contcurrent_nodeifoundv_key}
+node 49: 
+    active:   {ifound}
+Tree.Print
+node 0: 
+    active:   {current_nodethis}
+node 1: 
+    active:   {current_nodentbthis}
+node 2: 
+    active:   {}
+Tree.RecPrint
+node 0: 
+    active:   {nodethis}
+node 1: 
+    active:   {nodethis}
+node 3: 
+    active:   {nodet.0this}
+node 4: 
+    active:   {nodet.0this}
+node 5: 
+    active:   {nodethis}
+node 6: 
+    active:   {nodethis}
+node 8: 
+    active:   {nodet.1this}
+node 9: 
+    active:   {nodentbt.1this}
+node 10: 
+    active:   {nodethis}
+node 12: 
+    active:   {nodentbthis}
+node 14: 
+    active:   {nodethis}
+node 15: 
+    active:   {nodethis}
+node 17: 
+    active:   {nodet.2this}
+node 18: 
+    active:   {nodet.2this}
+node 19: 
+    active:   {nodethis}
+node 20: 
+    active:   {nodethis}
+node 22: 
+    active:   {nodet.3this}
+node 23: 
+    active:   {nodet.3this}
+node 24: 
+    active:   {nodethis}
+node 25: 
+    active:   {nodethis}
+node 27: 
+    active:   {nodet.4this}
+node 28: 
+    active:   {ntbt.4this}
+node 29: 
+    active:   {}
+node 31: 
+    active:   {ntb}
+node 33: 
+    active:   {}

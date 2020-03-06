@@ -15,9 +15,9 @@ public class V2VM {
         try {
             VaporProgram tree = ParseVapor.parseVapor(System.in, System.err);
             LiveRangeVisitor<Exception> rangeVisitor = new LiveRangeVisitor();
-            List<List<LiveRange>> ranges = new ArrayList<>();
 
-            // For each function compute live range
+            // One set of ranges per function
+            List<LiveRanges> ranges = new ArrayList<>();
             for (int i = 0; i < tree.functions.length; i++) {
                 VFunction currFunc = tree.functions[i];
                 rangeVisitor.setCurrFunction(currFunc);
@@ -29,6 +29,15 @@ public class V2VM {
                 ranges.add(rangeVisitor.getCurrRanges());
                 rangeVisitor.inspect();
             }
+
+            // For each function use LSRA to allocate registers
+            List<RegisterAllocation> allocations = new ArrayList<>();
+            for (int i = 0; i < tree.functions.length; i++) {
+                RegisterAllocation currAlloc = new RegisterAllocation(tree.functions[i], ranges.get(i));
+                currAlloc.LinearScanRegisterAllocation();
+                allocations.add(currAlloc);
+            }
+
         } catch (Exception e) {
             System.out.println(e.toString());
             e.printStackTrace(System.out);

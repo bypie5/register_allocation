@@ -1,1 +1,234 @@
-t.0
+Main
+node 0: 
+    active:   {t.0}
+node 1: 
+    active:   {t.0}
+node 2: 
+    active:   {t.0}
+node 3: 
+    active:   {t.0}
+node 5: 
+    active:   {t.0t.1}
+node 6: 
+    active:   {t.0t.1}
+node 7: 
+    active:   {t.0t.2}
+node 8: 
+    active:   {t.2}
+node 9: 
+    active:   {}
+LS.Start
+node 0: 
+    active:   {szt.0this}
+node 1: 
+    active:   {szt.0this}
+node 2: 
+    active:   {aux01szthis}
+node 3: 
+    active:   {t.1this}
+node 4: 
+    active:   {t.1this}
+node 5: 
+    active:   {aux02this}
+node 6: 
+    active:   {this}
+node 7: 
+    active:   {t.2this}
+node 8: 
+    active:   {t.2this}
+node 9: 
+    active:   {t.3this}
+node 10: 
+    active:   {t.3this}
+node 11: 
+    active:   {t.4this}
+node 12: 
+    active:   {t.4this}
+node 13: 
+    active:   {t.5this}
+node 14: 
+    active:   {t.5this}
+node 15: 
+    active:   {t.6this}
+node 16: 
+    active:   {t.6this}
+node 17: 
+    active:   {t.7this}
+node 18: 
+    active:   {t.7this}
+node 19: 
+    active:   {t.8this}
+node 20: 
+    active:   {t.8this}
+node 21: 
+    active:   {t.9this}
+node 22: 
+    active:   {t.9}
+node 23: 
+    active:   {}
+LS.Print
+node 0: 
+    active:   {jthis}
+node 2: 
+    active:   {jt.0this}
+node 3: 
+    active:   {jt.0t.1this}
+node 4: 
+    active:   {jt.1this}
+node 5: 
+    active:   {jt.2this}
+node 6: 
+    active:   {jt.2this}
+node 7: 
+    active:   {jt.2this}
+node 9: 
+    active:   {jt.2t.3this}
+node 10: 
+    active:   {jt.2t.3this}
+node 11: 
+    active:   {jt.2t.3this}
+node 12: 
+    active:   {jt.2this}
+node 14: 
+    active:   {jt.2t.3this}
+node 15: 
+    active:   {jt.2t.3this}
+node 16: 
+    active:   {jt.3t.4this}
+node 17: 
+    active:   {jt.4this}
+node 18: 
+    active:   {jthis}
+node 19: 
+    active:   {jthis}
+node 21: 
+    active:   {}
+LS.Search
+node 0: 
+    active:   {jnumthis}
+node 1: 
+    active:   {jls01numthis}
+node 2: 
+    active:   {ifoundjnumthis}
+node 4: 
+    active:   {ifoundjnumt.0this}
+node 5: 
+    active:   {ifoundjnumt.0t.1this}
+node 6: 
+    active:   {ifoundjnumt.1this}
+node 7: 
+    active:   {ifoundjnumt.2this}
+node 8: 
+    active:   {ifoundjnumt.2this}
+node 9: 
+    active:   {ifoundjnumt.2this}
+node 11: 
+    active:   {ifoundjnumt.2t.3this}
+node 12: 
+    active:   {ifoundjnumt.2t.3this}
+node 13: 
+    active:   {ifoundjnumt.2t.3this}
+node 14: 
+    active:   {ifoundjnumt.2this}
+node 16: 
+    active:   {ifoundjnumt.2t.3this}
+node 17: 
+    active:   {ifoundjnumt.2t.3this}
+node 18: 
+    active:   {aux01ifoundjnumt.3this}
+node 19: 
+    active:   {aux01aux02ifoundjnumthis}
+node 20: 
+    active:   {aux01aux02ifoundjnumt.4this}
+node 21: 
+    active:   {aux01aux02ifoundjnumt.4this}
+node 22: 
+    active:   {ifoundjntnumthis}
+node 23: 
+    active:   {ifoundjnumthis}
+node 25: 
+    active:   {aux01aux02ifoundjnumt.5this}
+node 26: 
+    active:   {ifoundjnumt.5t.6this}
+node 27: 
+    active:   {ifoundjnumt.6this}
+node 28: 
+    active:   {ifoundjntnumthis}
+node 29: 
+    active:   {ifoundjnumthis}
+node 31: 
+    active:   {ls01numthis}
+node 32: 
+    active:   {ifoundnumthis}
+node 33: 
+    active:   {ifoundjnumthis}
+node 36: 
+    active:   {ifoundjnumthis}
+node 37: 
+    active:   {ifoundjnumthis}
+node 39: 
+    active:   {ifound}
+LS.Init
+node 0: 
+    active:   {szthis}
+node 1: 
+    active:   {szt.0this}
+node 2: 
+    active:   {t.0this}
+node 3: 
+    active:   {jthis}
+node 4: 
+    active:   {jt.1this}
+node 5: 
+    active:   {jkt.1this}
+node 7: 
+    active:   {jkt.2this}
+node 8: 
+    active:   {jkt.2t.3this}
+node 9: 
+    active:   {jkt.3this}
+node 10: 
+    active:   {aux01jkthis}
+node 11: 
+    active:   {aux01aux02jkthis}
+node 12: 
+    active:   {aux01aux02jkt.4this}
+node 13: 
+    active:   {aux01aux02jkt.4this}
+node 14: 
+    active:   {aux01aux02jkt.4this}
+node 16: 
+    active:   {aux01aux02jkt.4t.5this}
+node 17: 
+    active:   {aux01aux02jkt.4t.5this}
+node 18: 
+    active:   {aux01aux02jkt.4t.5this}
+node 19: 
+    active:   {aux01aux02jkt.4this}
+node 21: 
+    active:   {aux01aux02jkt.4t.5this}
+node 22: 
+    active:   {aux01aux02jkt.4t.5this}
+node 23: 
+    active:   {aux01aux02jkt.5t.6this}
+node 24: 
+    active:   {jkt.5t.6this}
+node 25: 
+    active:   {jkthis}
+node 26: 
+    active:   {jkthis}
+node 27: 
+    active:   {jkthis}
+node 29: 
+    active:   {}
+AllocArray
+node 0: 
+    active:   {bytessize}
+node 1: 
+    active:   {bytessize}
+node 2: 
+    active:   {bytessizev}
+node 3: 
+    active:   {sizev}
+node 4: 
+    active:   {v}
