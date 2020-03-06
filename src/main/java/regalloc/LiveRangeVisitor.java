@@ -36,6 +36,31 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
     }
 
+    public VariableSet diff(VariableSet lhs, VariableSet rhs) {
+        VariableSet d = new VariableSet();
+        d.elements = new HashSet<>(lhs.elements);
+        d.elements.remove(rhs.elements);
+
+        return d;
+    }
+
+    public VariableSet union(VariableSet lhs, VariableSet rhs) {
+        VariableSet u = new VariableSet();
+        u.elements = new HashSet<>(lhs.elements);
+        u.elements.addAll(rhs.elements);
+
+        return u;
+    }
+
+    public CFGNode getNodeFromIndex(int index) {
+        for (CFGNode node : nodes) {
+            if (node.index == index)
+                return node;
+        }
+
+        return null;
+    }
+
     public void cleanUpCFG() {
         List<Integer> actualNodes = new ArrayList<>();
         for (CFGNode node : nodes) {
@@ -64,15 +89,25 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
         do {
             for (int i = 0; i < nodes.size(); i++) {
-                nodes.get(i).inPrime.assign(nodes.get(i).in);
-                nodes.get(i).outPrime.assign(nodes.get(i).out);
-                nodes.get(i).in.assign(nodes.get(i).use.union(nodes.get(i).out.diff(nodes.get(i).def)));
+                CFGNode currNode = nodes.get(i);
+
+                currNode.inPrime.elements = nodes.get(i).in.elements;
+                currNode.outPrime.elements = nodes.get(i).out.elements;
+
+                currNode.in = union(currNode.use, diff(currNode.out, currNode.def));
+                for (int j = 0; j < currNode.succ.size(); j++) {
+                    currNode.out = union(currNode.out, getNodeFromIndex(currNode.succ.get(j)).in);
+                }
             }
-        } while(converged());
+        } while(!converged());
     }
 
     boolean converged() {
-        return false;
+        for (CFGNode node : nodes) {
+            if (!node.inPrime.equals(node.in) || !node.outPrime.equals(node.out))
+                return false;
+        }
+        return true;
     }
 
     // Creates data structure to be used later
@@ -80,7 +115,6 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         LiveRange liveRange = new LiveRange();
 
         computeLiveRanges();
-
         // TODO: Feed CFGNode data into liveRange
 
         return liveRange;
@@ -234,24 +268,10 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
 
         public boolean equals(VariableSet comp) {
-            return this.elements.equals(comp);
+            return this.elements.equals(comp.elements);
         }
 
-        public VariableSet diff(VariableSet rhs) {
-            VariableSet d = this;
-            d.elements.removeAll(rhs.elements);
-
-            return d;
-        }
-
-        public VariableSet union(VariableSet rhs) {
-            VariableSet u = this;
-            u.elements.addAll(rhs.elements);
-            return u;
-        }
-
-        public void assign(VariableSet a) {
-            this.elements.clear();
+        public void copy(VariableSet a) {
             this.elements.addAll(a.elements);
         }
 
@@ -263,7 +283,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
                 if (count == 0)
                     val += el.next();
                 else
-                    val += el.next() + " ";
+                    val += " " + el.next();
                 count++;
             }
             return val;
@@ -293,10 +313,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
 
         public void inspect() {
-            System.out.println("    in:  {"  + in.inspect() + "}");
-            System.out.println("    out: {" + out.inspect() + "}");
-            System.out.println("    def: {" + def.inspect() + "}");
-            System.out.println("    use: {" + use.inspect() + "}");
+            System.out.println("    in:   {"  + in.inspect() + "}");
+            System.out.println("    out:  {" + out.inspect() + "}");
+            //System.out.println("    in':  {"  + inPrime.inspect() + "}");
+            //System.out.println("    out': {" + outPrime.inspect() + "}");
+            System.out.println("    def:  {" + def.inspect() + "}");
+            System.out.println("    use:  {" + use.inspect() + "}");
         }
 
         public void addSingleSucc(int pos) {

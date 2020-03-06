@@ -64,4 +64,18 @@ public class V2VMTest {
         V2VM.allocRegs();
         assertEquals("ALWAYS FAIL", outContent.toString());
     }
+
+    @Test
+    public void bookTest() {
+        try {
+            File inputFile = new File("./src/test/resources/book.vapor");
+            System.setIn(new FileInputStream(inputFile));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            fail();
+        }
+
+        V2VM.allocRegs();
+        assertEquals("ALWAYS FAIL", outContent.toString());
+    }
 }
