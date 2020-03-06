@@ -27,7 +27,6 @@ public class V2VM {
                 }
 
                 ranges.add(rangeVisitor.getCurrRanges());
-                rangeVisitor.inspect();
             }
 
             // For each function use LSRA to allocate registers
@@ -36,6 +35,10 @@ public class V2VM {
                 RegisterAllocation currAlloc = new RegisterAllocation(tree.functions[i], ranges.get(i));
                 currAlloc.LinearScanRegisterAllocation();
                 allocations.add(currAlloc);
+            }
+
+            for (RegisterAllocation alloc : allocations) {
+                alloc.print();
             }
 
         } catch (Exception e) {
