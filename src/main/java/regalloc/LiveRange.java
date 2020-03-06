@@ -1,5 +1,7 @@
 package regalloc;
 
+import java.util.Collections;
+
 public class LiveRange {
 
     public int start;
@@ -31,7 +33,7 @@ public class LiveRange {
         System.out.println();
     }
 
-    public int compareTo(LiveRange lhs) {
+    public int compareStartTo(LiveRange lhs) {
         return this.start - lhs.start;
     }
 }

@@ -14,9 +14,9 @@ public class RegisterAllocation {
     // General Purpose Registers
     // $s0...$s7 are callee-saved
     // $t0...$t8 are caller-saved
-    public static String[] GPRs =
-            {"$s0","$s1","$s2","$s3","$s4","$s5","$s6","$s7",
-             "$t0","$t1","$t2","$t3","$t4","$t5","$t6","$t7","$t8"};
+    public static String[] GPRs = {"$s0", "$s1"};
+           /* {"$s0","$s1","$s2","$s3","$s4","$s5","$s6","$s7",
+             "$t0","$t1","$t2","$t3","$t4","$t5","$t6","$t7","$t8"};*/
 
     VFunction currFunction;
     LiveRanges ranges;
@@ -73,7 +73,7 @@ public class RegisterAllocation {
     }
 
     public void SpillAtInterval(LiveRange i) {
-        sortByIncreasingEndPoint(active);
+        //sortByIncreasingEndPoint(active);
         LiveRange spill = active.get(active.size()-1);
         if (spill.end > i.end) {
             i.register = spill.register;
@@ -87,14 +87,8 @@ public class RegisterAllocation {
     }
 
     // TODO: Verify this works
-    void sortByIncreasingEndPoint(List<LiveRange> ranges) {
-        Collections.sort(ranges, (o1, o2) -> o1.start > o2.start ? -1 : 1);
-    }
-
-    String getRegFromPool() {
-        String reg = freePool.get(0);
-        freePool.remove(0);
-        return reg;
+    void sortByIncreasingEndPoint(List<LiveRange> r) {
+        r.sort((o1, o2) -> o1.end < o2.end ? -1 : 1);
     }
 
     int getOrgPos(String reg) {
@@ -108,13 +102,17 @@ public class RegisterAllocation {
         return -1;
     }
 
+    String getRegFromPool() {
+        String reg = freePool.get(0);
+        freePool.remove(0);
+        return reg;
+    }
+
     void addRegToPool(String reg) {
         freePool.add(reg);
         freePool.sort((o1, o2) -> getOrgPos(o1) < getOrgPos(o2) ? -1 : 1);
-        for (String r : freePool) {
-            System.out.print(r);
-        }
-        System.out.println();
+        if (freePool.size() > GPRs.length)
+            System.out.println("freePool is larger than available: " + freePool.size());
     }
 
     int getNewStackLoc() {

@@ -1,7 +1,5 @@
 package regalloc;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class LiveRanges {
@@ -26,7 +24,7 @@ public class LiveRanges {
     }
 
     public void sortIncreaseStartPoint() {
-        Collections.sort(ranges, (o1, o2) -> o1.start < o2.start ? -1 : 1);
+        ranges.sort((o1, o2) -> o1.start < o2.start ? -1 : 1);
     }
 
     public List<LiveRange> getRanges() {
