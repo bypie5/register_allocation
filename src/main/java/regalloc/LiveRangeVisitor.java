@@ -36,22 +36,6 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
     }
 
-    public VariableSet diff(VariableSet lhs, VariableSet rhs) {
-        VariableSet d = new VariableSet();
-        d.elements = new HashSet<>(lhs.elements);
-        d.elements.remove(rhs.elements);
-
-        return d;
-    }
-
-    public VariableSet union(VariableSet lhs, VariableSet rhs) {
-        VariableSet u = new VariableSet();
-        u.elements = new HashSet<>(lhs.elements);
-        u.elements.addAll(rhs.elements);
-
-        return u;
-    }
-
     public CFGNode getNodeFromIndex(int index) {
         for (CFGNode node : nodes) {
             if (node.index == index)
@@ -86,19 +70,34 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
     // Computes live ranges on CFGNodes in nodes list
     public void computeLiveRanges() {
         cleanUpCFG();
+        printCFG();
 
-        do {
+       do {
             for (int i = 0; i < nodes.size(); i++) {
                 CFGNode currNode = nodes.get(i);
 
-                currNode.inPrime.elements = nodes.get(i).in.elements;
-                currNode.outPrime.elements = nodes.get(i).out.elements;
+                currNode.inPrime = new TreeSet<>();
+                currNode.inPrime.addAll(currNode.in);
+                currNode.outPrime = new TreeSet<>();
+                currNode.outPrime.addAll(currNode.out);
 
-                currNode.in = union(currNode.use, diff(currNode.out, currNode.def));
+                // diff
+                Set<String> diff = new TreeSet<>(currNode.out);
+                diff.removeAll(currNode.def);
+                // union
+                Set<String> newIn = new TreeSet<>(currNode.use);
+                newIn.addAll(diff);
+                currNode.in = new TreeSet<>();
+                currNode.in.addAll(newIn);
+
                 for (int j = 0; j < currNode.succ.size(); j++) {
-                    currNode.out = union(currNode.out, getNodeFromIndex(currNode.succ.get(j)).in);
+                    Set<String> newOut = new TreeSet<>(currNode.out);
+                    newOut.addAll(getNodeFromIndex(currNode.succ.get(j)).in);
+                    currNode.out = new TreeSet<>();
+                    currNode.out.addAll(newOut);
                 }
             }
+
         } while(!converged());
     }
 
@@ -124,11 +123,11 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode currNode = new CFGNode(getRelativePos(a.sourcePos.line));
 
         // defs
-        currNode.def.addElement(a.dest.toString());
+        currNode.def.add(a.dest.toString());
 
         // uses
         if (a.source instanceof VVarRef) {
-            currNode.use.addElement(a.source.toString());
+            currNode.use.add(a.source.toString());
         }
 
         currNode.addSingleSucc(getRelativePos(a.sourcePos.line));
@@ -140,12 +139,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode currNode = new CFGNode(getRelativePos(c.sourcePos.line));
 
         // defs
-        currNode.def.addElement(c.dest.toString());
+        currNode.def.add(c.dest.toString());
 
         // uses
         for (int i = 0; i < c.args.length; i++) {
             if (c.args[i] instanceof VVarRef) {
-                currNode.use.addElement(c.args[i].toString());
+                currNode.use.add(c.args[i].toString());
             }
         }
 
@@ -159,13 +158,13 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
         // defs
         if (c.dest != null) {
-            currNode.def.addElement(c.dest.toString());
+            currNode.def.add(c.dest.toString());
         }
 
         // uses
         for (int i = 0; i < c.args.length; i++) {
             if (c.args[i] instanceof VVarRef) {
-                currNode.use.addElement(c.args[i].toString());
+                currNode.use.add(c.args[i].toString());
             }
         }
 
@@ -182,12 +181,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         // uses
         if (w.dest instanceof VMemRef.Global) {
             if (((VMemRef.Global) w.dest).base instanceof VAddr.Var) {
-                currNode.use.addElement(((VMemRef.Global) w.dest).base.toString());
+                currNode.use.add(((VMemRef.Global) w.dest).base.toString());
             }
         }
 
         if (w.source instanceof VVarRef) {
-            currNode.use.addElement(w.source.toString());
+            currNode.use.add(w.source.toString());
         }
 
         currNode.addSingleSucc(getRelativePos(w.sourcePos.line));
@@ -199,12 +198,12 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode currNode = new CFGNode(getRelativePos(r.sourcePos.line));
 
         // defs
-        currNode.def.addElement(r.dest.toString());
+        currNode.def.add(r.dest.toString());
 
         // uses
         if (r.source instanceof VMemRef.Global) {
             if (((VMemRef.Global) r.source).base instanceof VAddr.Var) {
-                currNode.use.addElement(((VMemRef.Global) r.source).base.toString());
+                currNode.use.add(((VMemRef.Global) r.source).base.toString());
             }
         }
 
@@ -219,7 +218,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         // defs
 
         // uses
-        currNode.use.addElement(b.value.toString());
+        currNode.use.add(b.value.toString());
 
         currNode.addSingleSucc(getRelativePos(b.sourcePos.line));
         int targetPos = b.target.getTarget().sourcePos.line;
@@ -248,7 +247,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
         // uses
         if (r.value instanceof VVarRef) {
-            currNode.use.addElement(r.value.toString());
+            currNode.use.add(r.value.toString());
         }
 
         // Does not have any successors
@@ -256,69 +255,52 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         nodes.add(currNode);
     }
 
-    class VariableSet {
-        Set<String> elements;
-
-        public VariableSet () {
-            elements = new HashSet<>();
-        }
-
-        public void addElement(String key) {
-            elements.add(key);
-        }
-
-        public boolean equals(VariableSet comp) {
-            return this.elements.equals(comp.elements);
-        }
-
-        public void copy(VariableSet a) {
-            this.elements.addAll(a.elements);
-        }
-
-        public String inspect() {
-            String val = "";
-            int count = 0;
-            Iterator<String> el = elements.iterator();
-            while(el.hasNext()) {
-                if (count == 0)
-                    val += el.next();
-                else
-                    val += " " + el.next();
-                count++;
-            }
-            return val;
-        }
-    }
-
     class CFGNode {
         public int index;
-        public VariableSet in;
-        public VariableSet out;
-        public VariableSet def;
-        public VariableSet use;
-        public VariableSet inPrime;
-        public VariableSet outPrime;
+        public Set<String> in;
+        public Set<String> out;
+        public Set<String> def;
+        public Set<String> use;
+        public Set<String> inPrime;
+        public Set<String> outPrime;
 
         List<Integer> succ;
 
         public CFGNode(int index) {
             this.index = index;
-            in = new VariableSet();
-            out = new VariableSet();
-            def = new VariableSet();
-            use = new VariableSet();
-            inPrime = new VariableSet();
-            outPrime = new VariableSet();
+            in = new TreeSet();
+            out = new TreeSet();
+            def = new TreeSet();
+            use = new TreeSet();
+            inPrime = new TreeSet();
+            outPrime = new TreeSet();
             succ = new ArrayList<>();
         }
 
         public void inspect() {
-            System.out.println("    in:   {"  + in.inspect() + "}");
-            System.out.println("    out:  {" + out.inspect() + "}");
-            //System.out.println("    in':  {"  + inPrime.inspect() + "}");
-            //System.out.println("    out': {" + outPrime.inspect() + "}");
-            System.out.println("    def:  {" + def.inspect() + "}");
-            System.out.println("    use:  {" + use.inspect() + "}");
+            System.out.print("    in:    {");
+            for (String s : in) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    out:   {");
+            for (String s : out) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    use:   {");
+            for (String s : use) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    def:   {");
+            for (String s : def) {
+                System.out.print(s);
+            }
+            System.out.println("}");
         }
 
         public void addSingleSucc(int pos) {
