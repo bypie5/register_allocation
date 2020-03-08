@@ -127,6 +127,8 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
                     line += currArgAlloc.getLoc();
             } else if (c.args[i] instanceof VOperand.Static) {
                 line += c.args[i].toString();
+            } else if (c.args[i] instanceof VLitStr) {
+                line += "\""+ ((VLitStr)c.args[i]).value + "\"";
             }
         }
 
@@ -137,10 +139,44 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
     public void visit(VMemWrite w) throws E {
         int sourcePos = getRelativePos(w.sourcePos.line);
+        LiveRange destAlloc = currAllocation.getAlloc(sourcePos, ((VMemRef.Global) w.dest).base.toString());
+        LiveRange srcAlloc = currAllocation.getAlloc(sourcePos, w.source.toString());
+
+        String line = "";
+        if (destAlloc != null) {
+            line += "[" + destAlloc.getLoc() + "+" + ((VMemRef.Global) w.dest).byteOffset + "]";
+        }
+
+        line += " = ";
+
+        if (srcAlloc != null) {
+            line += srcAlloc.getLoc();
+        } else {
+            line += w.source.toString();
+        }
+
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VMemRead r) throws E {
         int sourcePos = getRelativePos(r.sourcePos.line);
+        LiveRange destAlloc = currAllocation.getAlloc(sourcePos, r.dest.toString());
+        LiveRange srcAlloc = currAllocation.getAlloc(sourcePos, ((VMemRef.Global) r.source).base.toString());
+
+        String line = "";
+        if (destAlloc != null) {
+            line += destAlloc.getLoc();
+        }
+
+        line += " = ";
+
+        if (srcAlloc != null) {
+            line += "[" + srcAlloc.getLoc() + "+" + ((VMemRef.Global) r.source).byteOffset + "]";
+        } else {
+            line += "[" +r.source.toString() + "]";
+        }
+
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VBranch b) throws E {
