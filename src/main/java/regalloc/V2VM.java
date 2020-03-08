@@ -35,7 +35,6 @@ public class V2VM {
                 RegisterAllocation currAlloc = new RegisterAllocation(tree.functions[i], ranges.get(i));
                 currAlloc.LinearScanRegisterAllocation();
                 allocations.add(currAlloc);
-                currAlloc.print();
             }
 
             // Translate function to use registers instead of locals
