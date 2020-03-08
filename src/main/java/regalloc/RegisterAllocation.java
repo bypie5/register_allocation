@@ -14,9 +14,8 @@ public class RegisterAllocation {
     // General Purpose Registers
     // $s0...$s7 are callee-saved
     // $t0...$t8 are caller-saved
-    public static String[] GPRs = {"$s0", "$s1"};
-           /* {"$s0","$s1","$s2","$s3","$s4","$s5","$s6","$s7",
-             "$t0","$t1","$t2","$t3","$t4","$t5","$t6","$t7","$t8"};*/
+    public static String[] GPRs = {"$s0","$s1","$s2","$s3","$s4","$s5","$s6","$s7",
+             "$t0","$t1","$t2","$t3","$t4","$t5","$t6","$t7","$t8"};
 
     VFunction currFunction;
     LiveRanges ranges;
@@ -42,11 +41,15 @@ public class RegisterAllocation {
         }
     }
 
+    int R() {
+        return GPRs.length;
+    }
+
     public void LinearScanRegisterAllocation() {
         ranges.sortIncreaseStartPoint();
         for (LiveRange i : ranges.getRanges()) {
             ExpireOldIntervals(i);
-            if (active.size() == GPRs.length) {
+            if (active.size() == R()) {
                 SpillAtInterval(i);
             } else {
                 i.register = getRegFromPool();
@@ -61,12 +64,17 @@ public class RegisterAllocation {
         List<LiveRange> toRemove = new ArrayList<>();
         for (LiveRange j : active) {
             if (j.end >= i.start) {
+                deleteExpire(toRemove);
                 return;
             }
             addRegToPool(j.register);
             toRemove.add(j);
         }
 
+        deleteExpire(toRemove);
+    }
+
+    public void deleteExpire(List<LiveRange> toRemove) {
         for (LiveRange r : toRemove) {
             active.remove(r);
         }
