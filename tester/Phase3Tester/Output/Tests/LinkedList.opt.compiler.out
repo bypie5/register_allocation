@@ -1,534 +1,182 @@
-Main
-node 0: 
-    active:   {t.0}
-node 1: 
-    active:   {t.0}
-node 2: 
-    active:   {}
-Element.Init
-node 0: 
-    active:   {thisv_Agev_Marriedv_Salary}
-node 1: 
-    active:   {thisv_Marriedv_Salary}
-node 2: 
-    active:   {thisv_Married}
-node 3: 
-    active:   {}
-Element.GetAge
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-Element.GetSalary
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-Element.GetMarried
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-Element.Equal
-node 0: 
-    active:   {otherret_valthis}
-node 1: 
-    active:   {otherret_valthis}
-node 2: 
-    active:   {otherret_valthis}
-node 4: 
-    active:   {aux01otherret_valthis}
-node 5: 
-    active:   {aux01otherret_valt.0this}
-node 6: 
-    active:   {aux01otherret_valt.0t.1this}
-node 7: 
-    active:   {otherret_valt.1this}
-node 8: 
-    active:   {ret_val}
-node 9: 
-    active:   {ret_val}
-node 11: 
-    active:   {otherret_valthis}
-node 12: 
-    active:   {otherret_valthis}
-node 14: 
-    active:   {aux02otherret_valthis}
-node 15: 
-    active:   {aux02otherret_valt.2this}
-node 16: 
-    active:   {aux02otherret_valt.2t.3this}
-node 17: 
-    active:   {otherret_valt.3this}
-node 18: 
-    active:   {ret_val}
-node 19: 
-    active:   {ret_val}
-node 21: 
-    active:   {otherret_valt.4this}
-node 22: 
-    active:   {otherret_valt.4}
-node 23: 
-    active:   {otherret_val}
-node 24: 
-    active:   {otherret_val}
-node 26: 
-    active:   {otherret_valt.5}
-node 27: 
-    active:   {ret_valt.5}
-node 28: 
-    active:   {ret_val}
-node 29: 
-    active:   {ret_val}
-node 31: 
-    active:   {ntret_val}
-node 33: 
-    active:   {ret_val}
-node 35: 
-    active:   {otherret_val}
-node 36: 
-    active:   {otherret_val}
-node 38: 
-    active:   {otherret_valt.6}
-node 39: 
-    active:   {ret_valt.6}
-node 40: 
-    active:   {ret_val}
-node 41: 
-    active:   {ret_val}
-node 43: 
-    active:   {ntret_val}
-node 48: 
-    active:   {ret_val}
-Element.Compare
-node 0: 
-    active:   {num1num2retval}
-node 1: 
-    active:   {aux02num1num2}
-node 2: 
-    active:   {aux02num1num2t.0}
-node 3: 
-    active:   {aux02num1t.0}
-node 4: 
-    active:   {retval}
-node 5: 
-    active:   {retval}
-node 7: 
-    active:   {aux02num1t.1}
-node 8: 
-    active:   {t.1}
-node 9: 
-    active:   {retval}
-node 10: 
-    active:   {retval}
-node 12: 
-    active:   {retval}
-node 15: 
-    active:   {retval}
-List.Init
-node 0: 
-    active:   {this}
-node 1: 
-    active:   {}
-List.InitNew
-node 0: 
-    active:   {thisv_elemv_endv_next}
-node 1: 
-    active:   {thisv_elemv_next}
-node 2: 
-    active:   {thisv_next}
-node 3: 
-    active:   {}
-List.Insert
-node 0: 
-    active:   {aux03new_elemthis}
-node 1: 
-    active:   {aux02aux03new_elem}
-node 2: 
-    active:   {aux02aux03new_elem}
-node 3: 
-    active:   {aux02aux03new_elem}
-node 5: 
-    active:   {aux02aux03new_elemret_val}
-node 6: 
-    active:   {aux02}
-List.SetNext
-node 0: 
-    active:   {thisv_next}
-node 1: 
-    active:   {}
-List.Delete
-node 0: 
-    active:   {emy_headthis}
-node 1: 
-    active:   {emy_headret_valthis}
-node 2: 
-    active:   {aux04emy_headret_valthis}
-node 3: 
-    active:   {aux01aux04emy_headret_valthis}
-node 4: 
-    active:   {aux01aux04emy_headprevret_valthis}
-node 5: 
-    active:   {aux01aux04emy_headprevret_valthisvar_end}
-node 6: 
-    active:   {aux01aux04emy_headprevret_valthisvar_elemvar_end}
-node 8: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 9: 
-    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
-node 10: 
-    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
-node 12: 
-    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
-node 14: 
-    active:   {aux01aux04emy_headprevret_valt.0var_elemvar_end}
-node 15: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 16: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 18: 
-    active:   {aux01aux04emy_headprevret_valt.1var_elemvar_end}
-node 19: 
-    active:   {aux01aux04emy_headprevret_valt.1var_elemvar_end}
-node 20: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 21: 
-    active:   {aux01aux04emy_headprevret_valt.2var_elemvar_end}
-node 22: 
-    active:   {aux01aux04emy_headprevret_valt.2var_elemvar_end}
-node 23: 
-    active:   {aux01aux04eprevret_valvar_elemvar_end}
-node 24: 
-    active:   {aux01aux04eprevret_valvar_elemvar_end}
-node 26: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 27: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 29: 
-    active:   {aux01aux04emy_headprevret_valt.3var_elemvar_end}
-node 30: 
-    active:   {aux01aux04emy_headprevret_valt.3var_elemvar_end}
-node 31: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 32: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 34: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 35: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 37: 
-    active:   {aux01aux04emy_headprevret_valt.4var_elemvar_end}
-node 38: 
-    active:   {aux01aux04aux05emy_headprevret_valt.4var_elemvar_end}
-node 39: 
-    active:   {aux01aux04emy_headprevret_valt.5var_elemvar_end}
-node 40: 
-    active:   {aux01aux04emy_headprevret_valt.5var_elemvar_end}
-node 42: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 44: 
-    active:   {aux01aux04emy_headntprevret_valvar_elemvar_end}
-node 46: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 47: 
-    active:   {aux01emy_headprevret_val}
-node 48: 
-    active:   {aux01emy_headprevret_val}
-node 49: 
-    active:   {aux01emy_headprevret_val}
-node 51: 
-    active:   {aux01emy_headprevret_val}
-node 52: 
-    active:   {aux01emy_headprevret_val}
-node 53: 
-    active:   {aux01emy_headprevret_val}
-node 55: 
-    active:   {aux01emy_headprevret_valvar_end}
-node 56: 
-    active:   {aux01emy_headprevret_valvar_end}
-node 57: 
-    active:   {aux01emy_headprevret_valvar_end}
-node 59: 
-    active:   {aux01emy_headprevret_valvar_elemvar_end}
-node 60: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 61: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 63: 
-    active:   {aux01aux04emy_headntprevret_valvar_elemvar_end}
-node 65: 
-    active:   {aux01aux04emy_headprevret_valvar_elemvar_end}
-node 67: 
-    active:   {my_head}
-List.Search
-node 0: 
-    active:   {eint_ret_valthis}
-node 1: 
-    active:   {aux01eint_ret_valthis}
-node 2: 
-    active:   {aux01eint_ret_valthisvar_end}
-node 3: 
-    active:   {aux01eint_ret_valthisvar_elemvar_end}
-node 5: 
-    active:   {aux01eint_ret_valt.0var_elemvar_end}
-node 6: 
-    active:   {aux01eint_ret_valt.0var_elem}
-node 7: 
-    active:   {aux01eint_ret_valvar_elem}
-node 8: 
-    active:   {aux01eint_ret_valvar_elem}
-node 10: 
-    active:   {aux01eint_ret_valt.1var_elem}
-node 11: 
-    active:   {aux01eint_ret_valt.1}
-node 12: 
-    active:   {aux01eint_ret_val}
-node 13: 
-    active:   {aux01eint_ret_val}
-node 15: 
-    active:   {aux01eint_ret_valnt}
-node 17: 
-    active:   {aux01eint_ret_val}
-node 18: 
-    active:   {aux01eint_ret_val}
-node 20: 
-    active:   {aux01eint_ret_val}
-node 21: 
-    active:   {aux01eint_ret_val}
-node 22: 
-    active:   {aux01eint_ret_val}
-node 24: 
-    active:   {aux01eint_ret_valvar_end}
-node 25: 
-    active:   {aux01eint_ret_valvar_end}
-node 26: 
-    active:   {aux01eint_ret_valvar_end}
-node 28: 
-    active:   {aux01eint_ret_valvar_elemvar_end}
-node 29: 
-    active:   {aux01eint_ret_valvar_elemvar_end}
-node 31: 
-    active:   {int_ret_val}
-List.GetEnd
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-List.GetElem
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-List.GetNext
-node 0: 
-    active:   {t.0this}
-node 1: 
-    active:   {t.0}
-List.Print
-node 0: 
-    active:   {aux01this}
-node 1: 
-    active:   {aux01thisvar_end}
-node 2: 
-    active:   {aux01thisvar_elemvar_end}
-node 4: 
-    active:   {aux01t.0var_elemvar_end}
-node 5: 
-    active:   {aux01t.0var_elem}
-node 6: 
-    active:   {aux01var_elem}
-node 7: 
-    active:   {aux01var_elem}
-node 9: 
-    active:   {aux01t.1var_elem}
-node 10: 
-    active:   {aux01t.1}
-node 11: 
-    active:   {aux01}
-node 12: 
-    active:   {aux01}
-node 14: 
-    active:   {aux01}
-node 15: 
-    active:   {aux01}
-node 16: 
-    active:   {aux01}
-node 18: 
-    active:   {aux01var_end}
-node 19: 
-    active:   {aux01var_end}
-node 20: 
-    active:   {aux01var_end}
-node 22: 
-    active:   {aux01var_elemvar_end}
-node 23: 
-    active:   {aux01var_elemvar_end}
-node 25: 
-    active:   {}
-LL.Start
-node 0: 
-    active:   {last_elem}
-node 1: 
-    active:   {last_elem}
-node 2: 
-    active:   {last_elem}
-node 4: 
-    active:   {aux01last_elem}
-node 5: 
-    active:   {headlast_elem}
-node 6: 
-    active:   {head}
-node 7: 
-    active:   {head}
-node 9: 
-    active:   {aux01head}
-node 10: 
-    active:   {head}
-node 11: 
-    active:   {head}
-node 13: 
-    active:   {aux01head}
-node 14: 
-    active:   {el01head}
-node 15: 
-    active:   {el01head}
-node 16: 
-    active:   {el01head}
-node 18: 
-    active:   {aux01el01head}
-node 19: 
-    active:   {el01head}
-node 20: 
-    active:   {el01head}
-node 22: 
-    active:   {el01head}
-node 23: 
-    active:   {head}
-node 24: 
-    active:   {head}
-node 26: 
-    active:   {aux01head}
-node 27: 
-    active:   {head}
-node 28: 
-    active:   {el01head}
-node 29: 
-    active:   {el01head}
-node 30: 
-    active:   {el01head}
-node 32: 
-    active:   {aux01el01head}
-node 33: 
-    active:   {el01el02head}
-node 34: 
-    active:   {el01el02head}
-node 35: 
-    active:   {el01el02head}
-node 37: 
-    active:   {el01el02head}
-node 38: 
-    active:   {el02head}
-node 39: 
-    active:   {el02head}
-node 41: 
-    active:   {aux01el02head}
-node 42: 
-    active:   {el02head}
-node 43: 
-    active:   {el01el02head}
-node 44: 
-    active:   {el01el02head}
-node 45: 
-    active:   {el01el02head}
-node 47: 
-    active:   {aux01el01el02head}
-node 48: 
-    active:   {el01el02head}
-node 49: 
-    active:   {el01el02head}
-node 51: 
-    active:   {el01el02head}
-node 52: 
-    active:   {el02head}
-node 53: 
-    active:   {el02head}
-node 55: 
-    active:   {aux01el02head}
-node 56: 
-    active:   {el02el03head}
-node 57: 
-    active:   {el02el03head}
-node 58: 
-    active:   {el02el03head}
-node 60: 
-    active:   {aux01el02el03head}
-node 61: 
-    active:   {el02el03head}
-node 62: 
-    active:   {el02el03head}
-node 64: 
-    active:   {el02el03headt.0}
-node 65: 
-    active:   {el02el03headt.0}
-node 66: 
-    active:   {el02el03head}
-node 67: 
-    active:   {el02el03head}
-node 69: 
-    active:   {el02el03headt.1}
-node 70: 
-    active:   {el02headt.1}
-node 71: 
-    active:   {el02head}
-node 72: 
-    active:   {el01el02head}
-node 73: 
-    active:   {el01el02head}
-node 74: 
-    active:   {el01el02head}
-node 76: 
-    active:   {aux01el01el02head}
-node 77: 
-    active:   {el01el02head}
-node 78: 
-    active:   {el01el02head}
-node 80: 
-    active:   {el01el02head}
-node 81: 
-    active:   {el01el02head}
-node 82: 
-    active:   {el01el02head}
-node 84: 
-    active:   {aux01el01el02head}
-node 85: 
-    active:   {el01el02head}
-node 86: 
-    active:   {el01el02head}
-node 87: 
-    active:   {el01el02head}
-node 89: 
-    active:   {el01el02head}
-node 90: 
-    active:   {el01head}
-node 91: 
-    active:   {el01head}
-node 93: 
-    active:   {aux01el01head}
-node 94: 
-    active:   {el01head}
-node 95: 
-    active:   {el01head}
-node 96: 
-    active:   {el01head}
-node 98: 
-    active:   {el01head}
-node 99: 
-    active:   {head}
-node 100: 
-    active:   {head}
-node 102: 
-    active:   {aux01head}
-node 103: 
-    active:   {}
-node 104: 
-    active:   {}
+func Main [in 0, out 0, local 0]
+    $s0 = 
+    PrintIntS($s0)
+    ret
+func Element.Init [in 0, out 0, local 0]
+    ret
+func Element.GetAge [in 0, out 0, local 0]
+    ret
+func Element.GetSalary [in 0, out 0, local 0]
+    ret
+func Element.GetMarried [in 0, out 0, local 0]
+    ret
+func Element.Equal [in 0, out 0, local 0]
+    $s2 = 1
+    Error()
+    $s3 = 
+    $s5 = 
+    $s2 = 0
+    Error()
+    $s3 = 
+    $s5 = 
+    $s2 = 0
+    Error()
+    $s0 = 
+    $s2 = 0
+    $s0 = 0
+    Error()
+    $s0 = 
+     = 0
+    $s0 = 0
+    ret
+func Element.Compare [in 0, out 0, local 0]
+    $s0 = 0
+    $s0 = Add($s1 1)
+    $s3 = LtS($s2 $s1)
+    $s0 = 0
+    $s2 = LtS($s1 $s0)
+    $s0 = 0
+    $s0 = 1
+    ret
+func List.Init [in 0, out 0, local 0]
+    ret
+func List.InitNew [in 0, out 0, local 0]
+    ret
+func List.Insert [in 0, out 0, local 0]
+    $s1 = $s0
+    $s0 = HeapAllocZ(12)
+    Error()
+    $s1 = 
+    ret
+func List.SetNext [in 0, out 0, local 0]
+    ret
+func List.Delete [in 0, out 0, local 0]
+    $s1 = $s0
+    $s3 = 0
+    $s4 = Sub(0 1)
+    $s5 = $s0
+    $s6 = $s0
+    $s0 = Sub(1 $s3)
+    $s0 = 0
+    Error()
+    $s0 = 
+    $s3 = 1
+    $s0 = LtS($s4 0)
+    Error()
+    $s0 = 
+    $s1 = Sub(0 555)
+    PrintIntS($s1)
+    Error()
+    Error()
+    $s1 = 
+    $s4 = 
+    $s1 = Sub(0 555)
+    PrintIntS($s1)
+    $s1 = 0
+    $s6 = $s5
+    Error()
+     = 
+    Error()
+    $s1 = 
+    Error()
+    $s0 = 
+    $s2 = 1
+    $s1 = 0
+    ret
+func List.Search [in 0, out 0, local 0]
+    $s2 = 0
+    $s3 = $s0
+    $s0 = Sub(1 )
+    Error()
+    $s0 = 
+    $s2 = 1
+    $s0 = 0
+    Error()
+    $s3 = 
+    Error()
+    $s0 = 
+    Error()
+    $s1 = 
+    ret
+func List.GetEnd [in 0, out 0, local 0]
+    ret
+func List.GetElem [in 0, out 0, local 0]
+    ret
+func List.GetNext [in 0, out 0, local 0]
+    ret
+func List.Print [in 0, out 0, local 0]
+    $s1 = $s0
+    $s0 = Sub(1 )
+    Error()
+    $s0 = 
+    PrintIntS($s0)
+    Error()
+    $s1 = 
+    Error()
+    $s0 = 
+    Error()
+    $s1 = 
+    ret
+func LL.Start [in 0, out 0, local 0]
+    $s0 = HeapAllocZ(12)
+    Error()
+    $s1 = 
+    $s0 = last_elem
+    Error()
+    $s1 = 
+    Error()
+    $s1 = 
+    $s1 = HeapAllocZ(12)
+    Error()
+    $s2 = 
+    Error()
+    $s0 = 
+    Error()
+    $s1 = 
+    PrintIntS(10000000)
+    $s1 = HeapAllocZ(12)
+    Error()
+    $s2 = 
+    $s2 = $s1
+    Error()
+    $s0 = 
+    Error()
+    $s1 = 
+    PrintIntS(10000000)
+    $s1 = HeapAllocZ(12)
+    Error()
+    $s3 = 
+    Error()
+    $s0 = 
+    Error()
+    $s1 = 
+    $s1 = HeapAllocZ(12)
+    Error()
+    $s3 = 
+    Error()
+    $s3 = 
+    PrintIntS($s3)
+    Error()
+    $s1 = 
+    PrintIntS($s1)
+    PrintIntS(10000000)
+    $s1 = HeapAllocZ(12)
+    Error()
+    $s3 = 
+    Error()
+    $s0 = 
+    Error()
+    $s0 = 
+    PrintIntS(2220000)
+    Error()
+     = 
+    Error()
+    $s0 = 
+    PrintIntS(33300000)
+    Error()
+     = 
+    Error()
+    $s0 = 
+    PrintIntS(44440000)
+    ret
+

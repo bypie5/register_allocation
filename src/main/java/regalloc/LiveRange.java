@@ -21,6 +21,14 @@ public class LiveRange {
         location = -1;
     }
 
+    public String getLoc() {
+        if (location != -1) {
+            return "local[" + location + "]";
+        }
+
+        return register;
+    }
+
     void print() {
         System.out.println(ident + "(" + start + ", " + end + ") loc: " + location);
         System.out.println("    reg: " + register + " loc: " + location);
@@ -31,9 +39,5 @@ public class LiveRange {
             System.out.print("+");
         }
         System.out.println();
-    }
-
-    public int compareStartTo(LiveRange lhs) {
-        return this.start - lhs.start;
     }
 }

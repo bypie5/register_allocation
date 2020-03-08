@@ -1,40 +1,14 @@
-Main
-node 0: 
-    active:   {t.0}
-node 1: 
-    active:   {t.0}
-node 2: 
-    active:   {t.0}
-node 3: 
-    active:   {t.0}
-node 5: 
-    active:   {t.0t.1}
-node 6: 
-    active:   {t.0t.1}
-node 7: 
-    active:   {t.0t.2}
-node 8: 
-    active:   {t.2}
-node 9: 
-    active:   {}
-Fac.ComputeFac
-node 0: 
-    active:   {numt.0this}
-node 1: 
-    active:   {numt.0this}
-node 2: 
-    active:   {num_aux}
-node 3: 
-    active:   {num_aux}
-node 5: 
-    active:   {numt.1this}
-node 6: 
-    active:   {numt.1this}
-node 7: 
-    active:   {numt.2this}
-node 8: 
-    active:   {numt.2t.3this}
-node 9: 
-    active:   {numnum_auxt.3}
-node 11: 
-    active:   {num_aux}
+func Main [in 0, out 0, local 0]
+    $s0 = HeapAllocZ(4)
+    Error()
+    $s0 = 
+    PrintIntS($s0)
+    ret
+func Fac.ComputeFac [in 0, out 0, local 0]
+    $s2 = LtS($s0 1)
+    $s0 = 1
+    $s0 = Sub($s2 1)
+    $s3 = 
+    $s1 = MulS($s2 $s3)
+    ret
+

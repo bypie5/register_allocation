@@ -1,5 +1,7 @@
 
 
+import java.util.Collections;
+
 public class LiveRange {
 
     public int start;
@@ -19,8 +21,16 @@ public class LiveRange {
         location = -1;
     }
 
+    public String getLoc() {
+        if (location != -1) {
+            return "local[" + location + "]";
+        }
+
+        return register;
+    }
+
     void print() {
-        System.out.println(ident + "(" + start + ", " + end + ")");
+        System.out.println(ident + "(" + start + ", " + end + ") loc: " + location);
         System.out.println("    reg: " + register + " loc: " + location);
         for (int i = 0; i < start; i++) {
             System.out.print(".");
@@ -29,9 +39,5 @@ public class LiveRange {
             System.out.print("+");
         }
         System.out.println();
-    }
-
-    public int compareTo(LiveRange lhs) {
-        return this.start - lhs.start;
     }
 }

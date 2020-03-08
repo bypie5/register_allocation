@@ -1,7 +1,5 @@
 
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 public class LiveRanges {
@@ -26,10 +24,23 @@ public class LiveRanges {
     }
 
     public void sortIncreaseStartPoint() {
-        Collections.sort(ranges, (o1, o2) -> o1.start < o2.start ? -1 : 1);
+        ranges.sort((o1, o2) -> o1.start < o2.start ? -1 : 1);
     }
 
     public List<LiveRange> getRanges() {
         return this.ranges;
+    }
+
+    public LiveRange getAlloc(int line, String ident) {
+        for (LiveRange lr : ranges) {
+            if (inRange(lr,line) && lr.ident.equals(ident))
+                return lr;
+        }
+        return null;
+    }
+
+    // Helper function
+    boolean inRange(LiveRange lr, int line) {
+        return (lr.start <= line && line <= lr.end);
     }
 }

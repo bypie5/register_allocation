@@ -27,7 +27,6 @@ public class V2VM {
                 }
 
                 ranges.add(rangeVisitor.getCurrRanges());
-                rangeVisitor.inspect();
             }
 
             // For each function use LSRA to allocate registers
@@ -38,6 +37,19 @@ public class V2VM {
                 allocations.add(currAlloc);
             }
 
+            // Translate function to use registers instead of locals
+            TranslationVisitor<Exception> translationVisitor = new TranslationVisitor<>();
+            for (int i = 0; i < tree.functions.length; i++) {
+               RegisterAllocation currAllocation = allocations.get(i);
+               VFunction currFunc = tree.functions[i];
+               translationVisitor.setData(currFunc, currAllocation);
+
+               for (int j = 0; j < currFunc.body.length; j++) {
+                   tree.functions[i].body[j].accept(translationVisitor);
+               }
+            }
+
+            translationVisitor.printBuffer();
         } catch (Exception e) {
             System.out.println(e.toString());
             e.printStackTrace(System.out);

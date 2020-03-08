@@ -1,39 +1,22 @@
-Main
-node 0: 
-    active:   {t.0}
-node 1: 
-    active:   {t.0}
-node 2: 
-    active:   {}
-MT4.Start
-node 0: 
-    active:   {p1p2p3p4p5p6this}
-node 1: 
-    active:   {p1p2p3p4p5p6this}
-node 2: 
-    active:   {p1p2p3p4p5p6this}
-node 3: 
-    active:   {p1p2p3p4p5p6this}
-node 4: 
-    active:   {p1p2p3p4p5p6this}
-node 5: 
-    active:   {p1p2p3p4p5p6this}
-node 6: 
-    active:   {auxp1p2p3p4p5p6this}
-node 7: 
-    active:   {aux}
-MT4.Change
-node 0: 
-    active:   {p1p2p3p4p5p6}
-node 1: 
-    active:   {p2p3p4p5p6}
-node 2: 
-    active:   {p3p4p5p6}
-node 3: 
-    active:   {p4p5p6}
-node 4: 
-    active:   {p5p6}
-node 5: 
-    active:   {p6}
-node 6: 
-    active:   {}
+func Main [in 0, out 0, local 0]
+    $s0 = 
+    PrintIntS($s0)
+    ret
+func MT4.Start [in 0, out 0, local 0]
+    PrintIntS($s0)
+    PrintIntS($s4)
+    PrintIntS($s1)
+    PrintIntS($s5)
+    PrintIntS($s2)
+    PrintIntS($s6)
+    $s7 = 
+    ret
+func MT4.Change [in 0, out 0, local 0]
+    PrintIntS($s0)
+    PrintIntS($s1)
+    PrintIntS($s2)
+    PrintIntS($s3)
+    PrintIntS($s4)
+    PrintIntS($s5)
+    ret
+

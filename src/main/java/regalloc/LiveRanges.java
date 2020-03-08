@@ -33,10 +33,14 @@ public class LiveRanges {
 
     public LiveRange getAlloc(int line, String ident) {
         for (LiveRange lr : ranges) {
-            if (lr.location == line && lr.ident == ident)
+            if (inRange(lr,line) && lr.ident.equals(ident))
                 return lr;
         }
-
         return null;
+    }
+
+    // Helper function
+    boolean inRange(LiveRange lr, int line) {
+        return (lr.start <= line && line <= lr.end);
     }
 }

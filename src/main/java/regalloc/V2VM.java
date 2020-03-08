@@ -47,9 +47,9 @@ public class V2VM {
                for (int j = 0; j < currFunc.body.length; j++) {
                    tree.functions[i].body[j].accept(translationVisitor);
                }
-
-               currAllocation.print();
             }
+
+            translationVisitor.printBuffer();
         } catch (Exception e) {
             System.out.println(e.toString());
             e.printStackTrace(System.out);
