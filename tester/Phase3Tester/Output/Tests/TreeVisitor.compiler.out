@@ -1,0 +1,9 @@
+java.lang.IndexOutOfBoundsException: Index: 100, Size: 95
+java.lang.IndexOutOfBoundsException: Index: 100, Size: 95
+	at java.base/java.util.ArrayList.rangeCheckForAdd(ArrayList.java:754)
+	at java.base/java.util.ArrayList.add(ArrayList.java:479)
+	at TranslationVisitor.insertLabels(TranslationVisitor.java:44)
+	at TranslationVisitor.visit(TranslationVisitor.java:175)
+	at cs132.vapor.ast.VReturn.accept(VReturn.java:19)
+	at V2VM.allocRegs(V2VM.java:48)
+	at V2VM.main(V2VM.java:11)

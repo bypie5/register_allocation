@@ -1,0 +1,16 @@
+func Main [in 0, out 0, local 0]
+$s0 = 
+PrintIntS($s0)
+ret
+func Fac.ComputeFac [in 0, out 0, local 0]
+if1_else:
+$s2 = LtS($s0 1)
+if $s2 goto :if1_else
+$s0 = 1
+if1_end:
+goto :if1_end
+$s2 = Sub($s1 1)
+$s3 = 
+$s0 = MulS($s1 $s3)
+ret
+
