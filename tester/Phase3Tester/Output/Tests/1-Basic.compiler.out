@@ -1,6 +1,6 @@
 func Main [in 0, out 0, local 0]
-    $s0 = 4
-    $s1 = Add($s0 2)
-    PrintIntS($s1)
-    ret
+$s0 = 4
+$s1 = Add($s0 2)
+PrintIntS($s1)
+ret
 

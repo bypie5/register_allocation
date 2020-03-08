@@ -37,12 +37,20 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         System.out.println();
     }
 
+    public void insertLabels() {
+        for (int i = 0; i < currFunction.labels.length; i++) {
+            int pos = getRelativePos(currFunction.labels[i].sourcePos.line);
+            // TODO: I don't know if this is right
+            buffer.add(pos + 1, currFunction.labels[i].ident + ":\n");
+        }
+    }
+
     void increaseIndent() {
-        indentLevel++;
+        //indentLevel++;
     }
 
     void decreaseIndent() {
-        indentLevel--;
+        //indentLevel--;
     }
 
     public void setData(VFunction currFunction, RegisterAllocation currAllocation) {
@@ -140,15 +148,30 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
     public void visit(VBranch b) throws E {
         int sourcePos = getRelativePos(b.sourcePos.line);
+        LiveRange destAlloc = currAllocation.getAlloc(sourcePos, b.value.toString());
+
+        String line = "";
+        if (destAlloc != null) {
+            line += "if " + destAlloc.getLoc() + " goto :" + b.target.ident;
+        }
+
+        appendBuffer(line);
     }
 
     public void visit(VGoto g) throws E {
         int sourcePos = getRelativePos(g.sourcePos.line);
+
+
+        appendBuffer("goto " + g.target.toString());
     }
 
     public void visit(VReturn r) throws E {
         int sourcePos = getRelativePos(r.sourcePos.line);
 
         appendBuffer("ret");
+
+        // Since this is the end of the function, insert
+        // CF labels.
+        insertLabels();
     }
 }

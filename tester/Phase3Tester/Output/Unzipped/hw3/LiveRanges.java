@@ -41,6 +41,7 @@ public class LiveRanges {
 
     // Helper function
     boolean inRange(LiveRange lr, int line) {
-        return (lr.start <= line && line <= lr.end);
+        // lr.end + 1 to deal with labels
+        return (lr.start <= line && line <= lr.end + 1);
     }
 }
