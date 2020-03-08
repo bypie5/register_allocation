@@ -39,6 +39,7 @@ public class V2VM {
 
             // Translate function to use registers instead of locals
             TranslationVisitor<Exception> translationVisitor = new TranslationVisitor<>();
+            List<List<String>> buffers = new ArrayList<>();
             for (int i = 0; i < tree.functions.length; i++) {
                RegisterAllocation currAllocation = allocations.get(i);
                VFunction currFunc = tree.functions[i];
@@ -47,12 +48,24 @@ public class V2VM {
                for (int j = 0; j < currFunc.body.length; j++) {
                    tree.functions[i].body[j].accept(translationVisitor);
                }
+
+               buffers.add(translationVisitor.buffer);
             }
 
-            translationVisitor.printBuffer();
+            //translationVisitor.printBuffer();
+            printBuffers(buffers);
         } catch (Exception e) {
             System.out.println(e.toString());
             e.printStackTrace(System.out);
+        }
+    }
+
+    public static void printBuffers(List<List<String>> buffers) {
+        for (List<String> buffer : buffers) {
+            for (String line : buffer) {
+                System.out.print(line);
+            }
+            System.out.println();
         }
     }
 }

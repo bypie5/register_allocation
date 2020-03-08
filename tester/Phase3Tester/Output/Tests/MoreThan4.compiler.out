@@ -2,10 +2,11 @@ func Main [in 0, out 0, local 0]
 $s0 = HeapAllocZ(4)
 if $s0 goto :null1
 Error()
-$s1 = 
 null1:
-PrintIntS($s1)
+$s0 = 
+PrintIntS($s0)
 ret
+
 func MT4.Start [in 0, out 0, local 0]
 PrintIntS($s0)
 PrintIntS($s4)
@@ -15,6 +16,7 @@ PrintIntS($s2)
 PrintIntS($s6)
 $s7 = 
 ret
+
 func MT4.Change [in 0, out 0, local 0]
 PrintIntS($s0)
 PrintIntS($s1)
