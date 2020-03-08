@@ -1,9 +1,218 @@
-java.lang.IndexOutOfBoundsException: Index: 94, Size: 93
-java.lang.IndexOutOfBoundsException: Index: 94, Size: 93
-	at java.base/java.util.ArrayList.rangeCheckForAdd(ArrayList.java:754)
-	at java.base/java.util.ArrayList.add(ArrayList.java:479)
-	at TranslationVisitor.insertLabels(TranslationVisitor.java:44)
-	at TranslationVisitor.visit(TranslationVisitor.java:175)
-	at cs132.vapor.ast.VReturn.accept(VReturn.java:19)
-	at V2VM.allocRegs(V2VM.java:48)
-	at V2VM.main(V2VM.java:11)
+func Main [in 0, out 0, local 0]
+$s0 = HeapAllocZ(8)
+if $s0 goto :null1
+Error()
+null1:
+$s1 = 
+PrintIntS($s1)
+ret
+
+func BBS.Start [in 0, out 0, local 0]
+$s1 = 
+$s1 = 
+PrintIntS(99999)
+$s0 = 
+$s0 = 
+ret
+
+func BBS.Sort [in 0, out 0, local 0]
+$s0 = Sub($s1 1)
+$s0 = Sub(0 1)
+while1_top:
+$s1 = LtS($s0 $s0)
+if $s1 goto :while1_end
+$s0 = 1
+while2_top:
+$s2 = Add($s1 1)
+$s1 = LtS($s0 $s2)
+if $s1 goto :while2_end
+$s0 = Sub($s0 1)
+if $s0 goto :null2
+Error()
+null2:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds1
+Error()
+bounds1:
+$s2 = MulS($s0 4)
+$s2 = Add($s2 $s1)
+if $s0 goto :null3
+Error()
+null3:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds2
+Error()
+bounds2:
+$s1 = MulS($s3 4)
+$s1 = Add($s1 $s0)
+$s1 = LtS($s0 $s2)
+if $s1 goto :if1_else
+$s0 = Sub($s3 1)
+if $s0 goto :null4
+Error()
+null4:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds3
+Error()
+bounds3:
+$s2 = MulS($s0 4)
+$s2 = Add($s2 $s1)
+if $s0 goto :null5
+Error()
+null5:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds4
+Error()
+bounds4:
+$s2 = MulS($s0 4)
+$s2 = Add($s2 $s1)
+if $s0 goto :null6
+Error()
+null6:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds5
+Error()
+bounds5:
+$s2 = MulS($s0 4)
+$s2 = Add($s2 $s1)
+if $s0 goto :null7
+Error()
+null7:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds6
+Error()
+bounds6:
+$s3 = MulS($s0 4)
+$s3 = Add($s3 $s1)
+goto :if1_end
+if1_else:
+$s0 = 0
+if1_end:
+$s0 = Add($s0 1)
+goto :while2_top
+while2_end:
+$s0 = Sub($s0 1)
+goto :while1_top
+while1_end:
+ret
+
+func BBS.Print [in 0, out 0, local 0]
+$s0 = 0
+while3_top:
+$s3 = LtS($s0 $s1)
+if $s3 goto :while3_end
+if $s0 goto :null8
+Error()
+null8:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds7
+Error()
+bounds7:
+$s1 = MulS($s2 4)
+$s1 = Add($s1 $s0)
+PrintIntS($s0)
+$s2 = Add($s2 1)
+goto :while3_top
+while3_end:
+ret
+
+func BBS.Init [in 0, out 0, local 0]
+$s2 = 
+if $s0 goto :null9
+Error()
+null9:
+$s1 = Lt(0 $s1)
+if $s1 goto :bounds8
+Error()
+bounds8:
+$s1 = MulS(0 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null10
+Error()
+null10:
+$s1 = Lt(1 $s1)
+if $s1 goto :bounds9
+Error()
+bounds9:
+$s1 = MulS(1 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null11
+Error()
+null11:
+$s1 = Lt(2 $s1)
+if $s1 goto :bounds10
+Error()
+bounds10:
+$s1 = MulS(2 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null12
+Error()
+null12:
+$s1 = Lt(3 $s1)
+if $s1 goto :bounds11
+Error()
+bounds11:
+$s1 = MulS(3 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null13
+Error()
+null13:
+$s1 = Lt(4 $s1)
+if $s1 goto :bounds12
+Error()
+bounds12:
+$s1 = MulS(4 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null14
+Error()
+null14:
+$s1 = Lt(5 $s1)
+if $s1 goto :bounds13
+Error()
+bounds13:
+$s1 = MulS(5 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null15
+Error()
+null15:
+$s1 = Lt(6 $s1)
+if $s1 goto :bounds14
+Error()
+bounds14:
+$s1 = MulS(6 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null16
+Error()
+null16:
+$s1 = Lt(7 $s1)
+if $s1 goto :bounds15
+Error()
+bounds15:
+$s1 = MulS(7 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null17
+Error()
+null17:
+$s1 = Lt(8 $s1)
+if $s1 goto :bounds16
+Error()
+bounds16:
+$s1 = MulS(8 4)
+$s1 = Add($s1 $s0)
+if $s0 goto :null18
+Error()
+null18:
+$s1 = Lt(9 $s1)
+if $s1 goto :bounds17
+Error()
+bounds17:
+$s1 = MulS(9 4)
+$s1 = Add($s1 $s0)
+ret
+
+func AllocArray [in 0, out 0, local 0]
+$s0 = MulS($s1 4)
+$s0 = Add($s0 4)
+$s2 = HeapAllocZ($s0)
+ret
+

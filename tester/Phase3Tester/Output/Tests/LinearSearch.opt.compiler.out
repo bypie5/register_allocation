@@ -1,102 +1,107 @@
 func Main [in 0, out 0, local 0]
 $s0 = HeapAllocZ(8)
-while1_top:
 if $s0 goto :null1
-while2_top:
 Error()
 null1:
-while3_top:
 $s1 = 
 PrintIntS($s1)
 ret
-null2:
-null3:
+
 func LS.Start [in 0, out 0, local 0]
 $s0 = 
 $s0 = 
-null4:
 PrintIntS(9999)
-bounds2:
-bounds1:
 $s0 = 
-bounds3:
 PrintIntS($s0)
 $s0 = 
 PrintIntS($s0)
 $s0 = 
 PrintIntS($s0)
-while1_end:
-if1_else:
-while3_end:
 $s0 = 
 PrintIntS($s0)
 ret
+
 func LS.Print [in 0, out 0, local 0]
-if2_else:
 $s0 = 1
-$s3 = LtS($s0 $s2)
+while1_top:
+$s3 = LtS($s0 $s1)
 if $s3 goto :while1_end
-if2_end:
-if1_end:
-if $s2 goto :null2
+if $s0 goto :null2
 Error()
-while2_end:
-$s3 = Lt($s0 $s3)
-if $s3 goto :bounds1
+null2:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds1
 Error()
-$s3 = MulS($s0 4)
-$s3 = Add($s3 $s2)
-PrintIntS($s2)
-$s0 = Add($s0 1)
+bounds1:
+$s1 = MulS($s2 4)
+$s1 = Add($s1 $s0)
+PrintIntS($s0)
+$s2 = Add($s2 1)
 goto :while1_top
+while1_end:
 ret
+
 func LS.Search [in 0, out 0, local 0]
 $s0 = 1
-$s3 = 0
-$s3 = 0
-$s5 = LtS($s0 $s4)
-if $s5 goto :while2_end
-if $s4 goto :null3
+$s0 = 0
+$s0 = 0
+while2_top:
+$s3 = LtS($s0 $s1)
+if $s3 goto :while2_end
+if $s0 goto :null3
 Error()
-$s5 = Lt($s0 $s5)
-if $s5 goto :bounds2
+null3:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds2
 Error()
-$s5 = MulS($s0 4)
-$s5 = Add($s5 $s4)
-$s5 = Add($s1 1)
-$s6 = LtS($s4 $s1)
-if $s6 goto :if1_else
-$s4 = 0
+bounds2:
+$s2 = MulS($s0 4)
+$s2 = Add($s2 $s1)
+$s1 = Add($s3 1)
+$s1 = LtS($s0 $s3)
+if $s1 goto :if1_else
+$s0 = 0
 goto :if1_end
-$s6 = LtS($s4 $s5)
-if $s6 goto :if2_else
-$s4 = 0
+if1_else:
+$s2 = LtS($s0 $s1)
+if $s2 goto :if2_else
+$s0 = 0
 goto :if2_end
+if2_else:
 $s0 = 1
 $s0 = 1
-$s3 = Add($s3 1)
+if2_end:
+if1_end:
+$s0 = Add($s0 1)
 goto :while2_top
+while2_end:
 ret
+
 func LS.Init [in 0, out 0, local 0]
 $s2 = 
 $s0 = 1
-$s3 = Add($s2 1)
-$s4 = LtS($s0 $s2)
+$s1 = Add($s0 1)
+while3_top:
+$s4 = LtS($s2 $s0)
 if $s4 goto :while3_end
-$s2 = MulS(2 $s0)
-$s4 = Sub($s3 3)
-if $s5 goto :null4
+$s0 = MulS(2 $s2)
+$s0 = Sub($s1 3)
+if $s0 goto :null4
 Error()
-$s6 = Lt($s0 $s6)
-if $s6 goto :bounds3
+null4:
+$s2 = Lt($s1 $s2)
+if $s2 goto :bounds3
 Error()
-$s6 = MulS($s0 4)
-$s6 = Add($s6 $s5)
-$s5 = Add($s2 $s4)
-$s0 = Add($s0 1)
-$s3 = Sub($s3 1)
+bounds3:
+$s3 = MulS($s4 4)
+$s3 = Add($s3 $s0)
+$s0 = Add($s1 $s2)
+$s4 = Add($s4 1)
+$s5 = Sub($s5 1)
 goto :while3_top
+while3_end:
 ret
+
 func AllocArray [in 0, out 0, local 0]
 $s0 = MulS($s1 4)
 $s0 = Add($s0 4)

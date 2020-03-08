@@ -2,324 +2,341 @@ func Main [in 0, out 0, local 0]
 $s0 = 
 PrintIntS($s0)
 ret
-null21:
-while3_top:
-null1:
-while2_top:
-null5:
-null22:
+
 func Element.Init [in 0, out 0, local 0]
-null17:
 ret
-null23:
-while1_top:
-null13:
-if6_else:
-null18:
-null24:
+
 func Element.GetAge [in 0, out 0, local 0]
 ret
-ss1_else:
-null25:
-null19:
-if11_else:
+
 func Element.GetSalary [in 0, out 0, local 0]
-null26:
-if11_end:
-null20:
-ss1_end:
 ret
-while3_end:
-null27:
-null14:
-if7_else:
-if1_else:
-null6:
-null28:
-null15:
-if7_end:
-if6_end:
-null29:
+
 func Element.GetMarried [in 0, out 0, local 0]
-null16:
 ret
-null2:
-while2_end:
-null30:
+
 func Element.Equal [in 0, out 0, local 0]
-$s2 = 1
-null7:
-null31:
-if $s0 goto :null1
+$s0 = 1
+if $s1 goto :null1
 Error()
-if9_else:
-null32:
+null1:
+$s1 = 
 $s3 = 
-$s5 = 
-if2_else:
-if $s5 goto :if1_else
-null33:
-null8:
-$s2 = 0
+if $s3 goto :if1_else
+$s0 = 0
 goto :if1_end
-null34:
-null9:
+if1_else:
 if $s0 goto :null2
-null3:
 Error()
-null35:
+null2:
+$s1 = 
 $s3 = 
-if9_end:
-$s5 = 
-if8_else:
-if $s5 goto :if2_else
-if8_end:
-null36:
-if4_else:
-$s2 = 0
-if4_end:
-null37:
+if $s3 goto :if2_else
+$s0 = 0
 goto :if2_end
-null10:
-if3_else:
-null38:
-if $s3 goto :if3_else
-if $s1 goto :null3
-null11:
-null4:
-null39:
+if2_else:
+if $s1 goto :if3_else
+if $s2 goto :null3
 Error()
-$s0 = 
-null12:
-null40:
-if $s0 goto :if4_else
-$s2 = 0
-if5_else:
-if10_else:
-null41:
+null3:
+$s1 = 
+if $s1 goto :if4_else
+$s0 = 0
 goto :if4_end
-if10_end:
+if4_else:
+$s0 = 0
+if4_end:
+goto :if3_end
+if3_else:
+if $s0 goto :null4
+Error()
+null4:
+$s1 = 
+if $s1 goto :if5_else
+$s0 = 0
+goto :if5_end
+if5_else:
+$s0 = 0
 if5_end:
-null42:
-while1_end:
 if3_end:
 if2_end:
 if1_end:
-$s0 = 0
-goto :if3_end
-if $s0 goto :null4
-Error()
-$s1 = 
-if $s1 goto :if5_else
-$s2 = 0
-goto :if5_end
-$s0 = 0
 ret
+
 func Element.Compare [in 0, out 0, local 0]
 $s0 = 0
-$s0 = Add($s1 1)
-$s3 = LtS($s2 $s1)
-if $s3 goto :if6_else
+$s0 = Add($s2 1)
+$s0 = LtS($s1 $s2)
+if $s0 goto :if6_else
 $s0 = 0
 goto :if6_end
+if6_else:
 $s2 = LtS($s1 $s0)
 if $s2 goto :if7_else
 $s0 = 0
 goto :if7_end
+if7_else:
 $s0 = 1
+if7_end:
+if6_end:
 ret
+
 func List.Init [in 0, out 0, local 0]
 ret
+
 func List.InitNew [in 0, out 0, local 0]
 ret
+
 func List.Insert [in 0, out 0, local 0]
-$s1 = $s0
+$s0 = $s1
 $s0 = HeapAllocZ(12)
 if $s0 goto :null5
 Error()
-$s3 = 
+null5:
+$s1 = 
 ret
+
 func List.SetNext [in 0, out 0, local 0]
 ret
+
 func List.Delete [in 0, out 0, local 0]
-$s1 = $s0
-$s3 = 0
-$s4 = Sub(0 1)
-$s5 = $s0
-$s6 = $s0
-if $s7 goto :ss1_else
-$s0 = Sub(1 $s3)
+$s0 = $s1
+$s0 = 0
+$s0 = Sub(0 1)
+$s0 = $s1
+$s0 = $s1
+while1_top:
+if $s0 goto :ss1_else
+$s0 = Sub(1 $s1)
 goto :ss1_end
+ss1_else:
 $s0 = 0
+ss1_end:
 if $s0 goto :while1_end
-if $s2 goto :null6
+if $s1 goto :null6
 Error()
-$s0 = 
-if $s0 goto :if8_else
-$s3 = 1
-$s0 = LtS($s4 0)
+null6:
+$s2 = 
+if $s2 goto :if8_else
+$s0 = 1
+$s0 = LtS($s3 0)
 if $s0 goto :if9_else
-if $s5 goto :null7
+if $s4 goto :null7
 Error()
-$s0 = 
+null7:
+$s1 = 
 goto :if9_end
-$s1 = Sub(0 555)
-PrintIntS($s1)
-if $s6 goto :null8
+if9_else:
+$s0 = Sub(0 555)
+PrintIntS($s0)
+if $s1 goto :null8
 Error()
-if $s5 goto :null9
+null8:
+if $s0 goto :null9
 Error()
-$s1 = 
-$t1 = 
-$s1 = Sub(0 555)
-PrintIntS($s1)
+null9:
+$s2 = 
+$s0 = 
+$s0 = Sub(0 555)
+PrintIntS($s0)
+if9_end:
 goto :if8_end
-$s1 = 0
-if $s3 goto :if10_else
-$s6 = $s5
-if $s5 goto :null10
-Error()
-$s5 = 
-if $s5 goto :null11
-Error()
-$s1 = 
-if $s5 goto :null12
-Error()
-$s4 = 
-$s7 = 1
-goto :if10_end
-$t0 = 0
-goto :while1_top
-ret
-func List.Search [in 0, out 0, local 0]
-$s2 = 0
-$s3 = $s0
-$s0 = Sub(1 $s4)
-if $s0 goto :while2_end
-if $s1 goto :null13
-Error()
-$s0 = 
-if $s0 goto :if11_else
-$s2 = 1
-goto :if11_end
+if8_else:
 $s0 = 0
-if $s3 goto :null14
+if8_end:
+if $s0 goto :if10_else
+$s0 = $s1
+if $s1 goto :null10
 Error()
-$s3 = 
-if $s3 goto :null15
-Error()
+null10:
 $s0 = 
-if $s3 goto :null16
+if $s0 goto :null11
 Error()
-$s4 = 
-goto :while2_top
+null11:
+$s0 = 
+if $s1 goto :null12
+Error()
+null12:
+$s1 = 
+$s0 = 1
+goto :if10_end
+if10_else:
+$s0 = 0
+if10_end:
+goto :while1_top
+while1_end:
 ret
+
+func List.Search [in 0, out 0, local 0]
+$s0 = 0
+$s0 = $s1
+while2_top:
+$s1 = Sub(1 $s0)
+if $s1 goto :while2_end
+if $s2 goto :null13
+Error()
+null13:
+$s2 = 
+if $s2 goto :if11_else
+$s0 = 1
+goto :if11_end
+if11_else:
+$s0 = 0
+if11_end:
+if $s0 goto :null14
+Error()
+null14:
+$s0 = 
+if $s0 goto :null15
+Error()
+null15:
+$s0 = 
+if $s1 goto :null16
+Error()
+null16:
+$s1 = 
+goto :while2_top
+while2_end:
+ret
+
 func List.GetEnd [in 0, out 0, local 0]
 ret
+
 func List.GetElem [in 0, out 0, local 0]
 ret
+
 func List.GetNext [in 0, out 0, local 0]
 ret
+
 func List.Print [in 0, out 0, local 0]
-$s1 = $s0
-$s0 = Sub(1 $s2)
-if $s0 goto :while3_end
-if $s3 goto :null17
+$s0 = $s1
+while3_top:
+$s2 = Sub(1 $s1)
+if $s2 goto :while3_end
+if $s0 goto :null17
 Error()
-$s0 = 
-PrintIntS($s0)
-if $s1 goto :null18
-Error()
+null17:
 $s1 = 
-if $s1 goto :null19
+PrintIntS($s1)
+if $s2 goto :null18
 Error()
+null18:
+$s0 = 
+if $s0 goto :null19
+Error()
+null19:
 $s0 = 
 if $s1 goto :null20
 Error()
-$s2 = 
+null20:
+$s1 = 
 goto :while3_top
+while3_end:
 ret
+
 func LL.Start [in 0, out 0, local 0]
 $s0 = HeapAllocZ(12)
 if $s0 goto :null21
 Error()
-$s1 = 
-$s1 = $s0
-if $s1 goto :null22
+null21:
+$s0 = 
+$s0 = $s1
+if $s0 goto :null22
 Error()
+null22:
 $s0 = 
 if $s1 goto :null23
 Error()
+null23:
 $s0 = 
 $s0 = HeapAllocZ(12)
 if $s0 goto :null24
 Error()
-$s2 = 
-if $s1 goto :null25
+null24:
+$s0 = 
+if $s2 goto :null25
 Error()
+null25:
 $s1 = 
 if $s1 goto :null26
 Error()
+null26:
 $s0 = 
 PrintIntS(10000000)
 $s0 = HeapAllocZ(12)
 if $s0 goto :null27
 Error()
-$s2 = 
-$s2 = $s0
-if $s1 goto :null28
+null27:
+$s0 = 
+$s0 = $s1
+if $s2 goto :null28
 Error()
+null28:
 $s1 = 
 if $s1 goto :null29
 Error()
+null29:
 $s0 = 
 PrintIntS(10000000)
 $s0 = HeapAllocZ(12)
 if $s0 goto :null30
 Error()
-$s3 = 
-if $s1 goto :null31
+null30:
+$s0 = 
+if $s2 goto :null31
 Error()
+null31:
 $s1 = 
 if $s1 goto :null32
 Error()
+null32:
 $s0 = 
 $s0 = HeapAllocZ(12)
 if $s0 goto :null33
 Error()
-$s3 = 
-if $s1 goto :null34
+null33:
+$s0 = 
+if $s2 goto :null34
 Error()
-$s3 = 
-PrintIntS($s3)
-if $s1 goto :null35
+null34:
+$s1 = 
+PrintIntS($s1)
+if $s2 goto :null35
 Error()
-$s3 = 
-PrintIntS($s3)
+null35:
+$s2 = 
+PrintIntS($s2)
 PrintIntS(10000000)
 $s0 = HeapAllocZ(12)
 if $s0 goto :null36
 Error()
-$s3 = 
-if $s1 goto :null37
+null36:
+$s0 = 
+if $s2 goto :null37
 Error()
+null37:
 $s1 = 
 if $s1 goto :null38
 Error()
-$s3 = 
+null38:
+$s0 = 
 PrintIntS(2220000)
 if $s1 goto :null39
 Error()
+null39:
 $s1 = 
 if $s1 goto :null40
 Error()
-$s2 = 
+null40:
+$s0 = 
 PrintIntS(33300000)
 if $s1 goto :null41
 Error()
+null41:
 $s1 = 
 if $s1 goto :null42
 Error()
+null42:
 $s0 = 
 PrintIntS(44440000)
 ret

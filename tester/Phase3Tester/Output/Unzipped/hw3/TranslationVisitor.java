@@ -18,16 +18,16 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         buffer = new ArrayList<>();
     }
 
-    public void appendBuffer(String str) {
+    public void setBuffer(int pos, String str) {
         StringBuilder strBuilder = new StringBuilder(str);
         for (int i = 0; i < indentLevel * 4; i++)
             strBuilder.insert(0, " ");
         str = strBuilder.toString();
 
         if (str.charAt(str.length() - 1) != '\n')
-            buffer.add(str + "\n");
+            buffer.set(pos, str + "\n");
         else
-            buffer.add(str);
+            buffer.set(pos, str);
     }
 
     public void printBuffer() {
@@ -40,26 +40,23 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
     public void insertLabels() {
         for (int i = 0; i < currFunction.labels.length; i++) {
             int pos = getRelativePos(currFunction.labels[i].sourcePos.line);
-            // TODO: I don't know if this is right
-            buffer.add(pos + 1, currFunction.labels[i].ident + ":\n");
+            setBuffer(pos,currFunction.labels[i].ident + ":\n");
         }
-    }
 
-    void increaseIndent() {
-        //indentLevel++;
-    }
-
-    void decreaseIndent() {
-        //indentLevel--;
+        // Set up function header
+        buffer.add(0, "func " + currFunction.ident + " [in 0, out 0, local 0]\n");
     }
 
     public void setData(VFunction currFunction, RegisterAllocation currAllocation) {
         this.currFunction = currFunction;
         this.currAllocation = currAllocation;
 
-        indentLevel = 0;
-        appendBuffer("func " + currFunction.ident + " [in 0, out 0, local 0]");
-        increaseIndent();
+        // Set up buffer
+        buffer = new ArrayList<>();
+        for (int i = 0; i <= currFunction.body.length + currFunction.labels.length; i++) {
+            buffer.add("");
+        }
+
     }
 
     public int getRelativePos(int sourcePos) {
@@ -84,7 +81,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
             line += a.source.toString();
         }
 
-        appendBuffer(line);
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VCall c) throws E {
@@ -101,7 +98,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         // TODO: Use allocation registers
         //c.
 
-        appendBuffer(line);
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VBuiltIn c) throws E {
@@ -135,7 +132,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
         line += ")";
 
-        appendBuffer(line);
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VMemWrite w) throws E {
@@ -155,23 +152,23 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
             line += "if " + destAlloc.getLoc() + " goto :" + b.target.ident;
         }
 
-        appendBuffer(line);
+        setBuffer(sourcePos, line);
     }
 
     public void visit(VGoto g) throws E {
         int sourcePos = getRelativePos(g.sourcePos.line);
 
 
-        appendBuffer("goto " + g.target.toString());
+        setBuffer(sourcePos, "goto " + g.target.toString());
     }
 
     public void visit(VReturn r) throws E {
         int sourcePos = getRelativePos(r.sourcePos.line);
 
-        appendBuffer("ret");
+        setBuffer(sourcePos, "ret");
 
         // Since this is the end of the function, insert
-        // CF labels.
+        // CF labels. This also set function header
         insertLabels();
     }
 }
