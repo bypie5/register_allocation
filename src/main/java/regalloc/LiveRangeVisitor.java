@@ -322,29 +322,6 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
 
         public void inspect() {
-            /*System.out.print("    in:    {");
-            for (String s : in) {
-                System.out.print(s);
-            }
-            System.out.println("}");
-
-            System.out.print("    out:   {");
-            for (String s : out) {
-                System.out.print(s);
-            }
-            System.out.println("}");
-
-            System.out.print("    use:   {");
-            for (String s : use) {
-                System.out.print(s);
-            }
-            System.out.println("}");
-
-            System.out.print("    def:   {");
-            for (String s : def) {
-                System.out.print(s);
-            }
-            System.out.println("}");*/
             System.out.print("    active:   {");
             for (String s : active) {
                 System.out.print(s);

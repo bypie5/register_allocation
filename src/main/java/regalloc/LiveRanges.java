@@ -30,4 +30,13 @@ public class LiveRanges {
     public List<LiveRange> getRanges() {
         return this.ranges;
     }
+
+    public LiveRange getAlloc(int line, String ident) {
+        for (LiveRange lr : ranges) {
+            if (lr.location == line && lr.ident == ident)
+                return lr;
+        }
+
+        return null;
+    }
 }

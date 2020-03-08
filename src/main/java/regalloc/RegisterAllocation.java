@@ -35,6 +35,10 @@ public class RegisterAllocation {
         stackLoc = 0;
     }
 
+    public LiveRange getAlloc(int line, String ident) {
+        return ranges.getAlloc(line, ident);
+    }
+
     public void print() {
         for (LiveRange lr : ranges.getRanges()) {
             lr.print();

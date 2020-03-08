@@ -22,7 +22,7 @@ public class LiveRange {
     }
 
     void print() {
-        System.out.println(ident + "(" + start + ", " + end + ")");
+        System.out.println(ident + "(" + start + ", " + end + ") loc: " + location);
         System.out.println("    reg: " + register + " loc: " + location);
         for (int i = 0; i < start; i++) {
             System.out.print(".");

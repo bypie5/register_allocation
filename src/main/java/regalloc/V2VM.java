@@ -37,10 +37,19 @@ public class V2VM {
                 allocations.add(currAlloc);
             }
 
-            for (RegisterAllocation alloc : allocations) {
-                alloc.print();
-            }
+            // Translate function to use registers instead of locals
+            TranslationVisitor<Exception> translationVisitor = new TranslationVisitor<>();
+            for (int i = 0; i < tree.functions.length; i++) {
+               RegisterAllocation currAllocation = allocations.get(i);
+               VFunction currFunc = tree.functions[i];
+               translationVisitor.setData(currFunc, currAllocation);
 
+               for (int j = 0; j < currFunc.body.length; j++) {
+                   tree.functions[i].body[j].accept(translationVisitor);
+               }
+
+               currAllocation.print();
+            }
         } catch (Exception e) {
             System.out.println(e.toString());
             e.printStackTrace(System.out);
