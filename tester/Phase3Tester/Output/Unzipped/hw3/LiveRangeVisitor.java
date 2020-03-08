@@ -45,7 +45,21 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         return null;
     }
 
+    public void insertLabels() {
+        for (int i = 0; i < currFunction.labels.length; i++) {
+            int pos = getRelativePos(currFunction.labels[i].sourcePos.line);
+            CFGNode currLabel = new CFGNode(pos);
+            currLabel.addSingleSucc(pos);
+            nodes.add(pos + 1, currLabel);
+        }
+    }
+
     public void cleanUpCFG() {
+
+        insertLabels();
+
+        nodes.sort((o1, o2) -> o1.index < o2.index ? -1 : 1);
+
         List<Integer> actualNodes = new ArrayList<>();
         for (CFGNode node : nodes) {
             actualNodes.add(node.index);
@@ -81,21 +95,21 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
                 currNode.outPrime = new TreeSet<>();
                 currNode.outPrime.addAll(currNode.out);
 
-                // diff
+                // out[n] - def[n]
                 Set<String> diff = new TreeSet<>(currNode.out);
                 diff.removeAll(currNode.def);
-                // union
+                // use[n] u (out[n] - def[n])
                 Set<String> newIn = new TreeSet<>(currNode.use);
                 newIn.addAll(diff);
                 currNode.in = new TreeSet<>();
                 currNode.in.addAll(newIn);
 
+                Set<String> newOut = new TreeSet<>(currNode.out);
                 for (int j = 0; j < currNode.succ.size(); j++) {
-                    Set<String> newOut = new TreeSet<>(currNode.out);
                     newOut.addAll(getNodeFromIndex(currNode.succ.get(j)).in);
-                    currNode.out = new TreeSet<>();
-                    currNode.out.addAll(newOut);
                 }
+                currNode.out = new TreeSet<>();
+                currNode.out.addAll(newOut);
             }
 
         } while(!converged());
@@ -103,7 +117,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
     boolean converged() {
         for (CFGNode node : nodes) {
-            if (!node.inPrime.equals(node.in) || !node.outPrime.equals(node.out))
+            if (!(node.inPrime.equals(node.in) && node.outPrime.equals(node.out)))
                 return false;
         }
         return true;

@@ -1,0 +1,343 @@
+func Main [in 0, out 0, local 0]
+$s0 = HeapAllocZ(4)
+if $s0 goto :null1
+Error()
+while3_top:
+null2:
+null22:
+while2_top:
+$s1 = 
+null1:
+null18:
+null6:
+while1_top:
+null23:
+null14:
+if6_else:
+PrintIntS($s1)
+ret
+null19:
+null24:
+func Element.Init [in 0, out 0, local 0]
+ss1_else:
+ret
+if11_else:
+ss1_end:
+null20:
+if11_end:
+func Element.GetAge [in 0, out 0, local 0]
+null25:
+if7_else:
+null15:
+ret
+null21:
+null7:
+null26:
+if7_end:
+if6_end:
+func Element.GetSalary [in 0, out 0, local 0]
+while3_end:
+null16:
+null27:
+ret
+func Element.GetMarried [in 0, out 0, local 0]
+if1_else:
+ret
+func Element.Equal [in 0, out 0, local 0]
+null17:
+null3:
+null8:
+$s2 = 1
+null28:
+if $s0 goto :null2
+while2_end:
+Error()
+$s3 = 
+if9_else:
+$s5 = 
+null29:
+$s3 = Sub(1 $s5)
+if $s3 goto :if1_else
+$s2 = 0
+null9:
+goto :if1_end
+null30:
+if $s0 goto :null3
+Error()
+if2_else:
+null10:
+$s3 = 
+$s5 = 
+$s3 = Sub(1 $s5)
+if $s3 goto :if2_else
+null4:
+null31:
+$s2 = 0
+if9_end:
+goto :if2_end
+if8_else:
+if $s3 goto :if3_else
+null32:
+if8_end:
+if $s1 goto :null4
+Error()
+$s0 = 
+$s1 = Sub(1 $s0)
+null33:
+if4_else:
+null11:
+if $s1 goto :if4_else
+if4_end:
+$s2 = 0
+if3_else:
+goto :if4_end
+null12:
+null34:
+$s0 = 0
+null5:
+goto :if3_end
+if $s0 goto :null5
+Error()
+null35:
+null13:
+$s1 = 
+if $s1 goto :if5_else
+$s2 = 0
+if5_else:
+goto :if5_end
+null36:
+if10_else:
+if5_end:
+if10_end:
+if3_end:
+while1_end:
+if2_end:
+if1_end:
+$s0 = 0
+ret
+func Element.Compare [in 0, out 0, local 0]
+null37:
+$s0 = 0
+$s0 = Add($s1 1)
+$s3 = LtS($s2 $s1)
+if $s3 goto :if6_else
+$s0 = 0
+null38:
+goto :if6_end
+$s2 = LtS($s1 $s0)
+$s0 = Sub(1 $s2)
+if $s0 goto :if7_else
+$s0 = 0
+null39:
+goto :if7_end
+$s0 = 1
+ret
+func List.Init [in 0, out 0, local 0]
+ret
+func List.InitNew [in 0, out 0, local 0]
+null40:
+ret
+func List.Insert [in 0, out 0, local 0]
+$s1 = $s0
+$s0 = HeapAllocZ(16)
+$s3 = $s0
+null41:
+if $s3 goto :null6
+Error()
+$s0 = 
+ret
+func List.SetNext [in 0, out 0, local 0]
+ret
+null42:
+func List.Delete [in 0, out 0, local 0]
+$s1 = $s0
+$s3 = 0
+$s4 = Sub(0 1)
+$s5 = $s0
+null43:
+$s6 = $s0
+$s0 = Sub(1 $s7)
+if $s0 goto :ss1_else
+$s0 = Sub(1 $s3)
+goto :ss1_end
+$s0 = 0
+if $s0 goto :while1_end
+if $s2 goto :null7
+Error()
+$s0 = 
+if $s0 goto :if8_else
+$s3 = 1
+$s0 = LtS($s4 0)
+if $s0 goto :if9_else
+if $s5 goto :null8
+Error()
+$s0 = 
+goto :if9_end
+$s1 = Sub(0 555)
+PrintIntS($s1)
+if $s6 goto :null9
+Error()
+if $s5 goto :null10
+Error()
+$s1 = 
+$t1 = 
+$s1 = Sub(0 555)
+PrintIntS($s1)
+goto :if8_end
+$s1 = 0
+$s1 = Sub(1 $s3)
+if $s1 goto :if10_else
+$s6 = $s5
+if $s5 goto :null11
+Error()
+$s5 = 
+if $s5 goto :null12
+Error()
+$s1 = 
+if $s5 goto :null13
+Error()
+$s4 = 
+$s7 = 1
+goto :if10_end
+$t0 = 0
+goto :while1_top
+ret
+func List.Search [in 0, out 0, local 0]
+$s2 = 0
+$s3 = $s0
+$s0 = Sub(1 $s4)
+if $s0 goto :while2_end
+if $s1 goto :null14
+Error()
+$s0 = 
+if $s0 goto :if11_else
+$s2 = 1
+goto :if11_end
+$s0 = 0
+if $s3 goto :null15
+Error()
+$s3 = 
+if $s3 goto :null16
+Error()
+$s0 = 
+if $s3 goto :null17
+Error()
+$s4 = 
+goto :while2_top
+ret
+func List.GetEnd [in 0, out 0, local 0]
+ret
+func List.GetElem [in 0, out 0, local 0]
+ret
+func List.GetNext [in 0, out 0, local 0]
+ret
+func List.Print [in 0, out 0, local 0]
+$s1 = $s0
+$s0 = Sub(1 $s2)
+if $s0 goto :while3_end
+if $s3 goto :null18
+Error()
+$s0 = 
+PrintIntS($s0)
+if $s1 goto :null19
+Error()
+$s1 = 
+if $s1 goto :null20
+Error()
+$s0 = 
+if $s1 goto :null21
+Error()
+$s2 = 
+goto :while3_top
+ret
+func LL.Start [in 0, out 0, local 0]
+$s0 = HeapAllocZ(16)
+$s1 = $s0
+if $s1 goto :null22
+Error()
+$s0 = 
+$s0 = $s1
+if $s0 goto :null23
+Error()
+$s1 = 
+if $s0 goto :null24
+Error()
+$s1 = 
+$s1 = HeapAllocZ(16)
+$s2 = $s1
+if $s2 goto :null25
+Error()
+$s1 = 
+if $s0 goto :null26
+Error()
+$s0 = 
+if $s0 goto :null27
+Error()
+$s1 = 
+PrintIntS(10000000)
+$s1 = HeapAllocZ(16)
+$s2 = $s1
+if $s2 goto :null28
+Error()
+$s1 = 
+$s1 = $s2
+if $s0 goto :null29
+Error()
+$s0 = 
+if $s0 goto :null30
+Error()
+$s2 = 
+PrintIntS(10000000)
+$s2 = HeapAllocZ(16)
+$s3 = $s2
+if $s3 goto :null31
+Error()
+$s2 = 
+if $s0 goto :null32
+Error()
+$s0 = 
+if $s0 goto :null33
+Error()
+$s2 = 
+$s2 = HeapAllocZ(16)
+$s3 = $s2
+if $s3 goto :null34
+Error()
+$s2 = 
+if $s0 goto :null35
+Error()
+$s2 = 
+PrintIntS($s2)
+if $s0 goto :null36
+Error()
+$s2 = 
+PrintIntS($s2)
+PrintIntS(10000000)
+$s2 = HeapAllocZ(16)
+$s3 = $s2
+if $s3 goto :null37
+Error()
+$s2 = 
+if $s0 goto :null38
+Error()
+$s0 = 
+if $s0 goto :null39
+Error()
+$s2 = 
+PrintIntS(2220000)
+if $s0 goto :null40
+Error()
+$s0 = 
+if $s0 goto :null41
+Error()
+$s1 = 
+PrintIntS(33300000)
+if $s0 goto :null42
+Error()
+$s0 = 
+if $s0 goto :null43
+Error()
+$s1 = 
+PrintIntS(44440000)
+ret
+

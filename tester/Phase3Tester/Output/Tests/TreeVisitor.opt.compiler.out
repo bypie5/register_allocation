@@ -1,0 +1,572 @@
+func Main [in 0, out 0, local 0]
+while4_top:
+while3_top:
+null77:
+null71:
+null65:
+null70:
+$s0 = 
+null78:
+while5_top:
+null72:
+null53:
+PrintIntS($s0)
+null66:
+null79:
+null46:
+null60:
+if23_else:
+null73:
+if23_end:
+null37:
+if19_else:
+null80:
+if21_else:
+ret
+if21_end:
+if19_end:
+null81:
+null54:
+null74:
+null20:
+null67:
+null82:
+null1:
+null61:
+null75:
+null55:
+null47:
+null83:
+null68:
+while2_top:
+if24_else:
+if12_else:
+if24_end:
+null76:
+null62:
+null56:
+if22_else:
+null69:
+if22_end:
+null48:
+if16_else:
+func TV.Start [in 0, out 0, local 0]
+if20_else:
+if16_end:
+if20_end:
+$s0 = HeapAllocZ(24)
+if15_else:
+null38:
+null49:
+null57:
+while1_top:
+null63:
+null30:
+while4_end:
+if1_else:
+if $s0 goto :null1
+null64:
+null58:
+if13_else:
+if18_else:
+null50:
+if18_end:
+null2:
+if17_else:
+null21:
+null59:
+if17_end:
+if15_end:
+while3_end:
+while5_end:
+null39:
+Error()
+null51:
+null31:
+$s1 = 
+null40:
+if2_else:
+null52:
+if $s0 goto :null2
+if2_end:
+null41:
+null22:
+null32:
+if1_end:
+Error()
+if7_else:
+null42:
+null3:
+if7_end:
+$s1 = 
+if6_else:
+null43:
+null23:
+PrintIntS(100000000)
+if14_else:
+if $s0 goto :null3
+if4_else:
+null44:
+null33:
+null4:
+Error()
+$s1 = 
+null45:
+null24:
+if14_end:
+if13_end:
+if12_end:
+if $s0 goto :null4
+null34:
+null5:
+Error()
+if9_else:
+null25:
+if9_end:
+$s1 = 
+if8_else:
+if4_end:
+if $s0 goto :null5
+if3_else:
+null35:
+null6:
+Error()
+null26:
+$s1 = 
+null36:
+if $s0 goto :null6
+null7:
+Error()
+null27:
+if11_else:
+$s1 = 
+if11_end:
+if $s0 goto :null7
+if10_else:
+if5_else:
+if10_end:
+null8:
+Error()
+if8_end:
+if6_end:
+$s1 = 
+null28:
+while2_end:
+if $s0 goto :null8
+null9:
+Error()
+null29:
+$s1 = 
+if5_end:
+if3_end:
+if $s0 goto :null9
+while1_end:
+null10:
+Error()
+$s1 = 
+if $s0 goto :null10
+Error()
+$s1 = 
+PrintIntS(100000000)
+$s1 = HeapAllocZ(12)
+$s2 = $s1
+null11:
+PrintIntS(50000000)
+if $s0 goto :null11
+Error()
+$s1 = 
+null12:
+PrintIntS(100000000)
+if $s0 goto :null12
+Error()
+$s1 = 
+null13:
+PrintIntS($s1)
+if $s0 goto :null13
+Error()
+$s1 = 
+null14:
+PrintIntS($s1)
+if $s0 goto :null14
+Error()
+$s1 = 
+null15:
+PrintIntS($s1)
+if $s0 goto :null15
+Error()
+$s1 = 
+null16:
+PrintIntS($s1)
+if $s0 goto :null16
+Error()
+$s1 = 
+null17:
+PrintIntS($s1)
+if $s0 goto :null17
+Error()
+null18:
+$s1 = 
+if $s0 goto :null18
+Error()
+null19:
+$s1 = 
+if $s0 goto :null19
+Error()
+$s1 = 
+PrintIntS($s1)
+ret
+func Tree.Init [in 0, out 0, local 0]
+ret
+func Tree.SetRight [in 0, out 0, local 0]
+ret
+func Tree.SetLeft [in 0, out 0, local 0]
+ret
+func Tree.GetRight [in 0, out 0, local 0]
+ret
+func Tree.GetLeft [in 0, out 0, local 0]
+ret
+func Tree.GetKey [in 0, out 0, local 0]
+ret
+func Tree.SetKey [in 0, out 0, local 0]
+ret
+func Tree.GetHas_Right [in 0, out 0, local 0]
+ret
+func Tree.GetHas_Left [in 0, out 0, local 0]
+ret
+func Tree.SetHas_Left [in 0, out 0, local 0]
+ret
+func Tree.SetHas_Right [in 0, out 0, local 0]
+ret
+func Tree.Compare [in 0, out 0, local 0]
+$s0 = 0
+$s0 = Add($s1 1)
+$s3 = LtS($s2 $s1)
+if $s3 goto :if1_else
+$s0 = 0
+goto :if1_end
+$s2 = LtS($s1 $s0)
+if $s2 goto :if2_else
+$s0 = 0
+goto :if2_end
+$s0 = 1
+ret
+func Tree.Insert [in 0, out 0, local 0]
+$s1 = HeapAllocZ(24)
+if $s1 goto :null20
+Error()
+$s3 = 
+$s3 = $s0
+$s0 = 1
+if $s0 goto :while1_end
+if $s3 goto :null21
+Error()
+$s4 = 
+$s5 = LtS($s2 $s4)
+if $s5 goto :if3_else
+if $s3 goto :null22
+Error()
+$s4 = 
+if $s4 goto :if4_else
+if $s3 goto :null23
+Error()
+$s3 = 
+goto :if4_end
+$s0 = 0
+if $s3 goto :null24
+Error()
+$s4 = 
+if $s3 goto :null25
+Error()
+$s4 = 
+goto :if3_end
+if $s3 goto :null26
+Error()
+$s4 = 
+if $s4 goto :if5_else
+if $s3 goto :null27
+Error()
+$s3 = 
+goto :if5_end
+$s0 = 0
+if $s3 goto :null28
+Error()
+$s4 = 
+if $s3 goto :null29
+Error()
+$s4 = 
+goto :while1_top
+ret
+func Tree.Delete [in 0, out 0, local 0]
+$s0 = $s2
+$s3 = $s2
+$s4 = 1
+$s5 = 0
+$s6 = 1
+if $s4 goto :while2_end
+if $s0 goto :null30
+Error()
+$s7 = 
+$t0 = LtS($s1 $s7)
+if $t0 goto :if6_else
+if $s0 goto :null31
+Error()
+$s6 = 
+if $s6 goto :if7_else
+$s3 = $s0
+if $s0 goto :null32
+Error()
+$s0 = 
+goto :if7_end
+$s4 = 0
+goto :if6_end
+$t0 = LtS($s6 $s1)
+if $t0 goto :if8_else
+if $s0 goto :null33
+Error()
+$s6 = 
+if $s6 goto :if9_else
+$s3 = $s0
+if $s0 goto :null34
+Error()
+$s0 = 
+goto :if9_end
+$s4 = 0
+goto :if8_end
+if $s4 goto :if10_else
+if $s0 goto :null35
+Error()
+$s4 = 
+if $s4 goto :if11_else
+if $s0 goto :null36
+Error()
+$s4 = 
+if $s4 goto :if11_else
+$s4 = 1
+goto :if11_end
+$s4 = 
+goto :if10_end
+$s4 = 
+$s4 = 1
+$s5 = 0
+$s6 = 0
+goto :while2_top
+ret
+func Tree.Remove [in 0, out 0, local 0]
+if $s0 goto :null37
+Error()
+$s3 = 
+if $s3 goto :if12_else
+$s3 = 
+goto :if12_end
+if $s1 goto :null38
+Error()
+$s3 = 
+if $s3 goto :if13_else
+$s2 = 
+goto :if13_end
+if $s1 goto :null39
+Error()
+$s1 = 
+if $s2 goto :null40
+Error()
+$s3 = 
+if $s3 goto :null41
+Error()
+$s4 = 
+$s3 = 
+if $s3 goto :if14_else
+if $s2 goto :null42
+Error()
+$s0 = 
+if $s2 goto :null43
+Error()
+$s0 = 
+goto :if14_end
+if $s1 goto :null44
+Error()
+$s0 = 
+if $s1 goto :null45
+Error()
+$s0 = 
+ret
+func Tree.RemoveRight [in 0, out 0, local 0]
+if $s1 goto :null46
+Error()
+$s3 = 
+if $s3 goto :while3_end
+if $s1 goto :null47
+Error()
+if $s1 goto :null48
+Error()
+$s0 = 
+if $s0 goto :null49
+Error()
+$s3 = 
+$s0 = 
+$s0 = $s1
+if $s1 goto :null50
+Error()
+$s1 = 
+goto :while3_top
+if $s0 goto :null51
+Error()
+$s2 = 
+if $s0 goto :null52
+Error()
+$s1 = 
+ret
+func Tree.RemoveLeft [in 0, out 0, local 0]
+if $s1 goto :null53
+Error()
+$s3 = 
+if $s3 goto :while4_end
+if $s1 goto :null54
+Error()
+if $s1 goto :null55
+Error()
+$s0 = 
+if $s0 goto :null56
+Error()
+$s3 = 
+$s0 = 
+$s0 = $s1
+if $s1 goto :null57
+Error()
+$s1 = 
+goto :while4_top
+if $s0 goto :null58
+Error()
+$s2 = 
+if $s0 goto :null59
+Error()
+$s1 = 
+ret
+func Tree.Search [in 0, out 0, local 0]
+$s1 = $s0
+$s0 = 1
+$s3 = 0
+if $s0 goto :while5_end
+if $s1 goto :null60
+Error()
+$s4 = 
+$s5 = LtS($s2 $s4)
+if $s5 goto :if15_else
+if $s1 goto :null61
+Error()
+$s4 = 
+if $s4 goto :if16_else
+if $s1 goto :null62
+Error()
+$s1 = 
+goto :if16_end
+$s0 = 0
+goto :if15_end
+$s5 = LtS($s4 $s2)
+if $s5 goto :if17_else
+if $s1 goto :null63
+Error()
+$s4 = 
+if $s4 goto :if18_else
+if $s1 goto :null64
+Error()
+$s1 = 
+goto :if18_end
+$s0 = 0
+goto :if17_end
+$s0 = 1
+$s3 = 0
+goto :while5_top
+ret
+func Tree.Print [in 0, out 0, local 0]
+$s0 = $s1
+$s2 = 
+ret
+func Tree.RecPrint [in 0, out 0, local 0]
+if $s0 goto :null65
+Error()
+$s2 = 
+if $s2 goto :if19_else
+if $s0 goto :null66
+Error()
+$s2 = 
+$s3 = 
+goto :if19_end
+$s2 = 1
+if $s0 goto :null67
+Error()
+$s2 = 
+PrintIntS($s2)
+if $s0 goto :null68
+Error()
+$s2 = 
+if $s2 goto :if20_else
+if $s0 goto :null69
+Error()
+$s2 = 
+$s0 = 
+goto :if20_end
+$s0 = 1
+ret
+func Tree.accept [in 0, out 0, local 0]
+PrintIntS(333)
+if $s1 goto :null70
+Error()
+$s2 = 
+ret
+func Visitor.visit [in 0, out 0, local 0]
+if $s0 goto :null71
+Error()
+$s2 = 
+if $s2 goto :if21_else
+if $s0 goto :null72
+Error()
+$s2 = 
+if $s2 goto :null73
+Error()
+$s3 = 
+goto :if21_end
+$s2 = 0
+if $s0 goto :null74
+Error()
+$s2 = 
+if $s2 goto :if22_else
+if $s0 goto :null75
+Error()
+$s2 = 
+if $s0 goto :null76
+Error()
+$s2 = 
+goto :if22_end
+$s0 = 0
+ret
+func MyVisitor.visit [in 0, out 0, local 0]
+if $s0 goto :null77
+Error()
+$s2 = 
+if $s2 goto :if23_else
+if $s0 goto :null78
+Error()
+$s2 = 
+if $s2 goto :null79
+Error()
+$s3 = 
+goto :if23_end
+$s2 = 0
+if $s0 goto :null80
+Error()
+$s2 = 
+PrintIntS($s2)
+if $s0 goto :null81
+Error()
+$s2 = 
+if $s2 goto :if24_else
+if $s0 goto :null82
+Error()
+$s2 = 
+if $s0 goto :null83
+Error()
+$s2 = 
+goto :if24_end
+$s0 = 0
+ret
+
