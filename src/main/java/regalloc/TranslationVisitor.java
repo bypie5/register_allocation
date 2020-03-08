@@ -57,6 +57,8 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         this.currFunction = currFunction;
         this.currAllocation = currAllocation;
 
+        buffer = new ArrayList<>();
+
         indentLevel = 0;
         appendBuffer("func " + currFunction.ident + " [in 0, out 0, local 0]");
         increaseIndent();
