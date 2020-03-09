@@ -135,16 +135,10 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
                 }
             }
 
-            if (node.index == 194) {
-                System.out.print("");
-            }
-
             // Add a terminated range to finalRanges
             for (int i = 0; i < incompleteRanges.size(); i++) {
-               // if (!node.active.contains(incompleteRanges.get(i).ident)) {
-                    finalRanges.add(incompleteRanges.get(i));
-                    incompleteRanges.remove(i);
-                //}
+                finalRanges.add(incompleteRanges.get(i));
+                incompleteRanges.remove(i);
             }
         }
 
