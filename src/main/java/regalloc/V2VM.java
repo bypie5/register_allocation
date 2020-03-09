@@ -27,10 +27,6 @@ public class V2VM {
                 }
 
                 ranges.add(rangeVisitor.getCurrRanges());
-                //if (tree.functions[i].ident.equals("QS.Sort")) {
-                 //   rangeVisitor.inspect();
-                   // rangeVisitor.printCFG();
-                //}
             }
 
             // For each function use LSRA to allocate registers
@@ -39,8 +35,6 @@ public class V2VM {
                 RegisterAllocation currAlloc = new RegisterAllocation(tree.functions[i], ranges.get(i));
                 currAlloc.LinearScanRegisterAllocation();
                 allocations.add(currAlloc);
-                //if (tree.functions[i].ident.equals("QS.Sort"))
-                //currAlloc.print();
             }
 
             // Print out the data section
