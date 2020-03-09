@@ -1,5 +1,5 @@
 --- SelfTestCases/QuickSort.out	2020-03-05 22:31:29.000000000 -0800
-+++ ./Output/Tests/QuickSort.out	2020-03-09 14:03:01.000000000 -0700
++++ ./Output/Tests/QuickSort.out	2020-03-09 14:31:10.000000000 -0700
 @@ -1,22 +1,5 @@
 -20
 -7
@@ -27,4 +27,4 @@
 +require function address, found integer10
 +  Main() line 20
 +  QS.Start() line 39
-+  QS.Init() line 341
++  QS.Init() line 344

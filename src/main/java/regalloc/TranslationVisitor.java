@@ -14,6 +14,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
     List<String> buffer;
     int indentLevel;
     List<String> usedSXRegs;
+    int outCount;
 
     public TranslationVisitor() {
         buffer = new ArrayList<>();
@@ -49,9 +50,10 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
 
         int sxCount = 0;
+        int inCount = currFunction.params.length - 4 > 0 ? currFunction.params.length - 4 : 0;
         // Save all $sx registers
         sxCount = usedSXRegs.size();
-        funcHeader = new StringBuilder("func " + currFunction.ident + " [in 0, out 0, local " + sxCount + "]\n");
+        funcHeader = new StringBuilder("func " + currFunction.ident + " [in " + inCount + ", out " + outCount + ", local " + sxCount + "]\n");
         // Save $sx registers
         int stackLoc = 0;
         for (String reg : usedSXRegs) {
@@ -60,10 +62,17 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         }
 
         // Unload argument registers onto local variables
+        int argRegsUsed = 0;
         for (int i = 0; i < currFunction.params.length; i++) {
             LiveRange currArg = currAllocation.getAlloc(-1, currFunction.params[i].ident);
-            if (currArg != null)
-                funcHeader.append(currArg.getLoc()).append(" = ").append("$a").append(i).append("\n");
+            if (argRegsUsed < inCount + 1 || inCount == 0) {
+                if (currArg != null) {
+                    funcHeader.append(currArg.getLoc()).append(" = ").append("$a").append(i).append("\n");
+                }
+                argRegsUsed++;
+            } else {
+                funcHeader.append(currArg.getLoc()).append(" = ").append("in[").append(i-argRegsUsed).append("]\n");
+            }
         }
 
         buffer.add(0, funcHeader.toString());
@@ -80,6 +89,8 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
                     usedSXRegs.add(lr.getLoc());
             }
         }
+
+        outCount = 0;
 
 
         // Set up buffer
@@ -122,15 +133,30 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
         // Set up arguments
         // TODO: Use actual argument registers
+        int argRegUsed = 0;
         for (int i = 0; i < c.args.length; i++) {
-            if (c.args[i] instanceof VVarRef) {
-                LiveRange currArgAlloc = currAllocation.getAlloc(sourcePos, c.args[i].toString());
-                if (currArgAlloc != null)
-                    line += "$a" + i + " = " + currArgAlloc.getLoc() + "\n";
-            } else if (c.args[i] instanceof VOperand.Static) {
-                line += "$a" + i + " = " + c.args[i].toString() + "\n";
-            } else if (c.args[i] instanceof VLitStr) {
-                line += "\""+ ((VLitStr)c.args[i]).value + "\"";
+            if (argRegUsed < 4) {
+                if (c.args[i] instanceof VVarRef) {
+                    LiveRange currArgAlloc = currAllocation.getAlloc(sourcePos, c.args[i].toString());
+                    if (currArgAlloc != null)
+                        line += "$a" + i + " = " + currArgAlloc.getLoc() + "\n";
+                } else if (c.args[i] instanceof VOperand.Static) {
+                    line += "$a" + i + " = " + c.args[i].toString() + "\n";
+                } else if (c.args[i] instanceof VLitStr) {
+                    line += "\"" + ((VLitStr) c.args[i]).value + "\"";
+                }
+                argRegUsed++;
+            } else {
+                if (c.args[i] instanceof VVarRef) {
+                    LiveRange currArgAlloc = currAllocation.getAlloc(sourcePos, c.args[i].toString());
+                    if (currArgAlloc != null)
+                        line += "out[" + outCount + "] = " + currArgAlloc.getLoc() + "\n";
+                } else if (c.args[i] instanceof VOperand.Static) {
+                    line += "out[" + outCount + "] = " + c.args[i].toString() + "\n";
+                } else if (c.args[i] instanceof VLitStr) {
+                    line += "\"" + ((VLitStr) c.args[i]).value + "\"";
+                }
+                outCount++;
             }
         }
 
@@ -254,9 +280,13 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         StringBuilder retString = new StringBuilder();
 
         if (r.value != null) {
-            LiveRange retAlloc = currAllocation.getAlloc(sourcePos, r.value.toString());
-            if (retAlloc != null)
-                retString.append("$v0 = ").append(retAlloc.getLoc()).append("\n");
+            if (r.value instanceof VVarRef) {
+                LiveRange retAlloc = currAllocation.getAlloc(sourcePos, r.value.toString());
+                if (retAlloc != null)
+                    retString.append("$v0 = ").append(retAlloc.getLoc()).append("\n");
+            } else if (r.value instanceof VOperand.Static) {
+                retString.append("$v0 = ").append(r.value.toString()).append("\n");
+            }
         }
 
 

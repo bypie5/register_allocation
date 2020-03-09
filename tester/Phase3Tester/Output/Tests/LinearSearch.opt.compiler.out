@@ -55,6 +55,7 @@ $a1 = 50
 call $s3
 $s0 = $v0
 PrintIntS($s0)
+$v0 = 55
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -90,6 +91,7 @@ PrintIntS($s2)
 $s1 = Add($s1 1)
 goto :while1_top
 while1_end:
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -197,6 +199,7 @@ $s0 = Add($s0 1)
 $s3 = Sub($s3 1)
 goto :while3_top
 while3_end:
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]

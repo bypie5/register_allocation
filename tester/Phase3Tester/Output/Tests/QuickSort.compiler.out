@@ -58,6 +58,7 @@ $s0 = [$s0+8]
 $a0 = $s1
 call $s0
 $s3 = $v0
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -286,6 +287,7 @@ goto :if1_end
 if1_else:
 $s6 = 0
 if1_end:
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -323,6 +325,7 @@ PrintIntS($s2)
 $s1 = Add($s1 1)
 goto :while4_top
 while4_end:
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -461,6 +464,7 @@ bounds23:
 $s1 = MulS(9 4)
 $s1 = Add($s1 $s0)
 [$s1+4] = 5
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]

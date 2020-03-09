@@ -1,15 +1,15 @@
 const empty_MT4
 
-func Main [in 0, out 0, local 2]
+func Main [in 0, out 3, local 2]
 local[0] = $s0
 local[1] = $s1
 $a0 = :empty_MT4
 $a1 = 1
 $a2 = 2
 $a3 = 3
-$a4 = 4
-$a5 = 5
-$a6 = 6
+out[0] = 4
+out[1] = 5
+out[2] = 6
 call $s0
 $s1 = $v0
 PrintIntS($s1)
@@ -17,7 +17,7 @@ $s0 = local[0]
 $s1 = local[1]
 ret
 
-func MT4.Start [in 0, out 0, local 8]
+func MT4.Start [in 3, out 3, local 8]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -30,9 +30,9 @@ $s7 = $a0
 $s4 = $a1
 $s1 = $a2
 $s5 = $a3
-$s2 = $a4
-$s6 = $a5
-$s3 = $a6
+$s2 = in[0]
+$s6 = in[1]
+$s3 = in[2]
 PrintIntS($s4)
 PrintIntS($s1)
 PrintIntS($s5)
@@ -43,9 +43,9 @@ $a0 = $s7
 $a1 = $s3
 $a2 = $s6
 $a3 = $s2
-$a4 = $s5
-$a5 = $s1
-$a6 = $s4
+out[0] = $s5
+out[1] = $s1
+out[2] = $s4
 call $s0
 $t0 = $v0
 $v0 = $t0
@@ -59,7 +59,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func MT4.Change [in 0, out 0, local 7]
+func MT4.Change [in 3, out 0, local 7]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -71,15 +71,16 @@ $s0 = $a0
 $s1 = $a1
 $s2 = $a2
 $s3 = $a3
-$s4 = $a4
-$s5 = $a5
-$s6 = $a6
+$s4 = in[0]
+$s5 = in[1]
+$s6 = in[2]
 PrintIntS($s1)
 PrintIntS($s2)
 PrintIntS($s3)
 PrintIntS($s4)
 PrintIntS($s5)
 PrintIntS($s6)
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
