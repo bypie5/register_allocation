@@ -53,6 +53,7 @@ $s3 = $a3
 [$s2+4] = $s0
 [$s2+8] = $s1
 [$s2+12] = $s3
+$v0 = 1
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -225,6 +226,7 @@ func List.Init [in 0, out 0, local 1]
 local[0] = $s0
 $s0 = $a0
 [$s0+12] = 1
+$v0 = 1
 $s0 = local[0]
 ret
 
@@ -240,6 +242,7 @@ $s0 = $a3
 [$s2+12] = $s0
 [$s2+4] = $s1
 [$s2+8] = $s3
+$v0 = 1
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -283,6 +286,7 @@ local[1] = $s1
 $s0 = $a0
 $s1 = $a1
 [$s0+8] = $s1
+$v0 = 1
 $s0 = local[0]
 $s1 = local[1]
 ret
@@ -554,6 +558,7 @@ call $s0
 $s3 = $v0
 goto :while3_top
 while3_end:
+$v0 = 1
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -797,6 +802,7 @@ $a0 = $s0
 call $s1
 $s2 = $v0
 PrintIntS(44440000)
+$v0 = 0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
