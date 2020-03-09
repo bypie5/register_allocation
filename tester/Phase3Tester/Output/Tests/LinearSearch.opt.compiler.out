@@ -128,15 +128,15 @@ bounds2:
 $s6 = MulS($s2 4)
 $s6 = Add($s6 $s5)
 $s5 = [$s6+4]
-$s6 = Add($s0 1)
-$s7 = LtS($s5 $s0)
-if0 $s7 goto :if1_else
-$s7 = 0
+$s7 = Add($s0 1)
+$s6 = LtS($s5 $s0)
+if0 $s6 goto :if1_else
+$s6 = 0
 goto :if1_end
 if1_else:
-$t0 = LtS($s5 $s6)
+$t0 = LtS($s5 $s7)
 if $t0 goto :if2_else
-$s7 = 0
+$s6 = 0
 goto :if2_end
 if2_else:
 $s3 = 1

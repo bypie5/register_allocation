@@ -159,7 +159,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
                 LiveRange c = finalRanges.get(j);
                 if (r != c && r.ident.equals(c.ident)) {
                     r.start = Math.min(r.start, c.start);
-                    r.end = Math.max(r.end, c.end);
+                    r.end = Math.max(r.end, c.end) + 1;
                     duplicates.add(c);
                 }
             }

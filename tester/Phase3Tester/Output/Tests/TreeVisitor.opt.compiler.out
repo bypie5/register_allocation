@@ -1558,7 +1558,7 @@ $t0 = local[8]
 $s1 = $v0
 goto :if20_end
 if20_else:
- = 1
+$s1 = 1
 if20_end:
 $v0 = 1
 $s0 = local[0]
@@ -1656,7 +1656,7 @@ call :Tree.accept
 $s1 = $v0
 goto :if22_end
 if22_else:
- = 0
+$s1 = 0
 if22_end:
 $v0 = 0
 $s0 = local[0]
@@ -1751,7 +1751,7 @@ $t0 = local[8]
 $s1 = $v0
 goto :if24_end
 if24_else:
- = 0
+$s1 = 0
 if24_end:
 $v0 = 0
 $s0 = local[0]

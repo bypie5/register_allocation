@@ -660,34 +660,34 @@ ss1_else:
 $s7 = 0
 ss1_end:
 if0 $s7 goto :if11_else
-$s7 = 1
+$t0 = 1
 goto :if11_end
 if11_else:
-$t0 = [$s0+0]
-$t0 = [$t0+56]
+$s7 = [$s0+0]
+$s7 = [$s7+56]
 local[8] = $t0
 local[9] = $t1
 $a0 = $s0
 $a1 = $s3
 $a2 = $s2
-call $t0
+call $s7
 $t0 = local[8]
 $t1 = local[9]
-$s7 = $v0
+$t0 = $v0
 if11_end:
 goto :if10_end
 if10_else:
-$t0 = [$s0+0]
-$t0 = [$t0+56]
+$s7 = [$s0+0]
+$s7 = [$s7+56]
 local[8] = $t0
 local[9] = $t1
 $a0 = $s0
 $a1 = $s3
 $a2 = $s2
-call $t0
+call $s7
 $t0 = local[8]
 $t1 = local[9]
-$s7 = $v0
+$t0 = $v0
 if10_end:
 $s5 = 1
 $s4 = 0
@@ -1190,7 +1190,7 @@ call $s2
 $s3 = $v0
 goto :if20_end
 if20_else:
- = 1
+$s3 = 1
 if20_end:
 $v0 = 1
 $s0 = local[0]
@@ -1295,7 +1295,7 @@ call $s2
 $s4 = $v0
 goto :if22_end
 if22_else:
- = 0
+$s4 = 0
 if22_end:
 $v0 = 0
 $s0 = local[0]
@@ -1384,7 +1384,7 @@ call $s2
 $s4 = $v0
 goto :if24_end
 if24_else:
- = 0
+$s4 = 0
 if24_end:
 $v0 = 0
 $s0 = local[0]

@@ -1543,7 +1543,7 @@ $t0 = local[8]
 $s1 = $v0
 goto :if20_end
 if20_else:
- = 1
+$s1 = 1
 if20_end:
 $v0 = 1
 $s0 = local[0]

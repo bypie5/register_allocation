@@ -37,6 +37,7 @@ public class V2VM {
                 RegisterAllocation currAlloc = new RegisterAllocation(tree.functions[i], ranges.get(i));
                 currAlloc.LinearScanRegisterAllocation();
                 allocations.add(currAlloc);
+                //if (tree.functions[i].ident.equals("QS.Sort"))
                 //currAlloc.print();
             }
 
