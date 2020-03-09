@@ -10,7 +10,7 @@ $a3 = 3
 out[0] = 4
 out[1] = 5
 out[2] = 6
-call $s0
+call :MT4.Start
 $s1 = $v0
 PrintIntS($s1)
 $s0 = local[0]
@@ -46,7 +46,7 @@ $a3 = $s2
 out[0] = $s5
 out[1] = $s1
 out[2] = $s4
-call $s0
+call :MT4.Change
 $t0 = $v0
 $v0 = $t0
 $s0 = local[0]

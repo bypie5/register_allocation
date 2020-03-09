@@ -1,7 +1,0 @@
---- SelfTestCases/Factorial.opt.out	2020-03-05 22:31:29.000000000 -0800
-+++ ./Output/Tests/Factorial.opt.out	2020-03-09 14:31:06.000000000 -0700
-@@ -1 +1,3 @@
--3628800
-+--- Error (ProgramFault) ---
-+require function address, found undefined value
-+  Main() line 8

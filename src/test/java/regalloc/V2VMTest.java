@@ -108,6 +108,20 @@ public class V2VMTest {
     }
 
     @Test
+    public void factorialOptTest () {
+        try {
+            File inputFile = new File("./tester/Phase3Tester/SelfTestCases/Factorial.opt.vapor");
+            System.setIn(new FileInputStream(inputFile));
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+            fail();
+        }
+
+        V2VM.allocRegs();
+        assertEquals("ALWAYS FAIL", outContent.toString());
+    }
+
+    @Test
     public void moreThan4Test() {
         try {
             File inputFile = new File("./tester/Phase3Tester/SelfTestCases/MoreThan4.vapor");

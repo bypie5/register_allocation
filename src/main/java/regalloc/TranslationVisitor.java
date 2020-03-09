@@ -132,7 +132,6 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         String line = "";
 
         // Set up arguments
-        // TODO: Use actual argument registers
         int argRegUsed = 0;
         for (int i = 0; i < c.args.length; i++) {
             if (argRegUsed < 4) {
@@ -160,8 +159,12 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
             }
         }
 
-        LiveRange addrAlloc = currAllocation.getAlloc(sourcePos, c.addr.toString());
-        line += "call " + addrAlloc.getLoc() + "\n";
+        if (c.addr instanceof VAddr.Label) {
+            line += "call :" + ((VAddr.Label<VFunction>) c.addr).label.ident + "\n";
+        } else {
+            LiveRange addrAlloc = currAllocation.getAlloc(sourcePos, c.addr.toString());
+            line += "call " + addrAlloc.getLoc() + "\n";
+        }
 
         // Get the return value
         if (destAlloc != null) {

@@ -1,5 +1,22 @@
---- Error (ProgramFault) ---
-require function address, found integer10
-  Main() line 20
-  BBS.Start() line 39
-  BBS.Init() line 225
+20
+7
+12
+18
+2
+11
+6
+9
+19
+5
+99999
+2
+5
+6
+7
+9
+11
+12
+18
+19
+20
+0
