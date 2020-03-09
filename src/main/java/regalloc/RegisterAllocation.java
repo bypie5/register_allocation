@@ -97,8 +97,7 @@ public class RegisterAllocation {
             i.location = getNewStackLoc();
         }
     }
-
-    // TODO: Verify this works
+    
     void sortByIncreasingEndPoint(List<LiveRange> r) {
         r.sort((o1, o2) -> o1.end < o2.end ? -1 : 1);
     }
