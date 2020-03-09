@@ -50,7 +50,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
 
         int sxCount = 0;
-        int inCount = currFunction.params.length - 4 > 0 ? currFunction.params.length - 4 : 0;
+        int inCount = Math.max(currFunction.params.length - 4, 0);
         // Save all $sx registers
         sxCount = usedSXRegs.size();
         funcHeader = new StringBuilder("func " + currFunction.ident + " [in " + inCount + ", out " + outCount + ", local " + sxCount + "]\n");
