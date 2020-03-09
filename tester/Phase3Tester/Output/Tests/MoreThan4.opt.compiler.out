@@ -1,3 +1,5 @@
+const empty_MT4
+
 func Main [in 0, out 0, local 2]
 local[0] = $s0
 local[1] = $s1
