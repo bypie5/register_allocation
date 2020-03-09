@@ -334,7 +334,7 @@ $s3 = local[3]
 $s4 = local[4]
 ret
 
-func Tree.Insert [in 0, out 0, local 8]
+func Tree.Insert [in 0, out 0, local 16]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -349,9 +349,25 @@ $t4 = HeapAllocZ(24)
 if $t4 goto :null20
 Error("null pointer")
 null20:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $t4
 $a1 = $t1
 call :Tree.Init
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t5 = $v0
 $s0 = $s1
 $s1 = 1
@@ -360,23 +376,71 @@ if0 $s1 goto :while1_end
 if $s0 goto :null21
 Error("null pointer")
 null21:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t6 = $v0
 $t7 = LtS($t1 $t6)
 if0 $t7 goto :if3_else
 if $s0 goto :null22
 Error("null pointer")
 null22:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t6 = $v0
 if0 $t6 goto :if4_else
 if $s0 goto :null23
 Error("null pointer")
 null23:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $s0 = $v0
 goto :if4_end
 if4_else:
@@ -384,16 +448,48 @@ $s1 = 0
 if $s0 goto :null24
 Error("null pointer")
 null24:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 $a1 = 1
 call :Tree.SetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t5 = $v0
 if $s0 goto :null25
 Error("null pointer")
 null25:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 $a1 = $t4
 call :Tree.SetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t5 = $v0
 if4_end:
 goto :if3_end
@@ -401,15 +497,47 @@ if3_else:
 if $s0 goto :null26
 Error("null pointer")
 null26:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t6 = $v0
 if0 $t6 goto :if5_else
 if $s0 goto :null27
 Error("null pointer")
 null27:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 call :Tree.GetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $s0 = $v0
 goto :if5_end
 if5_else:
@@ -417,16 +545,48 @@ $s1 = 0
 if $s0 goto :null28
 Error("null pointer")
 null28:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 $a1 = 1
 call :Tree.SetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t5 = $v0
 if $s0 goto :null29
 Error("null pointer")
 null29:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
+local[15] = $t7
 $a0 = $s0
 $a1 = $t4
 call :Tree.SetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
+$t7 = local[15]
 $t5 = $v0
 if5_end:
 if3_end:
@@ -443,7 +603,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func Tree.Delete [in 0, out 0, local 8]
+func Tree.Delete [in 0, out 0, local 15]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -464,24 +624,66 @@ if0 $t2 goto :while2_end
 if $t0 goto :null30
 Error("null pointer")
 null30:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 $t6 = LtS($s7 $t5)
 if0 $t6 goto :if6_else
 if $t0 goto :null31
 Error("null pointer")
 null31:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t6 = $v0
 if0 $t6 goto :if7_else
 $t1 = $t0
 if $t0 goto :null32
 Error("null pointer")
 null32:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t0 = $v0
 goto :if7_end
 if7_else:
@@ -494,16 +696,44 @@ if0 $t6 goto :if8_else
 if $t0 goto :null33
 Error("null pointer")
 null33:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 if0 $t5 goto :if9_else
 $t1 = $t0
 if $t0 goto :null34
 Error("null pointer")
 null34:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t0 = $v0
 goto :if9_end
 if9_else:
@@ -515,32 +745,88 @@ if0 $t4 goto :if10_else
 if $t0 goto :null35
 Error("null pointer")
 null35:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 if $t5 goto :if11_else
 if $t0 goto :null36
 Error("null pointer")
 null36:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t0
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 if $t5 goto :if11_else
 $t5 = 1
 goto :if11_end
 if11_else:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s3
 $a1 = $t1
 $a2 = $t0
 call :Tree.Remove
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 if11_end:
 goto :if10_end
 if10_else:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s3
 $a1 = $t1
 $a2 = $t0
 call :Tree.Remove
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t5 = $v0
 if10_end:
 $t3 = 1
@@ -561,7 +847,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func Tree.Remove [in 0, out 0, local 8]
+func Tree.Remove [in 0, out 0, local 15]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -576,69 +862,209 @@ $s4 = $a2
 if $s4 goto :null37
 Error("null pointer")
 null37:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s4
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $t6 = $v0
 if0 $t6 goto :if12_else
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t2
 $a1 = $t5
 $a2 = $s4
 call :Tree.RemoveLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 goto :if12_end
 if12_else:
 if $s4 goto :null38
 Error("null pointer")
 null38:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s4
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s1 = $v0
 if0 $s1 goto :if13_else
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t2
 $a1 = $t5
 $a2 = $s4
 call :Tree.RemoveRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 goto :if13_end
 if13_else:
 if $s4 goto :null39
 Error("null pointer")
 null39:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s4
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s1 = $v0
 if $t5 goto :null40
 Error("null pointer")
 null40:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t5
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s2 = $v0
 if $s2 goto :null41
 Error("null pointer")
 null41:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $s2
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s3 = $v0
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t2
 $a1 = $s1
 $a2 = $s3
 call :Tree.Compare
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s2 = $v0
 if0 $s2 goto :if14_else
 if $t5 goto :null42
 Error("null pointer")
 null42:
 $s1 = [$t2+20]
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t5
 $a1 = $s1
 call :Tree.SetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 if $t5 goto :null43
 Error("null pointer")
 null43:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t5
 $a1 = 0
 call :Tree.SetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 goto :if14_end
 if14_else:
@@ -646,16 +1072,44 @@ if $t5 goto :null44
 Error("null pointer")
 null44:
 $s1 = [$t2+20]
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t5
 $a1 = $s1
 call :Tree.SetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 if $t5 goto :null45
 Error("null pointer")
 null45:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
+local[11] = $t3
+local[12] = $t4
+local[13] = $t5
+local[14] = $t6
 $a0 = $t5
 $a1 = 0
 call :Tree.SetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
+$t3 = local[11]
+$t4 = local[12]
+$t5 = local[13]
+$t6 = local[14]
 $s0 = $v0
 if14_end:
 if13_end:
@@ -671,7 +1125,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func Tree.RemoveRight [in 0, out 0, local 8]
+func Tree.RemoveRight [in 0, out 0, local 11]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -687,8 +1141,14 @@ while3_top:
 if $s4 goto :null46
 Error("null pointer")
 null46:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if0 $t1 goto :while3_end
 if $s4 goto :null47
@@ -697,25 +1157,49 @@ null47:
 if $s4 goto :null48
 Error("null pointer")
 null48:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if $t1 goto :null49
 Error("null pointer")
 null49:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $t1
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t2 = $v0
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 $a1 = $t2
 call :Tree.SetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 $s0 = $s4
 if $s4 goto :null50
 Error("null pointer")
 null50:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $s4 = $v0
 goto :while3_top
 while3_end:
@@ -723,16 +1207,28 @@ if $s0 goto :null51
 Error("null pointer")
 null51:
 $s1 = [$s6+20]
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s0
 $a1 = $s1
 call :Tree.SetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if $s0 goto :null52
 Error("null pointer")
 null52:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s0
 $a1 = 0
 call :Tree.SetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 $v0 = 1
 $s0 = local[0]
@@ -745,7 +1241,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func Tree.RemoveLeft [in 0, out 0, local 8]
+func Tree.RemoveLeft [in 0, out 0, local 11]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -761,8 +1257,14 @@ while4_top:
 if $s4 goto :null53
 Error("null pointer")
 null53:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if0 $t1 goto :while4_end
 if $s4 goto :null54
@@ -771,25 +1273,49 @@ null54:
 if $s4 goto :null55
 Error("null pointer")
 null55:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if $t1 goto :null56
 Error("null pointer")
 null56:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $t1
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t2 = $v0
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 $a1 = $t2
 call :Tree.SetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 $s0 = $s4
 if $s4 goto :null57
 Error("null pointer")
 null57:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s4
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $s4 = $v0
 goto :while4_top
 while4_end:
@@ -797,16 +1323,28 @@ if $s0 goto :null58
 Error("null pointer")
 null58:
 $s1 = [$s6+20]
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s0
 $a1 = $s1
 call :Tree.SetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if $s0 goto :null59
 Error("null pointer")
 null59:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s0
 $a1 = 0
 call :Tree.SetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 $v0 = 1
 $s0 = local[0]
@@ -819,7 +1357,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func Tree.Search [in 0, out 0, local 8]
+func Tree.Search [in 0, out 0, local 11]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -838,23 +1376,41 @@ if0 $s0 goto :while5_end
 if $s7 goto :null60
 Error("null pointer")
 null60:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s7
 call :Tree.GetKey
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 $t2 = LtS($s5 $t1)
 if0 $t2 goto :if15_else
 if $s7 goto :null61
 Error("null pointer")
 null61:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s7
 call :Tree.GetHas_Left
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t2 = $v0
 if0 $t2 goto :if16_else
 if $s7 goto :null62
 Error("null pointer")
 null62:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s7
 call :Tree.GetLeft
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $s7 = $v0
 goto :if16_end
 if16_else:
@@ -867,15 +1423,27 @@ if0 $t2 goto :if17_else
 if $s7 goto :null63
 Error("null pointer")
 null63:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s7
 call :Tree.GetHas_Right
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $t1 = $v0
 if0 $t1 goto :if18_else
 if $s7 goto :null64
 Error("null pointer")
 null64:
+local[8] = $t0
+local[9] = $t1
+local[10] = $t2
 $a0 = $s7
 call :Tree.GetRight
+$t0 = local[8]
+$t1 = local[9]
+$t2 = local[10]
 $s7 = $v0
 goto :if18_end
 if18_else:
@@ -918,7 +1486,7 @@ $s2 = local[2]
 $s3 = local[3]
 ret
 
-func Tree.RecPrint [in 0, out 0, local 8]
+func Tree.RecPrint [in 0, out 0, local 9]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -932,19 +1500,25 @@ $s5 = $a1
 if $s5 goto :null65
 Error("null pointer")
 null65:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetHas_Left
+$t0 = local[8]
 $t0 = $v0
 if0 $t0 goto :if19_else
 if $s5 goto :null66
 Error("null pointer")
 null66:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetLeft
+$t0 = local[8]
 $s0 = $v0
+local[8] = $t0
 $a0 = $s7
 $a1 = $s0
 call :Tree.RecPrint
+$t0 = local[8]
 $s1 = $v0
 goto :if19_end
 if19_else:
@@ -953,26 +1527,34 @@ if19_end:
 if $s5 goto :null67
 Error("null pointer")
 null67:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetKey
+$t0 = local[8]
 $s0 = $v0
 PrintIntS($s0)
 if $s5 goto :null68
 Error("null pointer")
 null68:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetHas_Right
+$t0 = local[8]
 $s0 = $v0
 if0 $s0 goto :if20_else
 if $s5 goto :null69
 Error("null pointer")
 null69:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetRight
+$t0 = local[8]
 $s0 = $v0
+local[8] = $t0
 $a0 = $s7
 $a1 = $s0
 call :Tree.RecPrint
+$t0 = local[8]
 $s1 = $v0
 goto :if20_end
 if20_else:
@@ -1087,7 +1669,7 @@ $s6 = local[6]
 $s7 = local[7]
 ret
 
-func MyVisitor.visit [in 0, out 0, local 8]
+func MyVisitor.visit [in 0, out 0, local 9]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -1101,24 +1683,30 @@ $s5 = $a1
 if $s5 goto :null77
 Error("null pointer")
 null77:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetHas_Right
+$t0 = local[8]
 $t0 = $v0
 if0 $t0 goto :if23_else
 if $s5 goto :null78
 Error("null pointer")
 null78:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetRight
+$t0 = local[8]
 $s0 = $v0
 [$s7+8] = $s0
 $s0 = [$s7+8]
 if $s0 goto :null79
 Error("null pointer")
 null79:
+local[8] = $t0
 $a0 = $s0
 $a1 = $s7
 call :Tree.accept
+$t0 = local[8]
 $s1 = $v0
 goto :if23_end
 if23_else:
@@ -1127,31 +1715,39 @@ if23_end:
 if $s5 goto :null80
 Error("null pointer")
 null80:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetKey
+$t0 = local[8]
 $s0 = $v0
 PrintIntS($s0)
 if $s5 goto :null81
 Error("null pointer")
 null81:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetHas_Left
+$t0 = local[8]
 $s0 = $v0
 if0 $s0 goto :if24_else
 if $s5 goto :null82
 Error("null pointer")
 null82:
+local[8] = $t0
 $a0 = $s5
 call :Tree.GetLeft
+$t0 = local[8]
 $s0 = $v0
 [$s7+4] = $s0
 $s0 = [$s7+4]
 if $s0 goto :null83
 Error("null pointer")
 null83:
+local[8] = $t0
 $a0 = $s0
 $a1 = $s7
 call :Tree.accept
+$t0 = local[8]
 $s1 = $v0
 goto :if24_end
 if24_else:

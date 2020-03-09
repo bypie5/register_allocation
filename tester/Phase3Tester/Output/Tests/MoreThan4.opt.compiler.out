@@ -17,7 +17,7 @@ $s0 = local[0]
 $s1 = local[1]
 ret
 
-func MT4.Start [in 3, out 3, local 8]
+func MT4.Start [in 3, out 3, local 9]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -39,6 +39,7 @@ PrintIntS($s5)
 PrintIntS($s2)
 PrintIntS($s6)
 PrintIntS($s3)
+local[8] = $t0
 $a0 = $s7
 $a1 = $s3
 $a2 = $s6
@@ -47,6 +48,7 @@ out[0] = $s5
 out[1] = $s1
 out[2] = $s4
 call :MT4.Change
+$t0 = local[8]
 $t0 = $v0
 $v0 = $t0
 $s0 = local[0]

@@ -14,6 +14,7 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
     List<String> buffer;
     int indentLevel;
     List<String> usedSXRegs;
+    List<String> usedTXRegs;
     int outCount;
 
     public TranslationVisitor() {
@@ -49,11 +50,11 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         StringBuilder funcHeader = new StringBuilder();
 
 
-        int sxCount = 0;
         int inCount = Math.max(currFunction.params.length - 4, 0);
-        // Save all $sx registers
-        sxCount = usedSXRegs.size();
-        funcHeader = new StringBuilder("func " + currFunction.ident + " [in " + inCount + ", out " + outCount + ", local " + sxCount + "]\n");
+        // Save all $sx  registers
+        int sxCount = usedSXRegs.size();
+        int txCount = usedTXRegs.size();
+        funcHeader = new StringBuilder("func " + currFunction.ident + " [in " + inCount + ", out " + outCount + ", local " + (sxCount+txCount) + "]\n");
         // Save $sx registers
         int stackLoc = 0;
         for (String reg : usedSXRegs) {
@@ -87,6 +88,14 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
             if (lr.getLoc().contains("s")) {
                 if (!usedSXRegs.contains(lr.getLoc()))
                     usedSXRegs.add(lr.getLoc());
+            }
+        }
+
+        usedTXRegs = new ArrayList<>();
+        for (LiveRange tr : currAllocation.ranges.getRanges()) {
+            if (tr.getLoc().contains("t")) {
+                if (!usedTXRegs.contains(tr.getLoc()))
+                    usedTXRegs.add(tr.getLoc());
             }
         }
 
@@ -131,6 +140,11 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
         String line = "";
 
+        // Save usedTs
+        for (int i = 0; i < usedTXRegs.size(); i++) {
+            line += "local[" + (usedSXRegs.size() + i) + "] = " + usedTXRegs.get(i) + "\n";
+        }
+
         // Set up arguments
         int argRegUsed = 0;
         for (int i = 0; i < c.args.length; i++) {
@@ -164,6 +178,11 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
         } else {
             LiveRange addrAlloc = currAllocation.getAlloc(sourcePos, c.addr.toString());
             line += "call " + addrAlloc.getLoc() + "\n";
+        }
+
+        // Restore Ts
+        for (int i = 0; i < usedTXRegs.size(); i++) {
+            line += usedTXRegs.get(i) + " = local[" + (usedSXRegs.size() + i) + "]\n";
         }
 
         // Get the return value

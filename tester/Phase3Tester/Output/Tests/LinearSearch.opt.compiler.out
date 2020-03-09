@@ -98,7 +98,7 @@ $s2 = local[2]
 $s3 = local[3]
 ret
 
-func LS.Search [in 0, out 0, local 8]
+func LS.Search [in 0, out 0, local 9]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
