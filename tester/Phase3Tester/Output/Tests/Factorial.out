@@ -1,0 +1,13 @@
+--- Error (ProgramFault) ---
+expecting argument 2 to be an integer, found data address<Heap.0>+0
+  Main() line 17
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 43
+  Fac.ComputeFac() line 45

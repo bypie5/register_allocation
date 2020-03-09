@@ -1,0 +1,5 @@
+--- Error (ProgramFault) ---
+require function address, found integer10
+  Main() line 20
+  LS.Start() line 39
+  LS.Init() line 185

@@ -1,0 +1,5 @@
+--- Error (ProgramFault) ---
+require function address, found integer10
+  Main() line 20
+  BBS.Start() line 39
+  BBS.Init() line 222

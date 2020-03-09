@@ -1,0 +1,21 @@
+--- SelfTestCases/LinkedList.out	2020-03-05 22:31:29.000000000 -0800
++++ ./Output/Tests/LinkedList.out	2020-03-08 22:09:00.000000000 -0700
+@@ -14,13 +14,8 @@
+ 39
+ 25
+ 2220000
+--555
+--555
+-28
+-22
+-25
+-33300000
+-22
+-25
+-44440000
+-0
++--- Error (ProgramFault) ---
++invalid argument types: (integer1, data address<Heap.6>+0)
++  Main() line 36
++  LL.Start() line 763
++  List.Delete() line 307

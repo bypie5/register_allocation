@@ -231,7 +231,11 @@ public class TranslationVisitor <E extends Throwable> extends VInstr.Visitor<E> 
 
         String line = "";
         if (destAlloc != null) {
-            line += "if " + destAlloc.getLoc() + " goto :" + b.target.ident;
+            if (b.positive) {
+                line += "if " + destAlloc.getLoc() + " goto :" + b.target.ident;
+            } else {
+                line += "if0 " + destAlloc.getLoc() + " goto :" + b.target.ident;
+            }
         }
 
         setBuffer(sourcePos, line);

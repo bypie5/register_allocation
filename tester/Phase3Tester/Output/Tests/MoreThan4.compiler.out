@@ -1,3 +1,7 @@
+const vmt_MT4
+    :MT4.Start
+    :MT4.Change
+
 func Main [in 0, out 0, local 3]
 local[0] = $s0
 local[1] = $s1

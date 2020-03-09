@@ -16,7 +16,10 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
         // Set up nodes
         for (int i = 0; i < currFunction.body.length + currFunction.labels.length; i++) {
-            nodes.add(new CFGNode(i));
+            CFGNode curr = new CFGNode(i);
+            if (i != (currFunction.body.length + currFunction.labels.length) - 1)
+            curr.addSingleSucc(i);
+            nodes.add(curr);
         }
     }
 
@@ -56,11 +59,9 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         CFGNode funcHeader = new CFGNode(-1);
         for (int i = 0; i < currFunction.params.length; i++) {
             funcHeader.def.add(currFunction.params[i].ident);
-            //funcHeader.active.add(currFunction.params[i].ident);
         }
         funcHeader.addSingleSucc(-1);
         nodes.add(0, funcHeader);
-
 
         do {
             for (int i = 0; i < nodes.size(); i++) {
@@ -297,6 +298,30 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
 
         public void inspect() {
+            System.out.print("    in:   {");
+            for (String s : in) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    out:   {");
+            for (String s : out) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    def:   {");
+            for (String s : def) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
+            System.out.print("    use:   {");
+            for (String s : use) {
+                System.out.print(s);
+            }
+            System.out.println("}");
+
             System.out.print("    active:   {");
             for (String s : active) {
                 System.out.print(s);
@@ -305,7 +330,8 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         }
 
         public void addSingleSucc(int pos) {
-            succ.add(pos + 1);
+            if (!succ.contains(pos+1))
+                succ.add(pos + 1);
         }
     }
 }
