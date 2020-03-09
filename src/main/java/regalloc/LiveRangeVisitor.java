@@ -100,14 +100,16 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         return true;
     }
 
-    LiveRange getRangeByIdent(String ident, List<LiveRange> ranges) {
+    List<LiveRange> getRangeByIdent(String ident, List<LiveRange> ranges) {
+        List<LiveRange> candidates = new ArrayList<>();
+
         for (LiveRange range : ranges) {
             if (range.ident.equals(ident)) {
-                return range;
+                candidates.add(range);
             }
         }
 
-        return null;
+        return candidates;
     }
 
     // Creates data structure to be used later
@@ -126,11 +128,23 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         for (CFGNode node : nodes) {
             // Create or extend ranges
             for(String ident : node.active) {
-                LiveRange temp = getRangeByIdent(ident, incompleteRanges);
-                if (temp == null) {
-                    incompleteRanges.add(new LiveRange(node.index, node.index, ident));
+                List<LiveRange> temp = getRangeByIdent(ident, incompleteRanges);
+                if (temp.size() == 0) {
+                    for (int i = 0; i < node.succ.size(); i++) {
+                        if (node.succ.size() > 1) {
+                            System.out.println("a");
+                        }
+                        incompleteRanges.add(new LiveRange(node.index, node.index, ident));
+                    }
                 } else {
-                    temp.end++;
+                    // Follow the successor's edges
+                    for (int i = 0; i < temp.size(); i++) {
+                        if (temp.size() > 1) {
+                            System.out.println("a");
+                        }
+                        CFGNode currNode = getNodeFromIndex(temp.get(i).end);
+                        temp.get(i).end = currNode.succ.get(i);
+                    }
                 }
             }
 
