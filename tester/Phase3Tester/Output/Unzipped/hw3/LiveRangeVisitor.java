@@ -52,6 +52,16 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
 
     // Computes live ranges on CFGNodes in nodes list
     public void computeNodeSets() {
+        // Add function header data into CFGNodes
+        CFGNode funcHeader = new CFGNode(-1);
+        for (int i = 0; i < currFunction.params.length; i++) {
+            funcHeader.def.add(currFunction.params[i].ident);
+            //funcHeader.active.add(currFunction.params[i].ident);
+        }
+        funcHeader.addSingleSucc(-1);
+        nodes.add(0, funcHeader);
+
+
         do {
             for (int i = 0; i < nodes.size(); i++) {
                 CFGNode currNode = nodes.get(i);
@@ -167,6 +177,7 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
                 currNode.use.add(c.args[i].toString());
             }
         }
+        currNode.use.add(c.addr.toString());
 
         currNode.addSingleSucc(getRelativePos(c.sourcePos.line));
     }

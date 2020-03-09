@@ -1,1 +1,12 @@
-2.1: syntax error
+8.1: no register named "a4" in current mode
+9.1: no register named "a5" in current mode
+10.1: no register named "a6" in current mode
+31.7: no register named "a4" in current mode
+32.7: no register named "a5" in current mode
+33.7: no register named "a6" in current mode
+44.1: no register named "a4" in current mode
+45.1: no register named "a5" in current mode
+46.1: no register named "a6" in current mode
+72.7: no register named "a4" in current mode
+73.7: no register named "a5" in current mode
+74.7: no register named "a6" in current mode
