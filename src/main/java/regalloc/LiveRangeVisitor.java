@@ -100,16 +100,15 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         return true;
     }
 
-    List<LiveRange> getRangeByIdent(String ident, List<LiveRange> ranges) {
-        List<LiveRange> candidates = new ArrayList<>();
+    LiveRange getRangeByIdent(String ident, List<LiveRange> ranges) {
 
         for (LiveRange range : ranges) {
             if (range.ident.equals(ident)) {
-                candidates.add(range);
+                return range;
             }
         }
 
-        return candidates;
+        return null;
     }
 
     // Creates data structure to be used later
@@ -128,23 +127,11 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         for (CFGNode node : nodes) {
             // Create or extend ranges
             for(String ident : node.active) {
-                List<LiveRange> temp = getRangeByIdent(ident, incompleteRanges);
-                if (temp.size() == 0) {
-                    for (int i = 0; i < node.succ.size(); i++) {
-                        if (node.succ.size() > 1) {
-                            System.out.println("a");
-                        }
-                        incompleteRanges.add(new LiveRange(node.index, node.index, ident));
-                    }
+                LiveRange temp = getRangeByIdent(ident, incompleteRanges);
+                if (temp == null) {
+                    incompleteRanges.add(new LiveRange(node.index, node.index, ident));
                 } else {
-                    // Follow the successor's edges
-                    for (int i = 0; i < temp.size(); i++) {
-                        if (temp.size() > 1) {
-                            System.out.println("a");
-                        }
-                        CFGNode currNode = getNodeFromIndex(temp.get(i).end);
-                        temp.get(i).end = currNode.succ.get(i);
-                    }
+                    temp.end++;
                 }
             }
 
@@ -161,6 +148,26 @@ public class LiveRangeVisitor <E extends Throwable> extends Visitor<E> {
         for (LiveRange r : incompleteRanges) {
             r.end++;
             finalRanges.add(r);
+        }
+
+        // Make a conservative approximation and union all live ranges
+        // for each variable
+        List<LiveRange> duplicates = new ArrayList<>();
+        int i = 0;
+        for (LiveRange r : finalRanges) {
+            for (int j = i; j < finalRanges.size(); j++) {
+                LiveRange c = finalRanges.get(j);
+                if (r != c && r.ident.equals(c.ident)) {
+                    r.start = Math.min(r.start, c.start);
+                    r.end = Math.max(r.end, c.end);
+                    duplicates.add(c);
+                }
+            }
+            i++;
+        }
+
+        for (LiveRange dup : duplicates) {
+            finalRanges.remove(dup);
         }
 
         return new LiveRanges(finalRanges);

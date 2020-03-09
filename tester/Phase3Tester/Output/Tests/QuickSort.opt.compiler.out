@@ -36,15 +36,15 @@ call $s3
 $s5 = $v0
 PrintIntS(9999)
 $s0 = [$s4+4]
-$s1 = Sub($s0 1)
+$s5 = Sub($s0 1)
 $a0 = $s4
 $a1 = 0
-$a2 = $s1
+$a2 = $s5
 call $s2
-$s1 = $v0
+$s5 = $v0
 $a0 = $s4
 call $s3
-$s1 = $v0
+$s5 = $v0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -85,107 +85,107 @@ $s7 = $s3
 $t0 = 1
 while1_top:
 if0 $t0 goto :while1_end
-$s4 = 1
+$t1 = 1
 while2_top:
-if0 $s4 goto :while2_end
+if0 $t1 goto :while2_end
 $s6 = Add($s6 1)
-$s4 = [$s2+0]
-if $s4 goto :null3
+$t2 = [$s2+0]
+if $t2 goto :null3
 Error("null pointer")
 null3:
-$t0 = [$s4+0]
-$t0 = Lt($s6 $t0)
-if $t0 goto :bounds2
+$t3 = [$t2+0]
+$t3 = Lt($s6 $t3)
+if $t3 goto :bounds2
 Error("array index out of bounds")
 bounds2:
-$t0 = MulS($s6 4)
-$t0 = Add($t0 $s4)
-$s4 = [$t0+4]
-$t0 = LtS($s4 $s5)
-if $t0 goto :if2_else
-$s4 = 0
+$t3 = MulS($s6 4)
+$t3 = Add($t3 $t2)
+$t2 = [$t3+4]
+$t3 = LtS($t2 $s5)
+if $t3 goto :if2_else
+$t1 = 0
 goto :if2_end
 if2_else:
-$s4 = 1
+$t1 = 1
 if2_end:
 goto :while2_top
 while2_end:
-$s4 = 1
+$t1 = 1
 while3_top:
-if0 $s4 goto :while3_end
+if0 $t1 goto :while3_end
 $s7 = Sub($s7 1)
-$s4 = [$s2+0]
-if $s4 goto :null4
+$t3 = [$s2+0]
+if $t3 goto :null4
 Error("null pointer")
 null4:
-$t0 = [$s4+0]
-$t0 = Lt($s7 $t0)
-if $t0 goto :bounds3
+$t4 = [$t3+0]
+$t4 = Lt($s7 $t4)
+if $t4 goto :bounds3
 Error("array index out of bounds")
 bounds3:
-$t0 = MulS($s7 4)
-$t0 = Add($t0 $s4)
-$s4 = [$t0+4]
-$t0 = LtS($s5 $s4)
-if $t0 goto :if3_else
-$s4 = 0
+$t4 = MulS($s7 4)
+$t4 = Add($t4 $t3)
+$t2 = [$t4+4]
+$t3 = LtS($s5 $t2)
+if $t3 goto :if3_else
+$t1 = 0
 goto :if3_end
 if3_else:
-$s4 = 1
+$t1 = 1
 if3_end:
 goto :while3_top
 while3_end:
-$s4 = [$s2+0]
-if $s4 goto :null5
+$t1 = [$s2+0]
+if $t1 goto :null5
 Error("null pointer")
 null5:
-$t0 = [$s4+0]
-$t0 = Lt($s6 $t0)
-if $t0 goto :bounds4
+$t2 = [$t1+0]
+$t2 = Lt($s6 $t2)
+if $t2 goto :bounds4
 Error("array index out of bounds")
 bounds4:
-$t0 = MulS($s6 4)
-$t0 = Add($t0 $s4)
-$s4 = [$t0+4]
-$t0 = [$s2+0]
-if $t0 goto :null6
+$t2 = MulS($s6 4)
+$t2 = Add($t2 $t1)
+$s4 = [$t2+4]
+$t1 = [$s2+0]
+if $t1 goto :null6
 Error("null pointer")
 null6:
-$t1 = [$t0+0]
-$t1 = Lt($s6 $t1)
-if $t1 goto :bounds5
+$t2 = [$t1+0]
+$t2 = Lt($s6 $t2)
+if $t2 goto :bounds5
 Error("array index out of bounds")
 bounds5:
-$t1 = MulS($s6 4)
-$t1 = Add($t1 $t0)
-$t0 = [$s2+0]
-if $t0 goto :null7
+$t2 = MulS($s6 4)
+$t2 = Add($t2 $t1)
+$t1 = [$s2+0]
+if $t1 goto :null7
 Error("null pointer")
 null7:
-$t2 = [$t0+0]
-$t2 = Lt($s7 $t2)
-if $t2 goto :bounds6
+$t3 = [$t1+0]
+$t3 = Lt($s7 $t3)
+if $t3 goto :bounds6
 Error("array index out of bounds")
 bounds6:
-$t2 = MulS($s7 4)
-$t2 = Add($t2 $t0)
-$t0 = [$t2+4]
-[$t1+4] = $t0
-$t0 = [$s2+0]
-if $t0 goto :null8
+$t3 = MulS($s7 4)
+$t3 = Add($t3 $t1)
+$t1 = [$t3+4]
+[$t2+4] = $t1
+$t1 = [$s2+0]
+if $t1 goto :null8
 Error("null pointer")
 null8:
-$t1 = [$t0+0]
-$t1 = Lt($s7 $t1)
-if $t1 goto :bounds7
+$t2 = [$t1+0]
+$t2 = Lt($s7 $t2)
+if $t2 goto :bounds7
 Error("array index out of bounds")
 bounds7:
-$t1 = MulS($s7 4)
-$t1 = Add($t1 $t0)
-[$t1+4] = $s4
-$t0 = Add($s6 1)
-$t1 = LtS($s7 $t0)
-if0 $t1 goto :if4_else
+$t2 = MulS($s7 4)
+$t2 = Add($t2 $t1)
+[$t2+4] = $s4
+$t1 = Add($s6 1)
+$t2 = LtS($s7 $t1)
+if0 $t2 goto :if4_else
 $t0 = 0
 goto :if4_end
 if4_else:

@@ -42,7 +42,7 @@ Error("null pointer")
 null2:
 $a0 = $s0
 call $s5
-$s1 = $v0
+$s7 = $v0
 PrintIntS(100000000)
 if $s0 goto :null3
 Error("null pointer")
@@ -50,55 +50,55 @@ null3:
 $a0 = $s0
 $a1 = 8
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null4
 Error("null pointer")
 null4:
 $a0 = $s0
 $a1 = 24
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null5
 Error("null pointer")
 null5:
 $a0 = $s0
 $a1 = 4
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null6
 Error("null pointer")
 null6:
 $a0 = $s0
 $a1 = 12
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null7
 Error("null pointer")
 null7:
 $a0 = $s0
 $a1 = 20
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null8
 Error("null pointer")
 null8:
 $a0 = $s0
 $a1 = 28
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null9
 Error("null pointer")
 null9:
 $a0 = $s0
 $a1 = 14
 call $s2
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null10
 Error("null pointer")
 null10:
 $a0 = $s0
 call $s5
-$s1 = $v0
+$s7 = $v0
 PrintIntS(100000000)
 $s1 = HeapAllocZ(12)
 [$s1+0] = :vmt_MyVisitor
@@ -158,13 +158,13 @@ null17:
 $a0 = $s0
 $a1 = 12
 call $s4
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null18
 Error("null pointer")
 null18:
 $a0 = $s0
 call $s5
-$s1 = $v0
+$s7 = $v0
 if $s0 goto :null19
 Error("null pointer")
 null19:
@@ -295,22 +295,23 @@ $s0 = local[0]
 $s1 = local[1]
 ret
 
-func Tree.Compare [in 0, out 0, local 4]
+func Tree.Compare [in 0, out 0, local 5]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
 local[3] = $s3
+local[4] = $s4
 $s0 = $a0
 $s2 = $a1
 $s1 = $a2
 $s0 = 0
-$s0 = Add($s1 1)
-$s3 = LtS($s2 $s1)
-if0 $s3 goto :if1_else
-$s1 = 0
+$s3 = Add($s1 1)
+$s4 = LtS($s2 $s1)
+if0 $s4 goto :if1_else
+$s0 = 0
 goto :if1_end
 if1_else:
-$s1 = LtS($s2 $s0)
+$s1 = LtS($s2 $s3)
 if $s1 goto :if2_else
 $s0 = 0
 goto :if2_end
@@ -323,6 +324,7 @@ $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
 $s3 = local[3]
+$s4 = local[4]
 ret
 
 func Tree.Insert [in 0, out 0, local 8]
@@ -353,16 +355,16 @@ Error("null pointer")
 null21:
 $a0 = $s0
 call $s3
-$t5 = $v0
-$t6 = LtS($t1 $t5)
-if0 $t6 goto :if3_else
+$t6 = $v0
+$t7 = LtS($t1 $t6)
+if0 $t7 goto :if3_else
 if $s0 goto :null22
 Error("null pointer")
 null22:
 $a0 = $s0
 call $s2
-$t5 = $v0
-if0 $t5 goto :if4_else
+$t6 = $v0
+if0 $t6 goto :if4_else
 if $s0 goto :null23
 Error("null pointer")
 null23:
@@ -394,8 +396,8 @@ Error("null pointer")
 null26:
 $a0 = $s0
 call $s7
-$t5 = $v0
-if0 $t5 goto :if5_else
+$t6 = $v0
+if0 $t6 goto :if5_else
 if $s0 goto :null27
 Error("null pointer")
 null27:
@@ -507,23 +509,23 @@ Error("null pointer")
 null35:
 $a0 = $t0
 call $s4
-$t2 = $v0
-if $t2 goto :if11_else
+$t5 = $v0
+if $t5 goto :if11_else
 if $t0 goto :null36
 Error("null pointer")
 null36:
 $a0 = $t0
 call $s0
-$t2 = $v0
-if $t2 goto :if11_else
-$t2 = 1
+$t5 = $v0
+if $t5 goto :if11_else
+$t5 = 1
 goto :if11_end
 if11_else:
 $a0 = $s3
 $a1 = $t1
 $a2 = $t0
 call $s5
-$t2 = $v0
+$t5 = $v0
 if11_end:
 goto :if10_end
 if10_else:
@@ -531,16 +533,16 @@ $a0 = $s3
 $a1 = $t1
 $a2 = $t0
 call $s5
-$t2 = $v0
+$t5 = $v0
 if10_end:
-$t2 = 1
-$t3 = 0
+$t3 = 1
+$t2 = 0
 if8_end:
 if6_end:
 $t4 = 0
 goto :while2_top
 while2_end:
-$v0 = $t2
+$v0 = $t3
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -582,8 +584,8 @@ Error("null pointer")
 null38:
 $a0 = $s4
 call $s2
-$s0 = $v0
-if0 $s0 goto :if13_else
+$s1 = $v0
+if0 $s1 goto :if13_else
 $a0 = $t2
 $a1 = $t5
 $a2 = $s4
@@ -596,33 +598,33 @@ Error("null pointer")
 null39:
 $a0 = $s4
 call $s6
-$s0 = $v0
+$s1 = $v0
 if $t5 goto :null40
 Error("null pointer")
 null40:
 $a0 = $t5
 call $s5
-$s1 = $v0
-if $s1 goto :null41
+$s2 = $v0
+if $s2 goto :null41
 Error("null pointer")
 null41:
-$a0 = $s1
+$a0 = $s2
 call $s6
-$s2 = $v0
+$s3 = $v0
 $a0 = $t2
-$a1 = $s0
-$a2 = $s2
+$a1 = $s1
+$a2 = $s3
 call $s7
-$s1 = $v0
-if0 $s1 goto :if14_else
+$s2 = $v0
+if0 $s2 goto :if14_else
 if $t5 goto :null42
 Error("null pointer")
 null42:
-$s0 = [$t2+20]
+$s1 = [$t2+20]
 $a0 = $t5
-$a1 = $s0
+$a1 = $s1
 call $t0
-$s1 = $v0
+$s0 = $v0
 if $t5 goto :null43
 Error("null pointer")
 null43:
@@ -635,11 +637,11 @@ if14_else:
 if $t5 goto :null44
 Error("null pointer")
 null44:
-$s0 = [$t2+20]
+$s1 = [$t2+20]
 $a0 = $t5
-$a1 = $s0
+$a1 = $s1
 call $t3
-$s1 = $v0
+$s0 = $v0
 if $t5 goto :null45
 Error("null pointer")
 null45:
@@ -688,17 +690,17 @@ Error("null pointer")
 null48:
 $a0 = $s4
 call $s2
-$s0 = $v0
-if $s0 goto :null49
+$t1 = $v0
+if $t1 goto :null49
 Error("null pointer")
 null49:
-$a0 = $s0
+$a0 = $t1
 call $s5
-$t1 = $v0
+$t2 = $v0
 $a0 = $s4
-$a1 = $t1
+$a1 = $t2
 call $s3
-$s0 = $v0
+$t1 = $v0
 $s0 = $s4
 if $s4 goto :null50
 Error("null pointer")
@@ -715,14 +717,14 @@ $s1 = [$s6+20]
 $a0 = $s0
 $a1 = $s1
 call $s7
-$s2 = $v0
+$t1 = $v0
 if $s0 goto :null52
 Error("null pointer")
 null52:
 $a0 = $s0
 $a1 = 0
 call $t0
-$s1 = $v0
+$t1 = $v0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -761,17 +763,17 @@ Error("null pointer")
 null55:
 $a0 = $s4
 call $s2
-$s0 = $v0
-if $s0 goto :null56
+$t1 = $v0
+if $t1 goto :null56
 Error("null pointer")
 null56:
-$a0 = $s0
+$a0 = $t1
 call $s5
-$t1 = $v0
+$t2 = $v0
 $a0 = $s4
-$a1 = $t1
+$a1 = $t2
 call $s3
-$s0 = $v0
+$t1 = $v0
 $s0 = $s4
 if $s4 goto :null57
 Error("null pointer")
@@ -788,14 +790,14 @@ $s1 = [$s6+20]
 $a0 = $s0
 $a1 = $s1
 call $s7
-$s2 = $v0
+$t1 = $v0
 if $s0 goto :null59
 Error("null pointer")
 null59:
 $a0 = $s0
 $a1 = 0
 call $t0
-$s1 = $v0
+$t1 = $v0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -870,13 +872,13 @@ $s0 = 0
 if18_end:
 goto :if17_end
 if17_else:
-$s0 = 1
-$t0 = 0
+$t0 = 1
+$s0 = 0
 if17_end:
 if15_end:
 goto :while5_top
 while5_end:
-$v0 = $s0
+$v0 = $t0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
@@ -934,7 +936,7 @@ call $s6
 $s1 = $v0
 goto :if19_end
 if19_else:
-$s0 = 1
+$s1 = 1
 if19_end:
 if $s5 goto :null67
 Error("null pointer")
@@ -1032,7 +1034,7 @@ call $s5
 $s1 = $v0
 goto :if21_end
 if21_else:
-$s0 = 0
+$s1 = 0
 if21_end:
 if $s4 goto :null74
 Error("null pointer")
@@ -1105,7 +1107,7 @@ call $s6
 $s1 = $v0
 goto :if23_end
 if23_else:
-$s0 = 0
+$s1 = 0
 if23_end:
 if $s5 goto :null80
 Error("null pointer")

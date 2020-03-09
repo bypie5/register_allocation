@@ -42,18 +42,18 @@ $s0 = [$s1+0]
 $s0 = [$s0+8]
 $a0 = $s1
 call $s0
-$s2 = $v0
+$s3 = $v0
 PrintIntS(99999)
 $s0 = [$s1+0]
 $s0 = [$s0+4]
 $a0 = $s1
 call $s0
-$s2 = $v0
+$s3 = $v0
 $s0 = [$s1+0]
 $s0 = [$s0+8]
 $a0 = $s1
 call $s0
-$s2 = $v0
+$s3 = $v0
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]

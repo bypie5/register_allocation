@@ -14,8 +14,13 @@
 39
 25
 2220000
---- Error (ProgramFault) ---
-invalid argument types: (integer1, data address<Heap.6>+0)
-  Main() line 36
-  LL.Start() line 763
-  List.Delete() line 307
+-555
+-555
+28
+22
+25
+33300000
+22
+25
+44440000
+0
