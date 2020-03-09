@@ -7,8 +7,20 @@
 39
 25
 1
---- Error (ProgramFault) ---
-require data address, found integer1
-  Main() line 11
-  LL.Start() line 626
-  List.Search() line 368
+0
+10000000
+28
+22
+39
+25
+2220000
+-555
+-555
+28
+22
+25
+33300000
+22
+25
+44440000
+0

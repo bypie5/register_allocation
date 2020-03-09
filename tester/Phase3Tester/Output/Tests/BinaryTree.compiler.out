@@ -513,7 +513,7 @@ $s5 = local[5]
 $s6 = local[6]
 ret
 
-func Tree.Delete [in 0, out 0, local 8]
+func Tree.Delete [in 0, out 0, local 10]
 local[0] = $s0
 local[1] = $s1
 local[2] = $s2
@@ -536,8 +536,12 @@ Error("null pointer")
 null31:
 $s7 = [$s2+0]
 $s7 = [$s7+20]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $t0 = $v0
 $s7 = LtS($s1 $t0)
 if0 $s7 goto :if6_else
@@ -546,8 +550,12 @@ Error("null pointer")
 null32:
 $s7 = [$s2+0]
 $s7 = [$s7+32]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $t1 = $v0
 if0 $t1 goto :if7_else
 $s3 = $s2
@@ -556,8 +564,12 @@ Error("null pointer")
 null33:
 $s7 = [$s2+0]
 $s7 = [$s7+16]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $s2 = $v0
 goto :if7_end
 if7_else:
@@ -572,8 +584,12 @@ Error("null pointer")
 null34:
 $s7 = [$s2+0]
 $s7 = [$s7+28]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $t0 = $v0
 if0 $t0 goto :if9_else
 $s3 = $s2
@@ -582,8 +598,12 @@ Error("null pointer")
 null35:
 $s7 = [$s2+0]
 $s7 = [$s7+12]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $s2 = $v0
 goto :if9_end
 if9_else:
@@ -597,8 +617,12 @@ Error("null pointer")
 null36:
 $s7 = [$s2+0]
 $s7 = [$s7+28]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $t0 = $v0
 $s7 = Sub(1 $t0)
 if0 $s7 goto :ss1_else
@@ -607,8 +631,12 @@ Error("null pointer")
 null37:
 $s7 = [$s2+0]
 $s7 = [$s7+32]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s2
 call $s7
+$t0 = local[8]
+$t1 = local[9]
 $t0 = $v0
 $s7 = Sub(1 $t0)
 goto :ss1_end
@@ -616,26 +644,34 @@ ss1_else:
 $s7 = 0
 ss1_end:
 if0 $s7 goto :if11_else
-$s7 = 1
+$t0 = 1
 goto :if11_end
 if11_else:
-$t0 = [$s0+0]
-$t0 = [$t0+56]
+$s7 = [$s0+0]
+$s7 = [$s7+56]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s0
 $a1 = $s3
 $a2 = $s2
-call $t0
-$s7 = $v0
+call $s7
+$t0 = local[8]
+$t1 = local[9]
+$t0 = $v0
 if11_end:
 goto :if10_end
 if10_else:
-$t0 = [$s0+0]
-$t0 = [$t0+56]
+$s7 = [$s0+0]
+$s7 = [$s7+56]
+local[8] = $t0
+local[9] = $t1
 $a0 = $s0
 $a1 = $s3
 $a2 = $s2
-call $t0
-$s7 = $v0
+call $s7
+$t0 = local[8]
+$t1 = local[9]
+$t0 = $v0
 if10_end:
 $s5 = 1
 $s4 = 0
@@ -1138,7 +1174,7 @@ call $s2
 $s3 = $v0
 goto :if20_end
 if20_else:
- = 1
+$s3 = 1
 if20_end:
 $v0 = 1
 $s0 = local[0]
