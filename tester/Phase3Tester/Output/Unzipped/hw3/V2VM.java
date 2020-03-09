@@ -27,8 +27,10 @@ public class V2VM {
                 }
 
                 ranges.add(rangeVisitor.getCurrRanges());
-                //rangeVisitor.inspect();
-                //rangeVisitor.printCFG();
+                //if (tree.functions[i].ident.equals("QS.Sort")) {
+                 //   rangeVisitor.inspect();
+                   // rangeVisitor.printCFG();
+                //}
             }
 
             // For each function use LSRA to allocate registers

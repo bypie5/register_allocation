@@ -23,17 +23,17 @@ $s1 = $a0
 $s2 = $a1
 $s3 = LtS($s2 1)
 if0 $s3 goto :if1_else
-$s3 = 1
+$s4 = 1
 goto :if1_end
 if1_else:
-$s4 = Sub($s2 1)
+$s3 = Sub($s2 1)
 $a0 = $s1
-$a1 = $s4
+$a1 = $s3
 call :Fac.ComputeFac
 $s5 = $v0
-$s3 = MulS($s2 $s5)
+$s4 = MulS($s2 $s5)
 if1_end:
-$v0 = $s3
+$v0 = $s4
 $s0 = local[0]
 $s1 = local[1]
 $s2 = local[2]
