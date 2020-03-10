@@ -24,13 +24,29 @@ Liveness calculation translates a control flow graph into a set of live ranges p
 6. return c
 ```
 
-<img src="/Users/brandonyi/Documents/School/CS179E/Project3/register_allocation/example_cfg.png" alt="example_cfg" style="zoom:25%;" />
+<img src="example_cfg.png" alt="example_cfg" style="zoom:25%;" />
 
 This control flow graph is then used to see which local variables are "live" at every point in the program. For example, `a` is live on the edges `1-2, 4-2`, 'b' is live on the edge `2-4` and `c` is alive the entire time. The edges where a variable is live is the variable's live range. These live ranges are used by the linear scan register allocation algorithm. 
 
+Live ranges are produced by the class `LiveRangeVisitor.java`. The `LiveRangeVisitor` class does a depth first visit on the syntax tree for a Vapor program and records where each local variable is used or defined. This information can be directly translated into live ranges for each local variable in the function by doing the following calculation:
+
+```
+for each CFGNode n:
+	n.in = {}; // empty set
+	n.out = {};
+	
+do {
+	for each CFGNode n:
+		n.inPrime = n.in
+		n.outPrime = n.out
+		n.in = n.use union (n.out - n.def)
+		n.out = union (s exists in n.successors) s.in
+} while (n.inPrime = n.in and n.outPrime = n.out for all n)
+```
+
 ### Linear Scan Register Allocation
 
-The linear scan register allocation algorithm by Massimiliano Poletto and Vivek Sarkar, "allocates registers to variables in a single linear-time scan of the variables’ live ranges."[^1]
+The linear scan register allocation algorithm by Massimiliano Poletto and Vivek Sarkar, "allocates registers to variables in a single linear-time scan of the variables’ live ranges."[^1] The algorithm tries to fit all of the local variables in a function into registers. If there are not enough registers to fit all of the local variables into, the algorithm will spill them onto a stack. The stack which the algorithm spills these local variables onto is a stack provided by the VaporM language. 
 
 ## Testing and Verification
 
